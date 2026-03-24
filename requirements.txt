@@ -1,0 +1,16 @@
+requests
+bandit
+# LLM SDKs
+anthropic>=0.40.0
+openai>=1.50.0
+google-generativeai>=0.8.0
+
+# Security analysis
+bandit>=1.8.0
+
+# Testing
+pytest>=8.0.0
+pytest-json-report>=1.5.0
+
+# Utilities
+python-dotenv>=1.0.0
