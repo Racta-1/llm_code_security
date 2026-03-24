@@ -100,18 +100,14 @@ llm-security-pipeline/
 
 `pipeline.py`
 
-This is the main entry point for the project.
-
-It:
-
-reads the task configuration
-loads the saved code files
-runs syntax checks
-runs correctness tests
-runs security analysis
-saves the results
-generates reports
-
+- This is the main entry point for the project.
+- reads the task configuration
+- loads the saved code files
+- runs syntax checks
+- runs correctness tests
+- runs security analysis
+- saves the results
+- generates reports
 
 `analysis/syntax_checker.py`
 
