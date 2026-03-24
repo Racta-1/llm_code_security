@@ -115,56 +115,42 @@ generates reports
 
 `analysis/syntax_checker.py`
 
-This checks whether the generated code is valid Python.
+- This checks whether the generated code is valid Python.
+- It usually uses Python parsing such as: **ast.parse()**
 
-It usually uses Python parsing such as:
-
-**ast.parse()**
-
-Purpose:
-
-catch syntax errors before running tests
-
+Purpose: catch syntax errors before running tests
 
 `analysis/correctness.py`
 
-This checks whether the code is semantically correct.
+- This checks whether the code is semantically correct.
 
-It:
+- writes the candidate code into a temporary *solution.py*
+- runs the task's pytest test file
+- computes pass/fail statistics
 
-writes the candidate code into a temporary solution.py
-runs the task's pytest test file
-computes pass/fail statistics
-
-Purpose:
-
-verify that the code actually does what the task requires
+Purpose: verify that the code actually does what the task requires
 
 
 `analysis/static_analyzer.py`
 
-This performs static security analysis on the generated code.
-
-It typically uses:
-
-**Bandit**
+- This performs static security analysis on the generated code.
+- It typically uses **Bandit**
 
 Purpose:
-
-detect insecure coding patterns
-compute issue counts and vulnerability density
-optionally map findings to CWE-style categories
+- detect insecure coding patterns
+- compute issue counts and vulnerability density
+- optionally map findings to CWE-style categories
 
 
 `analysis/reporter.py`
 
-This generates summary output after the evaluation completes.
+- This generates summary output after the evaluation completes.
 
 It creates:
 
-per-sample JSON result files
-summary JSON files
-Markdown reports
+- per-sample JSON result files
+- summary JSON files
+- Markdown reports
 
 ## Install Python Packages
 `pip install -r requirements.txt`
