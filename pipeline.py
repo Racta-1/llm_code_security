@@ -79,20 +79,51 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
             checker = CorrectnessChecker(task)
             if syntax_result["syntax_valid"]:
                 correctness = checker.check(code)
-                print(f"  ✓ Correctness: {correctness['pass_rate']:.1%} tests passing")
+                pass_rate = correctness["pass_rate"] if correctness["pass_rate"] is not None else 0.0
+                print(
+                    f"  ✓ Correctness: {pass_rate:.1%} tests passing "
+                    f"({correctness['passed']}/{correctness['total']})"
+                )
+                print(
+                    f"  ✓ Functional success: "
+                    f"{'Yes' if correctness['functional_success'] else 'No'}"
+                )
             else:
                 correctness = {
                     "pass_rate": 0.0,
+                    "passed": 0,
+                    "failed": 0,
+                    "errors": 0,
+                    "total": 0,
                     "details": [],
-                    "note": "Skipped because syntax is invalid."
+                    "functional_success": 0,
+                    "status": "skipped_invalid_syntax",
+                    "note": "Skipped because syntax is invalid.",
                 }
 
             # 3. Static security analysis
             analyzer = StaticAnalyzer()
             vuln_report = analyzer.analyze(str(out_file))
-            print(f"  ✓ Vuln density: {vuln_report['density']:.2f} issues/100 LOC")
 
-            # 4. Aggregate result
+            weighted_vuln_score = vuln_report.get("weighted_vuln_score", 0)
+            cwe_categories = vuln_report.get("cwe_categories", [])
+
+            print(f"  ✓ Vuln density: {vuln_report['density']:.2f} issues/100 LOC")
+            print(f"  ✓ Vulnerability count: {vuln_report['count']}")
+            print(f"  ✓ Weighted vuln score: {weighted_vuln_score}")
+            print(
+                f"  ✓ CWE categories: {', '.join(cwe_categories) if cwe_categories else 'None'}"
+            )
+
+            # 4. Combined success metric
+            secure_success = 1 if (
+                correctness["functional_success"] == 1 and
+                vuln_report["count"] == 0
+            ) else 0
+
+            print(f"  ✓ Secure success: {'Yes' if secure_success else 'No'}")
+
+            # 5. Aggregate result
             result = {
                 "run_id": run_id,
                 "task": task_name,
@@ -101,14 +132,28 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
                 "timestamp": datetime.now().isoformat(),
                 "source_code_file": str(code_file),
                 "snapshot_file": str(out_file),
+
                 "syntax_valid": syntax_result["syntax_valid"],
                 "syntax_error": syntax_result["syntax_error"],
-                "vuln_density": vuln_report["density"],
-                "vuln_count": vuln_report["count"],
-                "vuln_issues": vuln_report["issues"],
+
+                "tests_passed": correctness["passed"],
+                "tests_failed": correctness["failed"],
+                "tests_errors": correctness["errors"],
+                "tests_total": correctness["total"],
                 "correctness_pass_rate": correctness["pass_rate"],
                 "correctness_details": correctness["details"],
+                "functional_success": correctness["functional_success"],
+                "correctness_status": correctness.get("status"),
+                "correctness_note": correctness.get("note"),
+
+                "vuln_density": vuln_report["density"],
+                "vuln_count": vuln_report["count"],
+                "weighted_vuln_score": weighted_vuln_score,
+                "cwe_categories": cwe_categories,
+                "vuln_issues": vuln_report["issues"],
                 "loc": vuln_report["loc"],
+
+                "secure_success": secure_success,
             }
             all_results.append(result)
 
@@ -118,7 +163,7 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
             result_file = result_dir / f"{model_name}_{mode}_{task_name}.json"
             result_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
 
-    # 5. Generate summary report
+    # 6. Generate summary report
     reporter = Reporter(run_id, task_name)
     reporter.generate(all_results)
 

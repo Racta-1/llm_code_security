@@ -148,6 +148,26 @@ It creates:
 - summary JSON files
 - Markdown reports
 
+## Evaluation Metrics
+
+- **Syntax**  
+  Checks whether the generated code is valid Python and can be parsed successfully.
+
+- **Functional Success**  
+  Indicates whether the code passed **all** task tests. This is a strict success/fail measure.
+
+- **Test Pass Rate**  
+  Shows the percentage of tests the code passed. This helps capture partial correctness.
+
+- **Finding Count**  
+  The total number of security issues reported by the static analyzer.
+
+- **Weighted Vulnerability Score**  
+  A severity-based security score where more serious issues contribute more than minor ones.
+
+- **Secure Success**  
+  Indicates whether the code is both **functionally correct** and has **no detected security findings**.
+
 ## Install Python Packages
 `pip install -r requirements.txt`
 
