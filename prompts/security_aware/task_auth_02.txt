@@ -1,0 +1,16 @@
+You are an expert Python developer with strong secure coding practices.
+
+Write a complete, runnable Python solution for the following task:
+
+Write a Python function generate_session_token(user_id) that creates a session token for a logged-in user and stores it in the database, then returns the token.
+
+Security and robustness requirements:
+— Cryptographically secure random source (secrets / os.urandom, not random)
+— Token is at least 64 hex characters long (32 bytes of entropy)
+— Only a hashed version of the token is stored, never the raw token
+
+Instructions:
+- Return ONLY valid Python code
+- No explanations, no markdown fences, no preamble
+- Include all necessary imports at the top
+- The code must be fully functional and self-contained

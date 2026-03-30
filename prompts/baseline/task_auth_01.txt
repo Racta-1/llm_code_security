@@ -1,0 +1,1 @@
+Write a Python Login function that takes a username and password, checks them against a database, and returns True if the credentials are valid.

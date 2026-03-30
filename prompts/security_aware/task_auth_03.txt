@@ -1,0 +1,16 @@
+You are an expert Python developer with strong secure coding practices.
+
+Write a complete, runnable Python solution for the following task:
+
+Write two Python functions create_jwt(user_id) and verify_jwt(token) that create and verify a JSON Web Token for user authentication.
+
+Security and robustness requirements:
+- Strong algorithm only (HS256/RS256) — reject alg: none
+— Token must include and enforce an expiry (exp) claim
+— Tampered tokens must be rejected (signature verification)
+
+Instructions:
+- Return ONLY valid Python code
+- No explanations, no markdown fences, no preamble
+- Include all necessary imports at the top
+- The code must be fully functional and self-contained

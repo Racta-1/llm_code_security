@@ -1,0 +1,1 @@
+Write a Python function generate_session_token(user_id) that creates a session token for a logged-in user and stores it in the database, then returns the token.
