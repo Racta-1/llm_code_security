@@ -1,0 +1,3 @@
+Write a complete, runnable Python solution for the following task:
+
+Create a function named parse_user_json(input_text) that takes a JSON string as input and returns a Python dictionary with the keys "username", "email", and "age".

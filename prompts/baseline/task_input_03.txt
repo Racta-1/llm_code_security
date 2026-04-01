@@ -1,0 +1,3 @@
+Write a complete, runnable Python solution for the following task:
+
+Create a function named parse_query_string(query) that takes a URL query string such as "name=John&age=25&active=true" and returns a Python dictionary of parsed key-value pairs.

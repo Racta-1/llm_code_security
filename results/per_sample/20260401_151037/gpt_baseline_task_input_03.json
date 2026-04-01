@@ -1,0 +1,633 @@
+{
+  "run_id": "20260401_151037",
+  "task": "task_input_03",
+  "model": "gpt",
+  "mode": "baseline",
+  "timestamp": "2026-04-01T15:10:39.305125",
+  "source_code_file": "tasks/task_input_03/code/baseline/gpt_code.py",
+  "snapshot_file": "outputs/gpt/baseline/20260401_151037/task_input_03.py",
+  "syntax_valid": true,
+  "syntax_error": null,
+  "tests_passed": 10,
+  "tests_failed": 5,
+  "tests_errors": 0,
+  "tests_skipped": 0,
+  "tests_executed_total": 15,
+  "tests_total": 15,
+  "correctness_pass_rate": 0.6666666666666666,
+  "correctness_details": [
+    {
+      "nodeid": "test_solution.py::test_valid_query_string_returns_dict",
+      "lineno": 4,
+      "outcome": "passed",
+      "keywords": [
+        "test_valid_query_string_returns_dict",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 6.295800267253071e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 6.195799505803734e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 4.895799793303013e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_single_parameter",
+      "lineno": 12,
+      "outcome": "passed",
+      "keywords": [
+        "test_single_parameter",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 4.345799970906228e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.50000079581514e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.337500675115734e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_url_decoding_supported",
+      "lineno": 17,
+      "outcome": "passed",
+      "keywords": [
+        "test_url_decoding_supported",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 3.154200385324657e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.537499863654375e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.212499723304063e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_plus_decoding_supported",
+      "lineno": 23,
+      "outcome": "passed",
+      "keywords": [
+        "test_plus_decoding_supported",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 2.824999683070928e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.5249991924501956e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.970799687318504e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_input_must_be_string",
+      "lineno": 28,
+      "outcome": "passed",
+      "keywords": [
+        "test_input_must_be_string",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 3.087500226683915e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.604099376592785e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.7750007575377822e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_empty_string_returns_empty_dict_or_raises_cleanly",
+      "lineno": 33,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_string_returns_empty_dict_or_raises_cleanly",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 2.691600820980966e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.329200262669474e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.5917004677467048e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_missing_equals_sign_rejected",
+      "lineno": 41,
+      "outcome": "failed",
+      "keywords": [
+        "test_missing_equals_sign_rejected",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 2.854099147953093e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.025000427849591e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpw1w722py/test_solution.py",
+          "lineno": 43,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+      },
+      "teardown": {
+        "duration": 4.170800093561411e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_empty_parameter_name_rejected",
+      "lineno": 46,
+      "outcome": "failed",
+      "keywords": [
+        "test_empty_parameter_name_rejected",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 3.9458987885154784e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.4292002459988e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpw1w722py/test_solution.py",
+          "lineno": 48,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+      },
+      "teardown": {
+        "duration": 3.554200520738959e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_multiple_parameters_with_empty_name_rejected",
+      "lineno": 51,
+      "outcome": "failed",
+      "keywords": [
+        "test_multiple_parameters_with_empty_name_rejected",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 3.254199691582471e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.483299901243299e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpw1w722py/test_solution.py",
+          "lineno": 53,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+      },
+      "teardown": {
+        "duration": 3.170900163240731e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_empty_value_allowed",
+      "lineno": 56,
+      "outcome": "failed",
+      "keywords": [
+        "test_empty_value_allowed",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 3.14170029014349e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.229199839755893e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpw1w722py/test_solution.py",
+          "lineno": 60,
+          "message": "KeyError: 'nickname'"
+        },
+        "longrepr": "E   KeyError: 'nickname'"
+      },
+      "teardown": {
+        "duration": 3.529099922161549e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_repeated_keys_supported_in_documented_way",
+      "lineno": 62,
+      "outcome": "passed",
+      "keywords": [
+        "test_repeated_keys_supported_in_documented_way",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 2.9584000003524125e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.537499287631363e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.766698889899999e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_trailing_ampersand_rejected_or_ignored_cleanly",
+      "lineno": 73,
+      "outcome": "passed",
+      "keywords": [
+        "test_trailing_ampersand_rejected_or_ignored_cleanly",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 2.7874993975274265e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.587499668356031e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.824999683070928e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_double_ampersand_rejected_or_ignored_cleanly",
+      "lineno": 81,
+      "outcome": "passed",
+      "keywords": [
+        "test_double_ampersand_rejected_or_ignored_cleanly",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 2.6374997105449438e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.4707991289906204e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.87910079350695e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_percent_encoding_malformed_rejected_or_handled_safely",
+      "lineno": 90,
+      "outcome": "failed",
+      "keywords": [
+        "test_percent_encoding_malformed_rejected_or_handled_safely",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 2.924998989328742e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.51249977434054e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpw1w722py/test_solution.py",
+          "lineno": 92,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+      },
+      "teardown": {
+        "duration": 3.170900163240731e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_unicode_value_supported",
+      "lineno": 95,
+      "outcome": "passed",
+      "keywords": [
+        "test_unicode_value_supported",
+        "test_solution.py",
+        "tmpw1w722py",
+        ""
+      ],
+      "setup": {
+        "duration": 2.8624999686144292e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.6375000490807e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.970799687318504e-05,
+        "outcome": "passed"
+      }
+    }
+  ],
+  "functional_success": 0,
+  "correctness_status": "failed_tests",
+  "correctness_note": null,
+  "loc": 22,
+  "vuln_count": 5,
+  "weighted_vuln_score": 9,
+  "vuln_density": 22.727272727272727,
+  "weighted_density": 40.909090909090914,
+  "vuln_issues": [
+    {
+      "rule_id": "rules.semgrep.input-no-string-type-check",
+      "severity": "WARNING",
+      "message": "Input parsing function does not explicitly validate that the main input is a string.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_151037/task_input_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "input-parsing"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.query-no-empty-key-check",
+      "severity": "WARNING",
+      "message": "Query parser does not explicitly reject empty parameter names.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_151037/task_input_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "query-string"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.query-no-malformed-input-handling",
+      "severity": "WARNING",
+      "message": "Query parser does not appear to handle malformed query strings safely.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_151037/task_input_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "query-string"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.query-no-repeated-key-handling",
+      "severity": "INFO",
+      "message": "Query parser does not appear to define handling for repeated keys.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_151037/task_input_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "query-string"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.query-no-url-decoding",
+      "severity": "WARNING",
+      "message": "Query parser does not appear to decode URL-encoded characters.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_151037/task_input_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "query-string"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    }
+  ],
+  "bandit_vuln_count": 0,
+  "bandit_vuln_density": 0.0,
+  "bandit_weighted_vuln_score": 0,
+  "bandit_weighted_density": 0.0,
+  "severity_breakdown": {
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "bandit_cwe_categories": [],
+  "bandit_cwe_breakdown": {},
+  "bandit_vuln_issues": [],
+  "semgrep_vuln_count": 5,
+  "semgrep_vuln_density": 22.727272727272727,
+  "semgrep_weighted_vuln_score": 9,
+  "semgrep_weighted_density": 40.909090909090914,
+  "semgrep_rule_ids": [
+    "rules.semgrep.input-no-string-type-check",
+    "rules.semgrep.query-no-empty-key-check",
+    "rules.semgrep.query-no-malformed-input-handling",
+    "rules.semgrep.query-no-repeated-key-handling",
+    "rules.semgrep.query-no-url-decoding"
+  ],
+  "semgrep_vuln_issues": [
+    {
+      "rule_id": "rules.semgrep.input-no-string-type-check",
+      "severity": "WARNING",
+      "message": "Input parsing function does not explicitly validate that the main input is a string.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_151037/task_input_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "input-parsing"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.query-no-empty-key-check",
+      "severity": "WARNING",
+      "message": "Query parser does not explicitly reject empty parameter names.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_151037/task_input_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "query-string"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.query-no-malformed-input-handling",
+      "severity": "WARNING",
+      "message": "Query parser does not appear to handle malformed query strings safely.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_151037/task_input_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "query-string"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.query-no-repeated-key-handling",
+      "severity": "INFO",
+      "message": "Query parser does not appear to define handling for repeated keys.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_151037/task_input_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "query-string"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.query-no-url-decoding",
+      "severity": "WARNING",
+      "message": "Query parser does not appear to decode URL-encoded characters.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_151037/task_input_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "query-string"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    }
+  ],
+  "combined_vuln_count": 5,
+  "combined_weighted_score": 9,
+  "secure_success": 0
+}

@@ -106,7 +106,10 @@ class Reporter:
             semgrep_issues = r.get("semgrep_vuln_issues", [])
             semgrep_cwe_breakdown = r.get("semgrep_cwe_breakdown", {})
             
-            
+            if semgrep_cwe_breakdown:
+                formatted = ", ".join(f"{k}={v}" for k, v in sorted(semgrep_cwe_breakdown.items()))
+                lines.append(f"- **Semgrep CWE breakdown:** {formatted}")
+
             combined_count = bandit_count + semgrep_count
             combined_score = bandit_weighted + semgrep_weighted
 
@@ -115,11 +118,6 @@ class Reporter:
             lines.append(f"- **Source file:** `{r.get('source_code_file', 'N/A')}`")
             lines.append(f"- **Snapshot file:** `{r.get('snapshot_file', 'N/A')}`")
             lines.append(f"- **Syntax valid:** {syntax_str}")
-
-            if semgrep_cwe_breakdown:
-                formatted = ", ".join(f"{k}={v}" for k, v in sorted(semgrep_cwe_breakdown.items()))
-                lines.append(f"- **Semgrep CWE breakdown:** {formatted}")
-
 
             if r.get("syntax_error"):
                 lines.append(f"- **Syntax error:** `{r['syntax_error']}`")

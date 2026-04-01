@@ -1,8 +1,0 @@
-{
-  "name": "task_fileio_02",
-  "description": "Create a function named validate_upload(filename, content_bytes) that validates an uploaded file.",
-  "category": "file_io",
-  "test_file": "tasks/task_fileio_02/tests/test_task_fileio_02.py",
-  "code_dir": "tasks/task_fileio_02/code",
-  "module_name": "solution"
-}

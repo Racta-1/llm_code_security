@@ -1,3 +1,0 @@
-Write a complete, runnable Python solution for the following task:
-
-Create a function named validate_upload(filename, content_bytes) that validates an uploaded file.

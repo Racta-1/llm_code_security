@@ -1,0 +1,674 @@
+{
+  "run_id": "20260401_141654",
+  "task": "task_input_01",
+  "model": "gpt",
+  "mode": "baseline",
+  "timestamp": "2026-04-01T14:16:56.295372",
+  "source_code_file": "tasks/task_input_01/code/baseline/gpt_code.py",
+  "snapshot_file": "outputs/gpt/baseline/20260401_141654/task_input_01.py",
+  "syntax_valid": true,
+  "syntax_error": null,
+  "tests_passed": 8,
+  "tests_failed": 8,
+  "tests_errors": 0,
+  "tests_skipped": 0,
+  "tests_executed_total": 16,
+  "tests_total": 16,
+  "correctness_pass_rate": 0.5,
+  "correctness_details": [
+    {
+      "nodeid": "test_solution.py::test_valid_json_returns_dict",
+      "lineno": 4,
+      "outcome": "passed",
+      "keywords": [
+        "test_valid_json_returns_dict",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 6.129199755378067e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.458398663904518e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.866699989885092e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_valid_json_with_extra_fields_still_contains_required_keys",
+      "lineno": 12,
+      "outcome": "passed",
+      "keywords": [
+        "test_valid_json_with_extra_fields_still_contains_required_keys",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.5083008697256446e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.850000211969018e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.199999628122896e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_missing_username_raises",
+      "lineno": 21,
+      "outcome": "failed",
+      "keywords": [
+        "test_missing_username_raises",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 2.9584000003524125e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.9250000049360096e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp89547ztm/test_solution.py",
+          "lineno": 23,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'KeyError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'KeyError'>)"
+      },
+      "teardown": {
+        "duration": 3.4415992558933794e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_missing_email_raises",
+      "lineno": 26,
+      "outcome": "failed",
+      "keywords": [
+        "test_missing_email_raises",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.100000321865082e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.675000673159957e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp89547ztm/test_solution.py",
+          "lineno": 28,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'KeyError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'KeyError'>)"
+      },
+      "teardown": {
+        "duration": 3.445899346843362e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_missing_age_raises",
+      "lineno": 31,
+      "outcome": "failed",
+      "keywords": [
+        "test_missing_age_raises",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.091699909418821e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.299999272916466e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp89547ztm/test_solution.py",
+          "lineno": 33,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'KeyError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'KeyError'>)"
+      },
+      "teardown": {
+        "duration": 3.112498961854726e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_malformed_json_raises",
+      "lineno": 36,
+      "outcome": "passed",
+      "keywords": [
+        "test_malformed_json_raises",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 2.791700535453856e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.124999734107405e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.091699909418821e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_input_must_be_string",
+      "lineno": 41,
+      "outcome": "passed",
+      "keywords": [
+        "test_input_must_be_string",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.200001083314419e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.0750004700385034e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.479100996628404e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_empty_string_raises",
+      "lineno": 46,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_string_raises",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.3792006433941424e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.4540996896103024e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.012499655596912e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_whitespace_only_string_raises",
+      "lineno": 51,
+      "outcome": "passed",
+      "keywords": [
+        "test_whitespace_only_string_raises",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.291599568910897e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.2166997445747256e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.112500417046249e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_json_array_rejected",
+      "lineno": 56,
+      "outcome": "failed",
+      "keywords": [
+        "test_json_array_rejected",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 2.8915994334965944e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.9749985919333994e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp89547ztm/solution.py",
+          "lineno": 19,
+          "message": "AttributeError: 'list' object has no attribute 'get'"
+        },
+        "longrepr": "E   AttributeError: 'list' object has no attribute 'get'"
+      },
+      "teardown": {
+        "duration": 3.924999327864498e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_json_scalar_rejected",
+      "lineno": 61,
+      "outcome": "failed",
+      "keywords": [
+        "test_json_scalar_rejected",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.5208999179303646e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.8582995077595115e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp89547ztm/solution.py",
+          "lineno": 19,
+          "message": "AttributeError: 'str' object has no attribute 'get'"
+        },
+        "longrepr": "E   AttributeError: 'str' object has no attribute 'get'"
+      },
+      "teardown": {
+        "duration": 3.362499410286546e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_age_preserved_as_integer",
+      "lineno": 66,
+      "outcome": "passed",
+      "keywords": [
+        "test_age_preserved_as_integer",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.237499913666397e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.762499545700848e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.9457994969561696e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_age_as_string_rejected",
+      "lineno": 71,
+      "outcome": "failed",
+      "keywords": [
+        "test_age_as_string_rejected",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.066699719056487e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.370899452827871e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp89547ztm/test_solution.py",
+          "lineno": 73,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+      },
+      "teardown": {
+        "duration": 3.700000524986535e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_null_value_rejected",
+      "lineno": 76,
+      "outcome": "failed",
+      "keywords": [
+        "test_null_value_rejected",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.241600643377751e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.487500700633973e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp89547ztm/test_solution.py",
+          "lineno": 78,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+      },
+      "teardown": {
+        "duration": 0.00017904199194163084,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_nested_object_for_required_field_rejected",
+      "lineno": 81,
+      "outcome": "failed",
+      "keywords": [
+        "test_nested_object_for_required_field_rejected",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.516599826980382e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.5334003516472876e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp89547ztm/test_solution.py",
+          "lineno": 83,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+      },
+      "teardown": {
+        "duration": 3.533299604896456e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_unicode_values_supported",
+      "lineno": 88,
+      "outcome": "passed",
+      "keywords": [
+        "test_unicode_values_supported",
+        "test_solution.py",
+        "tmp89547ztm",
+        ""
+      ],
+      "setup": {
+        "duration": 3.6416007787920535e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.008399264421314e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.391600330360234e-05,
+        "outcome": "passed"
+      }
+    }
+  ],
+  "functional_success": 0,
+  "correctness_status": "failed_tests",
+  "correctness_note": null,
+  "loc": 24,
+  "vuln_count": 5,
+  "weighted_vuln_score": 11,
+  "vuln_density": 20.833333333333336,
+  "weighted_density": 45.83333333333333,
+  "vuln_issues": [
+    {
+      "rule_id": "rules.semgrep.input-no-string-type-check",
+      "severity": "WARNING",
+      "message": "Input parsing function does not explicitly validate that the main input is a string.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_141654/task_input_01.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "input-parsing"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.json-missing-required-key-check",
+      "severity": "WARNING",
+      "message": "JSON parser does not explicitly validate presence of required keys.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_141654/task_input_01.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "json"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.json-no-age-type-validation",
+      "severity": "WARNING",
+      "message": "JSON parser does not explicitly validate that age is an integer.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_141654/task_input_01.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "json"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.json-no-json-library",
+      "severity": "ERROR",
+      "message": "JSON input appears to be parsed without using the json library.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_141654/task_input_01.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "json"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.json-no-malformed-json-handling",
+      "severity": "WARNING",
+      "message": "JSON parser does not appear to handle malformed JSON safely.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_141654/task_input_01.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "json"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    }
+  ],
+  "bandit_vuln_count": 0,
+  "bandit_vuln_density": 0.0,
+  "bandit_weighted_vuln_score": 0,
+  "bandit_weighted_density": 0.0,
+  "severity_breakdown": {
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "bandit_cwe_categories": [],
+  "bandit_cwe_breakdown": {},
+  "bandit_vuln_issues": [],
+  "semgrep_vuln_count": 5,
+  "semgrep_vuln_density": 20.833333333333336,
+  "semgrep_weighted_vuln_score": 11,
+  "semgrep_weighted_density": 45.83333333333333,
+  "semgrep_rule_ids": [
+    "rules.semgrep.input-no-string-type-check",
+    "rules.semgrep.json-missing-required-key-check",
+    "rules.semgrep.json-no-age-type-validation",
+    "rules.semgrep.json-no-json-library",
+    "rules.semgrep.json-no-malformed-json-handling"
+  ],
+  "semgrep_vuln_issues": [
+    {
+      "rule_id": "rules.semgrep.input-no-string-type-check",
+      "severity": "WARNING",
+      "message": "Input parsing function does not explicitly validate that the main input is a string.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_141654/task_input_01.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "input-parsing"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.json-missing-required-key-check",
+      "severity": "WARNING",
+      "message": "JSON parser does not explicitly validate presence of required keys.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_141654/task_input_01.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "json"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.json-no-age-type-validation",
+      "severity": "WARNING",
+      "message": "JSON parser does not explicitly validate that age is an integer.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_141654/task_input_01.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "json"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.json-no-json-library",
+      "severity": "ERROR",
+      "message": "JSON input appears to be parsed without using the json library.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_141654/task_input_01.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "json"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    },
+    {
+      "rule_id": "rules.semgrep.json-no-malformed-json-handling",
+      "severity": "WARNING",
+      "message": "JSON parser does not appear to handle malformed JSON safely.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_141654/task_input_01.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "json"
+        ],
+        "cwe": [
+          "CWE-20: Improper Input Validation"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-20"
+      ]
+    }
+  ],
+  "combined_vuln_count": 5,
+  "combined_weighted_score": 11,
+  "secure_success": 0
+}

@@ -1,8 +1,0 @@
-{
-  "name": "task_fileio_01",
-  "description": "Create a function named read_file(path) that reads a UTF-8 text file and returns its contents as a string.",
-  "category": "file_io",
-  "test_file": "tasks/task_fileio_01/tests/test_task_fileio_01.py",
-  "code_dir": "tasks/task_fileio_01/code",
-  "module_name": "solution"
-}

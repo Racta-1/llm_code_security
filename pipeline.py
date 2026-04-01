@@ -3,9 +3,9 @@ LLM Security Pipeline
 Assessing Security of LLM-Generated Code in Programming Tasks
 
 Usage:
-    python pipeline.py --task tasks/task_fileio_01/task.json --mode both
-    python pipeline.py --task tasks/task_fileio_01/task.json --mode baseline
-    python pipeline.py --task tasks/task_fileio_01/task.json --mode security_aware
+    python pipeline.py --task tasks/task_input_01/task.json --mode both
+    python pipeline.py --task tasks/task_input_01/task.json --mode baseline
+    python pipeline.py --task tasks/task_input_01/task.json --mode security_aware
 """
 
 import argparse

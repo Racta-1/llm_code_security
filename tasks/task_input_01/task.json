@@ -1,0 +1,8 @@
+{
+  "name": "task_input_01",
+  "description": "Create a function named parse_user_json(input_text) that takes a JSON string as input and returns a Python dictionary with the keys 'username', 'email', and 'age'.",
+  "category": "input_parsing",
+  "test_file": "tasks/task_input_01/tests/test_task_input_01.py",
+  "code_dir": "tasks/task_input_01/code",
+  "module_name": "solution"
+}

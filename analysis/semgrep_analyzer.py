@@ -17,7 +17,7 @@ class SemgrepAnalyzer:
     Supports local custom rules and extracts CWE metadata from rule definitions.
     """
 
-    def __init__(self, rules_path: str = "rules/semgrep/fileio_rules.yml"):
+    def __init__(self, rules_path: str = "rules/semgrep/inputparsing_rules.yml"):
         self.rules_path = rules_path
 
     def analyze(self, file_path: str) -> dict[str, Any]:

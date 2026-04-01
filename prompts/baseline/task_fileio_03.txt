@@ -1,3 +1,0 @@
-Write a complete, runnable Python solution for the following task:
-
-Create a function named verify_checksum(path, expected_hash) that computes the SHA-256 checksum of a file and returns True if it matches the expected checksum, otherwise False.
