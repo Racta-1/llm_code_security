@@ -1,0 +1,522 @@
+{
+  "run_id": "20260401_124329",
+  "task": "task_fileio_03",
+  "model": "gpt",
+  "mode": "baseline",
+  "timestamp": "2026-04-01T12:43:31.632538",
+  "source_code_file": "tasks/task_fileio_03/code/baseline/gpt_code.py",
+  "snapshot_file": "outputs/gpt/baseline/20260401_124329/task_fileio_03.py",
+  "syntax_valid": true,
+  "syntax_error": null,
+  "tests_passed": 9,
+  "tests_failed": 5,
+  "tests_errors": 0,
+  "tests_skipped": 3,
+  "tests_executed_total": 14,
+  "tests_total": 17,
+  "correctness_pass_rate": 0.6428571428571429,
+  "correctness_details": [
+    {
+      "nodeid": "test_solution.py::test_valid_sha256_checksum",
+      "lineno": 12,
+      "outcome": "passed",
+      "keywords": [
+        "test_valid_sha256_checksum",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.005457000006572343,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00017529199249111116,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 5.683400377165526e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_invalid_sha256_checksum_returns_false_or_raises",
+      "lineno": 21,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_sha256_checksum_returns_false_or_raises",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002606250054668635,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0001430830016033724,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 4.50000079581514e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_missing_file_raises",
+      "lineno": 31,
+      "outcome": "failed",
+      "keywords": [
+        "test_missing_file_raises",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020191699150018394,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 7.833300333004445e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp84oswyc2/test_solution.py",
+          "lineno": 35,
+          "message": "Failed: DID NOT RAISE <class 'FileNotFoundError'>"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE <class 'FileNotFoundError'>"
+      },
+      "teardown": {
+        "duration": 3.96659888792783e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_path_must_be_string",
+      "lineno": 38,
+      "outcome": "failed",
+      "keywords": [
+        "test_path_must_be_string",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00024562499311286956,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00013549999857787043,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp84oswyc2/test_solution.py",
+          "lineno": 44,
+          "message": "Failed: DID NOT RAISE <class 'TypeError'>"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE <class 'TypeError'>"
+      },
+      "teardown": {
+        "duration": 3.774999640882015e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_expected_hash_must_be_string",
+      "lineno": 47,
+      "outcome": "failed",
+      "keywords": [
+        "test_expected_hash_must_be_string",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020412499725352973,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00013770800433121622,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp84oswyc2/solution.py",
+          "lineno": 25,
+          "message": "AttributeError: 'NoneType' object has no attribute 'lower'"
+        },
+        "longrepr": "E   AttributeError: 'NoneType' object has no attribute 'lower'"
+      },
+      "teardown": {
+        "duration": 3.825000021606684e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_directory_path",
+      "lineno": 55,
+      "outcome": "failed",
+      "keywords": [
+        "test_reject_directory_path",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00019862499902956188,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.93330041738227e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp84oswyc2/test_solution.py",
+          "lineno": 57,
+          "message": "Failed: DID NOT RAISE any of (<class 'IsADirectoryError'>, <class 'ValueError'>, <class 'OSError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'IsADirectoryError'>, <class 'ValueError'>, <class 'OSError'>)"
+      },
+      "teardown": {
+        "duration": 4.141700628679246e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_uppercase_hash_is_handled",
+      "lineno": 60,
+      "outcome": "passed",
+      "keywords": [
+        "test_uppercase_hash_is_handled",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00019262499699834734,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00012629199773073196,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.679099609144032e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_whitespace_around_hash_is_handled",
+      "lineno": 69,
+      "outcome": "failed",
+      "keywords": [
+        "test_whitespace_around_hash_is_handled",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020545900042634457,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00017549999756738544,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp84oswyc2/test_solution.py",
+          "lineno": 76,
+          "message": "AssertionError: assert False is True\n +  where False = verify_checksum('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-84/test_whitespace_around_hash_is0/file.bin', '  6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090  ')\n +    where '/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-84/test_whitespace_around_hash_is0/file.bin' = str(PosixPath('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-84/test_whitespace_around_hash_is0/file.bin'))"
+        },
+        "longrepr": "E   AssertionError: assert False is True\n     +  where False = verify_checksum('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-84/test_whitespace_around_hash_is0/file.bin', '  6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090  ')\n     +    where '/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-84/test_whitespace_around_hash_is0/file.bin' = str(PosixPath('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-84/test_whitespace_around_hash_is0/file.bin'))"
+      },
+      "teardown": {
+        "duration": 3.4374999813735485e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_support_sha512_if_enabled",
+      "lineno": 78,
+      "outcome": "skipped",
+      "keywords": [
+        "test_support_sha512_if_enabled",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003552919952198863,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00010900000052060932,
+        "outcome": "skipped",
+        "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp84oswyc2/test_solution.py', 88, 'Skipped: verify_checksum does not support algorithm parameter')"
+      },
+      "teardown": {
+        "duration": 4.06660110456869e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_support_sha384_if_enabled",
+      "lineno": 90,
+      "outcome": "skipped",
+      "keywords": [
+        "test_support_sha384_if_enabled",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00019691699708346277,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0001093339960789308,
+        "outcome": "skipped",
+        "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp84oswyc2/test_solution.py', 100, 'Skipped: verify_checksum does not support algorithm parameter')"
+      },
+      "teardown": {
+        "duration": 4.091700247954577e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_weak_algorithm_md5",
+      "lineno": 102,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_weak_algorithm_md5",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00019425000937189907,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00010000000474974513,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.808400651905686e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_weak_algorithm_sha1",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_weak_algorithm_sha1",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002058749960269779,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0001109160075429827,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.429201024118811e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_unsupported_algorithm",
+      "lineno": 124,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_unsupported_algorithm",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020687500364147127,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.808399772737175e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.891700180247426e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_invalid_hash_length",
+      "lineno": 135,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_invalid_hash_length",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020087500161025673,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.983299241866916e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.979200846515596e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_non_hex_hash",
+      "lineno": 146,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_non_hex_hash",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000200708003831096,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.708300058264285e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.6833997000940144e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_small_chunk_size_still_works",
+      "lineno": 157,
+      "outcome": "skipped",
+      "keywords": [
+        "test_small_chunk_size_still_works",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020708399824798107,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00011695799184963107,
+        "outcome": "skipped",
+        "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp84oswyc2/test_solution.py', 167, 'Skipped: verify_checksum does not support chunk_size')"
+      },
+      "teardown": {
+        "duration": 3.925000783056021e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_chunk_size_must_be_positive",
+      "lineno": 169,
+      "outcome": "passed",
+      "keywords": [
+        "test_chunk_size_must_be_positive",
+        "test_solution.py",
+        "tmp84oswyc2",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00021212499996181577,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.912499808706343e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 6.762500561308116e-05,
+        "outcome": "passed"
+      }
+    }
+  ],
+  "functional_success": 0,
+  "correctness_status": "failed_tests",
+  "correctness_note": null,
+  "loc": 27,
+  "vuln_count": 1,
+  "weighted_vuln_score": 2,
+  "vuln_density": 3.7037037037037033,
+  "weighted_density": 7.4074074074074066,
+  "vuln_issues": [
+    {
+      "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+      "severity": "WARNING",
+      "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_124329/task_fileio_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "file-upload"
+        ],
+        "cwe": [
+          "CWE-22: Improper Limitation of a Pathname to a Restricted Directory",
+          "CWE-23: Relative Path Traversal"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-22",
+        "CWE-23"
+      ]
+    }
+  ],
+  "bandit_vuln_count": 0,
+  "bandit_vuln_density": 0.0,
+  "bandit_weighted_vuln_score": 0,
+  "bandit_weighted_density": 0.0,
+  "severity_breakdown": {
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "bandit_cwe_categories": [],
+  "bandit_cwe_breakdown": {},
+  "bandit_vuln_issues": [],
+  "semgrep_vuln_count": 1,
+  "semgrep_vuln_density": 3.7037037037037033,
+  "semgrep_weighted_vuln_score": 2,
+  "semgrep_weighted_density": 7.4074074074074066,
+  "semgrep_rule_ids": [
+    "rules.semgrep.fileio-no-basename-sanitization"
+  ],
+  "semgrep_vuln_issues": [
+    {
+      "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+      "severity": "WARNING",
+      "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+      "line": 3,
+      "path": "outputs/gpt/baseline/20260401_124329/task_fileio_03.py",
+      "metadata": {
+        "category": "security",
+        "technology": [
+          "python",
+          "file-upload"
+        ],
+        "cwe": [
+          "CWE-22: Improper Limitation of a Pathname to a Restricted Directory",
+          "CWE-23: Relative Path Traversal"
+        ]
+      },
+      "cwe_categories": [
+        "CWE-22",
+        "CWE-23"
+      ]
+    }
+  ],
+  "combined_vuln_count": 1,
+  "combined_weighted_score": 2,
+  "secure_success": 0
+}

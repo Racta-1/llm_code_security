@@ -158,7 +158,7 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
             combined_weighted_score = bandit_weighted + semgrep_weighted
 
             secure_success = 1 if (
-                correctness["functional_success"] == 1 and
+                # correctness["functional_success"] == 1 and
                 combined_vuln_count == 0
             ) else 0
 

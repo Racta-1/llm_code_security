@@ -1,0 +1,639 @@
+{
+  "run_id": "20260401_122053",
+  "task": "task_fileio_02",
+  "model": "gemini",
+  "mode": "security_aware",
+  "timestamp": "2026-04-01T12:21:00.542200",
+  "source_code_file": "tasks/task_fileio_02/code/security_aware/gemini_code.py",
+  "snapshot_file": "outputs/gemini/security_aware/20260401_122053/task_fileio_02.py",
+  "syntax_valid": true,
+  "syntax_error": null,
+  "tests_passed": 21,
+  "tests_failed": 2,
+  "tests_errors": 0,
+  "tests_skipped": 0,
+  "tests_executed_total": 23,
+  "tests_total": 23,
+  "correctness_pass_rate": 0.9130434782608695,
+  "correctness_details": [
+    {
+      "nodeid": "test_solution.py::test_valid_txt_upload",
+      "lineno": 5,
+      "outcome": "passed",
+      "keywords": [
+        "test_valid_txt_upload",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 6.941700121387839e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00011595898831728846,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 4.483301017899066e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_valid_pdf_upload",
+      "lineno": 9,
+      "outcome": "passed",
+      "keywords": [
+        "test_valid_pdf_upload",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 4.137500945944339e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.183300527278334e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.6124998587183654e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_valid_png_upload",
+      "lineno": 14,
+      "outcome": "passed",
+      "keywords": [
+        "test_valid_png_upload",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.679101064335555e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.204099241178483e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.5124990972690284e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_valid_jpg_upload",
+      "lineno": 19,
+      "outcome": "passed",
+      "keywords": [
+        "test_valid_jpg_upload",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.241699596401304e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.804199513979256e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.3208008971996605e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_filename_must_be_string",
+      "lineno": 24,
+      "outcome": "passed",
+      "keywords": [
+        "test_filename_must_be_string",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.358400135766715e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.037500523030758e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.995799877680838e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_content_must_be_bytes",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_content_must_be_bytes",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.11659969156608e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.9417005609720945e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.054099215660244e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_empty_filename",
+      "lineno": 34,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_empty_filename",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.3249991247430444e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.0875005652196705e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.024999750778079e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_whitespace_filename",
+      "lineno": 39,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_whitespace_filename",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.054099215660244e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.9000005926936865e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.008400381077081e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_empty_content",
+      "lineno": 44,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_empty_content",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.291599568910897e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.129100125283003e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.29999893438071e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_disallowed_extension",
+      "lineno": 49,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_disallowed_extension",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.1624993425793946e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.0457991417497396e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.1750008929520845e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_missing_extension",
+      "lineno": 54,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_missing_extension",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.47500026691705e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.945900582242757e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.6124998587183654e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_path_traversal_unix",
+      "lineno": 59,
+      "outcome": "failed",
+      "keywords": [
+        "test_reject_path_traversal_unix",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.9582999306730926e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 6.587499228771776e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvjgtj9da/test_solution.py",
+          "lineno": 61,
+          "message": "Failed: DID NOT RAISE <class 'ValueError'>"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE <class 'ValueError'>"
+      },
+      "teardown": {
+        "duration": 4.24169993493706e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_path_traversal_windows",
+      "lineno": 64,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_path_traversal_windows",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.875000402331352e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.6083005145192146e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.1499992473982275e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_filename_with_path_separator",
+      "lineno": 69,
+      "outcome": "failed",
+      "keywords": [
+        "test_reject_filename_with_path_separator",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 2.991700603161007e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.137499829288572e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvjgtj9da/test_solution.py",
+          "lineno": 71,
+          "message": "Failed: DID NOT RAISE <class 'ValueError'>"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE <class 'ValueError'>"
+      },
+      "teardown": {
+        "duration": 4.312499368097633e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_hidden_dangerous_name",
+      "lineno": 74,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_hidden_dangerous_name",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.708299482241273e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.212500400375575e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.5667006159201264e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_control_characters_in_filename",
+      "lineno": 82,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_control_characters_in_filename",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.254201146773994e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.3916006688959897e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.1458999728783965e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_oversized_file",
+      "lineno": 87,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_oversized_file",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.325000579934567e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.6833997000940144e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.208400448784232e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_accept_with_custom_allowed_extensions",
+      "lineno": 97,
+      "outcome": "passed",
+      "keywords": [
+        "test_accept_with_custom_allowed_extensions",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.024999750778079e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.820800338871777e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.8875001589767635e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_signature_mismatch_png_extension",
+      "lineno": 104,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_signature_mismatch_png_extension",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.058300353586674e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.066700057592243e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.9999995604157448e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_signature_mismatch_pdf_extension",
+      "lineno": 114,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_signature_mismatch_pdf_extension",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.13749915221706e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.225000157020986e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.241701051592827e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_accept_json_text_content",
+      "lineno": 124,
+      "outcome": "passed",
+      "keywords": [
+        "test_accept_json_text_content",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.195900353603065e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 4.549999721348286e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 2.737499016802758e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_accept_csv_text_content",
+      "lineno": 128,
+      "outcome": "passed",
+      "keywords": [
+        "test_accept_csv_text_content",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.1082992791198194e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.783300053328276e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.258300421293825e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_sanitized_filename_returned_if_applicable",
+      "lineno": 132,
+      "outcome": "passed",
+      "keywords": [
+        "test_sanitized_filename_returned_if_applicable",
+        "test_solution.py",
+        "tmpvjgtj9da",
+        ""
+      ],
+      "setup": {
+        "duration": 3.13749915221706e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 3.687500429805368e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.3333999454043806e-05,
+        "outcome": "passed"
+      }
+    }
+  ],
+  "functional_success": 0,
+  "correctness_status": "failed_tests",
+  "correctness_note": null,
+  "loc": 73,
+  "vuln_count": 3,
+  "weighted_vuln_score": 7,
+  "vuln_density": 4.10958904109589,
+  "weighted_density": 9.58904109589041,
+  "vuln_issues": [
+    {
+      "rule_id": "rules.semgrep.fileio-extension-only-validation",
+      "severity": "ERROR",
+      "message": "File validation appears to rely on extension checks without stronger content/signature validation.",
+      "line": 11,
+      "path": "outputs/gemini/security_aware/20260401_122053/task_fileio_02.py"
+    },
+    {
+      "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+      "severity": "WARNING",
+      "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+      "line": 11,
+      "path": "outputs/gemini/security_aware/20260401_122053/task_fileio_02.py"
+    },
+    {
+      "rule_id": "rules.semgrep.fileio-no-size-check",
+      "severity": "WARNING",
+      "message": "Uploaded content has no explicit maximum size check.",
+      "line": 11,
+      "path": "outputs/gemini/security_aware/20260401_122053/task_fileio_02.py"
+    }
+  ],
+  "bandit_vuln_count": 0,
+  "bandit_vuln_density": 0.0,
+  "bandit_weighted_vuln_score": 0,
+  "bandit_weighted_density": 0.0,
+  "severity_breakdown": {
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "bandit_cwe_categories": [],
+  "bandit_cwe_breakdown": {},
+  "bandit_vuln_issues": [],
+  "semgrep_vuln_count": 3,
+  "semgrep_vuln_density": 4.10958904109589,
+  "semgrep_weighted_vuln_score": 7,
+  "semgrep_weighted_density": 9.58904109589041,
+  "semgrep_rule_ids": [
+    "rules.semgrep.fileio-extension-only-validation",
+    "rules.semgrep.fileio-no-basename-sanitization",
+    "rules.semgrep.fileio-no-size-check"
+  ],
+  "semgrep_vuln_issues": [
+    {
+      "rule_id": "rules.semgrep.fileio-extension-only-validation",
+      "severity": "ERROR",
+      "message": "File validation appears to rely on extension checks without stronger content/signature validation.",
+      "line": 11,
+      "path": "outputs/gemini/security_aware/20260401_122053/task_fileio_02.py"
+    },
+    {
+      "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+      "severity": "WARNING",
+      "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+      "line": 11,
+      "path": "outputs/gemini/security_aware/20260401_122053/task_fileio_02.py"
+    },
+    {
+      "rule_id": "rules.semgrep.fileio-no-size-check",
+      "severity": "WARNING",
+      "message": "Uploaded content has no explicit maximum size check.",
+      "line": 11,
+      "path": "outputs/gemini/security_aware/20260401_122053/task_fileio_02.py"
+    }
+  ],
+  "combined_vuln_count": 3,
+  "combined_weighted_score": 7,
+  "secure_success": 0
+}

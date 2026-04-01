@@ -64,11 +64,13 @@ class Reporter:
                 r.get("bandit_weighted_vuln_score", r.get("weighted_vuln_score", 0))
                 + r.get("semgrep_weighted_vuln_score", 0)
             )
-
+            semgrep_cwe_categories = r.get("semgrep_cwe_categories", [])
             lines.append(
                 f"| {r['model']} | {r['mode']} | {syntax_str} | {func_str} | "
                 f"{pass_rate_str} | {executed} | {skipped} | "
                 f"{bandit_count} | {semgrep_count} | {combined_score} | {secure_str} |"
+                f"- **Semgrep CWE categories:** {', '.join(semgrep_cwe_categories) if semgrep_cwe_categories else 'None'}"
+
             )
 
         lines += ["", "## Detailed Breakdown", ""]
@@ -102,7 +104,9 @@ class Reporter:
             semgrep_weighted_density = r.get("semgrep_weighted_density", 0.0)
             semgrep_rule_ids = r.get("semgrep_rule_ids", [])
             semgrep_issues = r.get("semgrep_vuln_issues", [])
-
+            semgrep_cwe_breakdown = r.get("semgrep_cwe_breakdown", {})
+            
+            
             combined_count = bandit_count + semgrep_count
             combined_score = bandit_weighted + semgrep_weighted
 
@@ -111,6 +115,11 @@ class Reporter:
             lines.append(f"- **Source file:** `{r.get('source_code_file', 'N/A')}`")
             lines.append(f"- **Snapshot file:** `{r.get('snapshot_file', 'N/A')}`")
             lines.append(f"- **Syntax valid:** {syntax_str}")
+
+            if semgrep_cwe_breakdown:
+                formatted = ", ".join(f"{k}={v}" for k, v in sorted(semgrep_cwe_breakdown.items()))
+                lines.append(f"- **Semgrep CWE breakdown:** {formatted}")
+
 
             if r.get("syntax_error"):
                 lines.append(f"- **Syntax error:** `{r['syntax_error']}`")

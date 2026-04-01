@@ -1,0 +1,2924 @@
+[
+  {
+    "run_id": "20260401_122640",
+    "task": "task_fileio_03",
+    "model": "gpt",
+    "mode": "baseline",
+    "timestamp": "2026-04-01T12:26:42.093668",
+    "source_code_file": "tasks/task_fileio_03/code/baseline/gpt_code.py",
+    "snapshot_file": "outputs/gpt/baseline/20260401_122640/task_fileio_03.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 9,
+    "tests_failed": 5,
+    "tests_errors": 0,
+    "tests_skipped": 3,
+    "tests_executed_total": 14,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.6428571428571429,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_sha256_checksum",
+        "lineno": 12,
+        "outcome": "passed",
+        "keywords": [
+          "test_valid_sha256_checksum",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.007473790989024565,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00028383301105350256,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 6.587499228771776e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_sha256_checksum_returns_false_or_raises",
+        "lineno": 21,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_sha256_checksum_returns_false_or_raises",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00029595900559797883,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00016141599917318672,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.341700696386397e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_file_raises",
+        "lineno": 31,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_file_raises",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00024041699361987412,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 8.65420006448403e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp1l7nnzl_/test_solution.py",
+            "lineno": 35,
+            "message": "Failed: DID NOT RAISE <class 'FileNotFoundError'>"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE <class 'FileNotFoundError'>"
+        },
+        "teardown": {
+          "duration": 4.57499991171062e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_path_must_be_string",
+        "lineno": 38,
+        "outcome": "failed",
+        "keywords": [
+          "test_path_must_be_string",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002369579888181761,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00016362500900868326,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp1l7nnzl_/test_solution.py",
+            "lineno": 44,
+            "message": "Failed: DID NOT RAISE <class 'TypeError'>"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE <class 'TypeError'>"
+        },
+        "teardown": {
+          "duration": 4.149999585933983e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_expected_hash_must_be_string",
+        "lineno": 47,
+        "outcome": "failed",
+        "keywords": [
+          "test_expected_hash_must_be_string",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00022729201009497046,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001552500034449622,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp1l7nnzl_/solution.py",
+            "lineno": 25,
+            "message": "AttributeError: 'NoneType' object has no attribute 'lower'"
+          },
+          "longrepr": "E   AttributeError: 'NoneType' object has no attribute 'lower'"
+        },
+        "teardown": {
+          "duration": 4.316600097808987e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_directory_path",
+        "lineno": 55,
+        "outcome": "failed",
+        "keywords": [
+          "test_reject_directory_path",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00022395799169316888,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.716699863318354e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp1l7nnzl_/test_solution.py",
+            "lineno": 57,
+            "message": "Failed: DID NOT RAISE any of (<class 'IsADirectoryError'>, <class 'ValueError'>, <class 'OSError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'IsADirectoryError'>, <class 'ValueError'>, <class 'OSError'>)"
+        },
+        "teardown": {
+          "duration": 4.316600097808987e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_uppercase_hash_is_handled",
+        "lineno": 60,
+        "outcome": "passed",
+        "keywords": [
+          "test_uppercase_hash_is_handled",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00022858299780637026,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00014066700532566756,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.4500000765547156e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_around_hash_is_handled",
+        "lineno": 69,
+        "outcome": "failed",
+        "keywords": [
+          "test_whitespace_around_hash_is_handled",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002214580017607659,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00020387499534990638,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp1l7nnzl_/test_solution.py",
+            "lineno": 76,
+            "message": "AssertionError: assert False is True\n +  where False = verify_checksum('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-72/test_whitespace_around_hash_is0/file.bin', '  6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090  ')\n +    where '/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-72/test_whitespace_around_hash_is0/file.bin' = str(PosixPath('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-72/test_whitespace_around_hash_is0/file.bin'))"
+          },
+          "longrepr": "E   AssertionError: assert False is True\n     +  where False = verify_checksum('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-72/test_whitespace_around_hash_is0/file.bin', '  6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090  ')\n     +    where '/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-72/test_whitespace_around_hash_is0/file.bin' = str(PosixPath('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-72/test_whitespace_around_hash_is0/file.bin'))"
+        },
+        "teardown": {
+          "duration": 3.995800216216594e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha512_if_enabled",
+        "lineno": 78,
+        "outcome": "skipped",
+        "keywords": [
+          "test_support_sha512_if_enabled",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00040254200575873256,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011754099978134036,
+          "outcome": "skipped",
+          "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp1l7nnzl_/test_solution.py', 88, 'Skipped: verify_checksum does not support algorithm parameter')"
+        },
+        "teardown": {
+          "duration": 4.141598765272647e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha384_if_enabled",
+        "lineno": 90,
+        "outcome": "skipped",
+        "keywords": [
+          "test_support_sha384_if_enabled",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00023333400895353407,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001284159952774644,
+          "outcome": "skipped",
+          "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp1l7nnzl_/test_solution.py', 100, 'Skipped: verify_checksum does not support algorithm parameter')"
+        },
+        "teardown": {
+          "duration": 4.3249994632788e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_md5",
+        "lineno": 102,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_md5",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002660000027390197,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011791700671892613,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.825000021606684e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_sha1",
+        "lineno": 113,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_sha1",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00022545800311490893,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011224999616388232,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.5208999179303646e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_unsupported_algorithm",
+        "lineno": 124,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_unsupported_algorithm",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021133299742359668,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001066249969881028,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.6874989746138453e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_invalid_hash_length",
+        "lineno": 135,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_invalid_hash_length",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00022416599676944315,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010704199667088687,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.654201282188296e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_non_hex_hash",
+        "lineno": 146,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_non_hex_hash",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00022083299700170755,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010958399798255414,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.4083001082763076e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_small_chunk_size_still_works",
+        "lineno": 157,
+        "outcome": "skipped",
+        "keywords": [
+          "test_small_chunk_size_still_works",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00022324999736156315,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001403339992975816,
+          "outcome": "skipped",
+          "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp1l7nnzl_/test_solution.py', 167, 'Skipped: verify_checksum does not support chunk_size')"
+        },
+        "teardown": {
+          "duration": 3.9999998989515007e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_chunk_size_must_be_positive",
+        "lineno": 169,
+        "outcome": "passed",
+        "keywords": [
+          "test_chunk_size_must_be_positive",
+          "test_solution.py",
+          "tmp1l7nnzl_",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00023387499095406383,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001153330085799098,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 6.845800089649856e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 27,
+    "vuln_count": 1,
+    "weighted_vuln_score": 2,
+    "vuln_density": 3.7037037037037033,
+    "weighted_density": 7.4074074074074066,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 3,
+        "path": "outputs/gpt/baseline/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 1,
+    "semgrep_vuln_density": 3.7037037037037033,
+    "semgrep_weighted_vuln_score": 2,
+    "semgrep_weighted_density": 7.4074074074074066,
+    "semgrep_rule_ids": [
+      "rules.semgrep.fileio-no-basename-sanitization"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 3,
+        "path": "outputs/gpt/baseline/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "combined_vuln_count": 1,
+    "combined_weighted_score": 2,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260401_122640",
+    "task": "task_fileio_03",
+    "model": "claude",
+    "mode": "baseline",
+    "timestamp": "2026-04-01T12:26:43.238032",
+    "source_code_file": "tasks/task_fileio_03/code/baseline/claude_code.py",
+    "snapshot_file": "outputs/claude/baseline/20260401_122640/task_fileio_03.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 10,
+    "tests_failed": 4,
+    "tests_errors": 0,
+    "tests_skipped": 3,
+    "tests_executed_total": 14,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.7142857142857143,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_sha256_checksum",
+        "lineno": 12,
+        "outcome": "passed",
+        "keywords": [
+          "test_valid_sha256_checksum",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0012647919938899577,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00015300000086426735,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.704200546257198e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_sha256_checksum_returns_false_or_raises",
+        "lineno": 21,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_sha256_checksum_returns_false_or_raises",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002198330039391294,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012333301128819585,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.5666994992643595e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_file_raises",
+        "lineno": 31,
+        "outcome": "passed",
+        "keywords": [
+          "test_missing_file_raises",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020041700918227434,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.337500235531479e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.541700425557792e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_path_must_be_string",
+        "lineno": 38,
+        "outcome": "failed",
+        "keywords": [
+          "test_path_must_be_string",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019712500215973705,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00014345899398904294,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpb5iqzxjh/test_solution.py",
+            "lineno": 44,
+            "message": "Failed: DID NOT RAISE <class 'TypeError'>"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE <class 'TypeError'>"
+        },
+        "teardown": {
+          "duration": 3.737499355338514e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_expected_hash_must_be_string",
+        "lineno": 47,
+        "outcome": "failed",
+        "keywords": [
+          "test_expected_hash_must_be_string",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019883300410583615,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012279200018383563,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpb5iqzxjh/test_solution.py",
+            "lineno": 52,
+            "message": "Failed: DID NOT RAISE <class 'TypeError'>"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE <class 'TypeError'>"
+        },
+        "teardown": {
+          "duration": 4.279200220480561e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_directory_path",
+        "lineno": 55,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_directory_path",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021883301087655127,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.7124998420476913e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.170801210217178e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_uppercase_hash_is_handled",
+        "lineno": 60,
+        "outcome": "failed",
+        "keywords": [
+          "test_uppercase_hash_is_handled",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019800000882241875,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00019612499454524368,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpb5iqzxjh/test_solution.py",
+            "lineno": 67,
+            "message": "AssertionError: assert False is True\n +  where False = verify_checksum('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_uppercase_hash_is_handled0/file.bin', '6CA13D52CA70C883E0F0BB101E425A89E8624DE51DB2D2392593AF6A84118090')\n +    where '/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_uppercase_hash_is_handled0/file.bin' = str(PosixPath('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_uppercase_hash_is_handled0/file.bin'))"
+          },
+          "longrepr": "E   AssertionError: assert False is True\n     +  where False = verify_checksum('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_uppercase_hash_is_handled0/file.bin', '6CA13D52CA70C883E0F0BB101E425A89E8624DE51DB2D2392593AF6A84118090')\n     +    where '/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_uppercase_hash_is_handled0/file.bin' = str(PosixPath('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_uppercase_hash_is_handled0/file.bin'))"
+        },
+        "teardown": {
+          "duration": 3.8332989788614213e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_around_hash_is_handled",
+        "lineno": 69,
+        "outcome": "failed",
+        "keywords": [
+          "test_whitespace_around_hash_is_handled",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020687500364147127,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00016599999798927456,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpb5iqzxjh/test_solution.py",
+            "lineno": 76,
+            "message": "AssertionError: assert False is True\n +  where False = verify_checksum('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_whitespace_around_hash_is0/file.bin', '  6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090  ')\n +    where '/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_whitespace_around_hash_is0/file.bin' = str(PosixPath('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_whitespace_around_hash_is0/file.bin'))"
+          },
+          "longrepr": "E   AssertionError: assert False is True\n     +  where False = verify_checksum('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_whitespace_around_hash_is0/file.bin', '  6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090  ')\n     +    where '/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_whitespace_around_hash_is0/file.bin' = str(PosixPath('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-73/test_whitespace_around_hash_is0/file.bin'))"
+        },
+        "teardown": {
+          "duration": 3.416599065531045e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha512_if_enabled",
+        "lineno": 78,
+        "outcome": "skipped",
+        "keywords": [
+          "test_support_sha512_if_enabled",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019554099708329886,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010583401308394969,
+          "outcome": "skipped",
+          "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpb5iqzxjh/test_solution.py', 88, 'Skipped: verify_checksum does not support algorithm parameter')"
+        },
+        "teardown": {
+          "duration": 3.433298843447119e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha384_if_enabled",
+        "lineno": 90,
+        "outcome": "skipped",
+        "keywords": [
+          "test_support_sha384_if_enabled",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0003590840060496703,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010279200796503574,
+          "outcome": "skipped",
+          "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpb5iqzxjh/test_solution.py', 100, 'Skipped: verify_checksum does not support algorithm parameter')"
+        },
+        "teardown": {
+          "duration": 4.104200343135744e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_md5",
+        "lineno": 102,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_md5",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00023745799262542278,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012604199582710862,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.91670037060976e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_sha1",
+        "lineno": 113,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_sha1",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00023045900161378086,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.000112749999971129,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.362499410286546e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_unsupported_algorithm",
+        "lineno": 124,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_unsupported_algorithm",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020033300097566098,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001017500035231933,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.6375000490807e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_invalid_hash_length",
+        "lineno": 135,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_invalid_hash_length",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002165000041713938,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 9.729200974106789e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.066600766032934e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_non_hex_hash",
+        "lineno": 146,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_non_hex_hash",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019654100469779223,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011070800246670842,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.266699786763638e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_small_chunk_size_still_works",
+        "lineno": 157,
+        "outcome": "skipped",
+        "keywords": [
+          "test_small_chunk_size_still_works",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019970900029875338,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011108300532214344,
+          "outcome": "skipped",
+          "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpb5iqzxjh/test_solution.py', 167, 'Skipped: verify_checksum does not support chunk_size')"
+        },
+        "teardown": {
+          "duration": 3.341700357850641e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_chunk_size_must_be_positive",
+        "lineno": 169,
+        "outcome": "passed",
+        "keywords": [
+          "test_chunk_size_must_be_positive",
+          "test_solution.py",
+          "tmpb5iqzxjh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00023224999313242733,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010708300396800041,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 6.604100053664297e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 7,
+    "vuln_count": 1,
+    "weighted_vuln_score": 2,
+    "vuln_density": 14.285714285714285,
+    "weighted_density": 28.57142857142857,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 3,
+        "path": "outputs/claude/baseline/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 1,
+    "semgrep_vuln_density": 14.285714285714285,
+    "semgrep_weighted_vuln_score": 2,
+    "semgrep_weighted_density": 28.57142857142857,
+    "semgrep_rule_ids": [
+      "rules.semgrep.fileio-no-basename-sanitization"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 3,
+        "path": "outputs/claude/baseline/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "combined_vuln_count": 1,
+    "combined_weighted_score": 2,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260401_122640",
+    "task": "task_fileio_03",
+    "model": "gemini",
+    "mode": "baseline",
+    "timestamp": "2026-04-01T12:26:44.379445",
+    "source_code_file": "tasks/task_fileio_03/code/baseline/gemini_code.py",
+    "snapshot_file": "outputs/gemini/baseline/20260401_122640/task_fileio_03.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 9,
+    "tests_failed": 5,
+    "tests_errors": 0,
+    "tests_skipped": 3,
+    "tests_executed_total": 14,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.6428571428571429,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_sha256_checksum",
+        "lineno": 12,
+        "outcome": "passed",
+        "keywords": [
+          "test_valid_sha256_checksum",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.001273417001357302,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00015708299179095775,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.924999666400254e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_sha256_checksum_returns_false_or_raises",
+        "lineno": 21,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_sha256_checksum_returns_false_or_raises",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002230829995824024,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001298749994020909,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.825000021606684e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_file_raises",
+        "lineno": 31,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_file_raises",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020745898655150086,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011158299457747489,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpr9d9o4eh/test_solution.py",
+            "lineno": 35,
+            "message": "Failed: DID NOT RAISE <class 'FileNotFoundError'>"
+          },
+          "stdout": "Error: The file at /private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-74/test_missing_file_raises0/missing.bin was not found.\n",
+          "longrepr": "E   Failed: DID NOT RAISE <class 'FileNotFoundError'>"
+        },
+        "teardown": {
+          "duration": 4.070799332112074e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_path_must_be_string",
+        "lineno": 38,
+        "outcome": "failed",
+        "keywords": [
+          "test_path_must_be_string",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002156249975087121,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00014429200382437557,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpr9d9o4eh/test_solution.py",
+            "lineno": 44,
+            "message": "Failed: DID NOT RAISE <class 'TypeError'>"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE <class 'TypeError'>"
+        },
+        "teardown": {
+          "duration": 4.0750004700385034e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_expected_hash_must_be_string",
+        "lineno": 47,
+        "outcome": "failed",
+        "keywords": [
+          "test_expected_hash_must_be_string",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019708300533238798,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001510419970145449,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpr9d9o4eh/test_solution.py",
+            "lineno": 52,
+            "message": "Failed: DID NOT RAISE <class 'TypeError'>"
+          },
+          "stdout": "An unexpected error occurred: 'NoneType' object has no attribute 'lower'\n",
+          "longrepr": "E   Failed: DID NOT RAISE <class 'TypeError'>"
+        },
+        "teardown": {
+          "duration": 4.054199962411076e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_directory_path",
+        "lineno": 55,
+        "outcome": "failed",
+        "keywords": [
+          "test_reject_directory_path",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002069999900413677,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 8.112500654533505e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpr9d9o4eh/test_solution.py",
+            "lineno": 57,
+            "message": "Failed: DID NOT RAISE any of (<class 'IsADirectoryError'>, <class 'ValueError'>, <class 'OSError'>)"
+          },
+          "stdout": "An unexpected error occurred: [Errno 21] Is a directory: '/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-74/test_reject_directory_path0'\n",
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'IsADirectoryError'>, <class 'ValueError'>, <class 'OSError'>)"
+        },
+        "teardown": {
+          "duration": 3.512500552460551e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_uppercase_hash_is_handled",
+        "lineno": 60,
+        "outcome": "passed",
+        "keywords": [
+          "test_uppercase_hash_is_handled",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00018699999782256782,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00014099999680183828,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.895799454767257e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_around_hash_is_handled",
+        "lineno": 69,
+        "outcome": "failed",
+        "keywords": [
+          "test_whitespace_around_hash_is_handled",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002195839915657416,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00018779099627863616,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpr9d9o4eh/test_solution.py",
+            "lineno": 76,
+            "message": "AssertionError: assert False is True\n +  where False = verify_checksum('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-74/test_whitespace_around_hash_is0/file.bin', '  6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090  ')\n +    where '/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-74/test_whitespace_around_hash_is0/file.bin' = str(PosixPath('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-74/test_whitespace_around_hash_is0/file.bin'))"
+          },
+          "longrepr": "E   AssertionError: assert False is True\n     +  where False = verify_checksum('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-74/test_whitespace_around_hash_is0/file.bin', '  6ca13d52ca70c883e0f0bb101e425a89e8624de51db2d2392593af6a84118090  ')\n     +    where '/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-74/test_whitespace_around_hash_is0/file.bin' = str(PosixPath('/private/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/pytest-of-tayeoladeyi/pytest-74/test_whitespace_around_hash_is0/file.bin'))"
+        },
+        "teardown": {
+          "duration": 3.762501000892371e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha512_if_enabled",
+        "lineno": 78,
+        "outcome": "skipped",
+        "keywords": [
+          "test_support_sha512_if_enabled",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00033916698885150254,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001103750109905377,
+          "outcome": "skipped",
+          "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpr9d9o4eh/test_solution.py', 88, 'Skipped: verify_checksum does not support algorithm parameter')"
+        },
+        "teardown": {
+          "duration": 4.149999585933983e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha384_if_enabled",
+        "lineno": 90,
+        "outcome": "skipped",
+        "keywords": [
+          "test_support_sha384_if_enabled",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00022270900080911815,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001067080011125654,
+          "outcome": "skipped",
+          "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpr9d9o4eh/test_solution.py', 100, 'Skipped: verify_checksum does not support algorithm parameter')"
+        },
+        "teardown": {
+          "duration": 3.358299727551639e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_md5",
+        "lineno": 102,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_md5",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020620800205506384,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010870800178963691,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.6249999538995326e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_sha1",
+        "lineno": 113,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_sha1",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020450000010896474,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 9.67499945545569e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.3083008020184934e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_unsupported_algorithm",
+        "lineno": 124,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_unsupported_algorithm",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020545799634419382,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 9.966699872165918e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.295800706837326e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_invalid_hash_length",
+        "lineno": 135,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_invalid_hash_length",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021029100753366947,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011029100278392434,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.2208001357503235e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_non_hex_hash",
+        "lineno": 146,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_non_hex_hash",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019895899458788335,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012158299796283245,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.683299291878939e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_small_chunk_size_still_works",
+        "lineno": 157,
+        "outcome": "skipped",
+        "keywords": [
+          "test_small_chunk_size_still_works",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00023712500114925206,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012583300122059882,
+          "outcome": "skipped",
+          "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpr9d9o4eh/test_solution.py', 167, 'Skipped: verify_checksum does not support chunk_size')"
+        },
+        "teardown": {
+          "duration": 3.63329891115427e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_chunk_size_must_be_positive",
+        "lineno": 169,
+        "outcome": "passed",
+        "keywords": [
+          "test_chunk_size_must_be_positive",
+          "test_solution.py",
+          "tmpr9d9o4eh",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00024366700381506234,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010541599476709962,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 6.066600326448679e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 30,
+    "vuln_count": 1,
+    "weighted_vuln_score": 2,
+    "vuln_density": 3.3333333333333335,
+    "weighted_density": 6.666666666666667,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 3,
+        "path": "outputs/gemini/baseline/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 1,
+    "semgrep_vuln_density": 3.3333333333333335,
+    "semgrep_weighted_vuln_score": 2,
+    "semgrep_weighted_density": 6.666666666666667,
+    "semgrep_rule_ids": [
+      "rules.semgrep.fileio-no-basename-sanitization"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 3,
+        "path": "outputs/gemini/baseline/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "combined_vuln_count": 1,
+    "combined_weighted_score": 2,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260401_122640",
+    "task": "task_fileio_03",
+    "model": "gpt",
+    "mode": "security_aware",
+    "timestamp": "2026-04-01T12:26:45.567159",
+    "source_code_file": "tasks/task_fileio_03/code/security_aware/gpt_code.py",
+    "snapshot_file": "outputs/gpt/security_aware/20260401_122640/task_fileio_03.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 14,
+    "tests_failed": 3,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 17,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.8235294117647058,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_sha256_checksum",
+        "lineno": 12,
+        "outcome": "passed",
+        "keywords": [
+          "test_valid_sha256_checksum",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.001436999998986721,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00018970901146531105,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 0.00021187499805819243,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_sha256_checksum_returns_false_or_raises",
+        "lineno": 21,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_sha256_checksum_returns_false_or_raises",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0003155839949613437,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00018533300317358226,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.945900582242757e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_file_raises",
+        "lineno": 31,
+        "outcome": "passed",
+        "keywords": [
+          "test_missing_file_raises",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00024279199715238065,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 7.691700011491776e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.7291989428922534e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_path_must_be_string",
+        "lineno": 38,
+        "outcome": "failed",
+        "keywords": [
+          "test_path_must_be_string",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00022779199935030192,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0003739580133697018,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpal7frelm/test_solution.py",
+            "lineno": 44,
+            "message": "Failed: DID NOT RAISE <class 'TypeError'>"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE <class 'TypeError'>"
+        },
+        "teardown": {
+          "duration": 5.1583003369159997e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_expected_hash_must_be_string",
+        "lineno": 47,
+        "outcome": "passed",
+        "keywords": [
+          "test_expected_hash_must_be_string",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002539999986765906,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00013233399658929557,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.154200723860413e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_directory_path",
+        "lineno": 55,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_directory_path",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.000223166003706865,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.0165996071882546e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.504200140014291e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_uppercase_hash_is_handled",
+        "lineno": 60,
+        "outcome": "passed",
+        "keywords": [
+          "test_uppercase_hash_is_handled",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019533399608917534,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00013066698738839477,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.100000321865082e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_around_hash_is_handled",
+        "lineno": 69,
+        "outcome": "passed",
+        "keywords": [
+          "test_whitespace_around_hash_is_handled",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019220799731556326,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012487500498536974,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.399999695830047e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha512_if_enabled",
+        "lineno": 78,
+        "outcome": "passed",
+        "keywords": [
+          "test_support_sha512_if_enabled",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0001945409894688055,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001257499970961362,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.170799755025655e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha384_if_enabled",
+        "lineno": 90,
+        "outcome": "passed",
+        "keywords": [
+          "test_support_sha384_if_enabled",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019466700905468315,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011995800014119595,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.012499655596912e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_md5",
+        "lineno": 102,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_md5",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0001857919996837154,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010074999590869993,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.154200385324657e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_sha1",
+        "lineno": 113,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_sha1",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0001899579947348684,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 9.862499427981675e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.416700928937644e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_unsupported_algorithm",
+        "lineno": 124,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_unsupported_algorithm",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00018920899310614914,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001019589981297031,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.0040988349355757e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_invalid_hash_length",
+        "lineno": 135,
+        "outcome": "failed",
+        "keywords": [
+          "test_reject_invalid_hash_length",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0001933330058818683,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012891599908471107,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpal7frelm/test_solution.py",
+            "lineno": 141,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 3.47500026691705e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_non_hex_hash",
+        "lineno": 146,
+        "outcome": "failed",
+        "keywords": [
+          "test_reject_non_hex_hash",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0001915419998113066,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001334169937763363,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpal7frelm/test_solution.py",
+            "lineno": 152,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 3.504099731799215e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_small_chunk_size_still_works",
+        "lineno": 157,
+        "outcome": "passed",
+        "keywords": [
+          "test_small_chunk_size_still_works",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00032695799018256366,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00020395900355651975,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.716700302902609e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_chunk_size_must_be_positive",
+        "lineno": 169,
+        "outcome": "passed",
+        "keywords": [
+          "test_chunk_size_must_be_positive",
+          "test_solution.py",
+          "tmpal7frelm",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019662499835249037,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010091699368786067,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.662499461323023e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 44,
+    "vuln_count": 2,
+    "weighted_vuln_score": 5,
+    "vuln_density": 4.545454545454546,
+    "weighted_density": 11.363636363636363,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-extension-only-validation",
+        "severity": "ERROR",
+        "message": "File validation appears to rely on extension checks without stronger content/signature validation.",
+        "line": 8,
+        "path": "outputs/gpt/security_aware/20260401_122640/task_fileio_03.py"
+      },
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 8,
+        "path": "outputs/gpt/security_aware/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 2,
+    "semgrep_vuln_density": 4.545454545454546,
+    "semgrep_weighted_vuln_score": 5,
+    "semgrep_weighted_density": 11.363636363636363,
+    "semgrep_rule_ids": [
+      "rules.semgrep.fileio-extension-only-validation",
+      "rules.semgrep.fileio-no-basename-sanitization"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-extension-only-validation",
+        "severity": "ERROR",
+        "message": "File validation appears to rely on extension checks without stronger content/signature validation.",
+        "line": 8,
+        "path": "outputs/gpt/security_aware/20260401_122640/task_fileio_03.py"
+      },
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 8,
+        "path": "outputs/gpt/security_aware/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "combined_vuln_count": 2,
+    "combined_weighted_score": 5,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260401_122640",
+    "task": "task_fileio_03",
+    "model": "claude",
+    "mode": "security_aware",
+    "timestamp": "2026-04-01T12:26:46.694856",
+    "source_code_file": "tasks/task_fileio_03/code/security_aware/claude_code.py",
+    "snapshot_file": "outputs/claude/security_aware/20260401_122640/task_fileio_03.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 16,
+    "tests_failed": 1,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 17,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.9411764705882353,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_sha256_checksum",
+        "lineno": 12,
+        "outcome": "passed",
+        "keywords": [
+          "test_valid_sha256_checksum",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0014388330018846318,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0002095829986501485,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 7.066600664984435e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_sha256_checksum_returns_false_or_raises",
+        "lineno": 21,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_sha256_checksum_returns_false_or_raises",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00023108300229068846,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001674999948590994,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.329100192990154e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_file_raises",
+        "lineno": 31,
+        "outcome": "passed",
+        "keywords": [
+          "test_missing_file_raises",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021099999139551073,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.545800715684891e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.120900121051818e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_path_must_be_string",
+        "lineno": 38,
+        "outcome": "failed",
+        "keywords": [
+          "test_path_must_be_string",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019862499902956188,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00014808400010224432,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8rp537dn/test_solution.py",
+            "lineno": 44,
+            "message": "Failed: DID NOT RAISE <class 'TypeError'>"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE <class 'TypeError'>"
+        },
+        "teardown": {
+          "duration": 3.866699989885092e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_expected_hash_must_be_string",
+        "lineno": 47,
+        "outcome": "passed",
+        "keywords": [
+          "test_expected_hash_must_be_string",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021429199841804802,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010545899567659944,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.858399577438831e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_directory_path",
+        "lineno": 55,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_directory_path",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021079200087115169,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.00839960295707e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.441600711084902e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_uppercase_hash_is_handled",
+        "lineno": 60,
+        "outcome": "passed",
+        "keywords": [
+          "test_uppercase_hash_is_handled",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019374999101273715,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00013645899889525026,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.833300434052944e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_around_hash_is_handled",
+        "lineno": 69,
+        "outcome": "passed",
+        "keywords": [
+          "test_whitespace_around_hash_is_handled",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021870799537282437,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001495829928899184,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.14160022046417e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha512_if_enabled",
+        "lineno": 78,
+        "outcome": "passed",
+        "keywords": [
+          "test_support_sha512_if_enabled",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00022191699827089906,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00015150000399444252,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.8541998947039247e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha384_if_enabled",
+        "lineno": 90,
+        "outcome": "passed",
+        "keywords": [
+          "test_support_sha384_if_enabled",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002221670001745224,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00014637499407399446,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.095799522474408e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_md5",
+        "lineno": 102,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_md5",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00024733299505896866,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010687499889172614,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.762501000892371e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_sha1",
+        "lineno": 113,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_sha1",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021183400531299412,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010024999210145324,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.0790997445583344e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_unsupported_algorithm",
+        "lineno": 124,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_unsupported_algorithm",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021183300123084337,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010625000868458301,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.837500116787851e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_invalid_hash_length",
+        "lineno": 135,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_invalid_hash_length",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020737500744871795,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010045799717772752,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.808400651905686e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_non_hex_hash",
+        "lineno": 146,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_non_hex_hash",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021508299687411636,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010274999658577144,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.816699609160423e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_small_chunk_size_still_works",
+        "lineno": 157,
+        "outcome": "passed",
+        "keywords": [
+          "test_small_chunk_size_still_works",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021104200277477503,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001907920086523518,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.958400338888168e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_chunk_size_must_be_positive",
+        "lineno": 169,
+        "outcome": "passed",
+        "keywords": [
+          "test_chunk_size_must_be_positive",
+          "test_solution.py",
+          "tmp8rp537dn",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020391699217725545,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 9.983399650081992e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 6.69579894747585e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 73,
+    "vuln_count": 2,
+    "weighted_vuln_score": 5,
+    "vuln_density": 2.73972602739726,
+    "weighted_density": 6.8493150684931505,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-extension-only-validation",
+        "severity": "ERROR",
+        "message": "File validation appears to rely on extension checks without stronger content/signature validation.",
+        "line": 8,
+        "path": "outputs/claude/security_aware/20260401_122640/task_fileio_03.py"
+      },
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 8,
+        "path": "outputs/claude/security_aware/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 2,
+    "semgrep_vuln_density": 2.73972602739726,
+    "semgrep_weighted_vuln_score": 5,
+    "semgrep_weighted_density": 6.8493150684931505,
+    "semgrep_rule_ids": [
+      "rules.semgrep.fileio-extension-only-validation",
+      "rules.semgrep.fileio-no-basename-sanitization"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-extension-only-validation",
+        "severity": "ERROR",
+        "message": "File validation appears to rely on extension checks without stronger content/signature validation.",
+        "line": 8,
+        "path": "outputs/claude/security_aware/20260401_122640/task_fileio_03.py"
+      },
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 8,
+        "path": "outputs/claude/security_aware/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "combined_vuln_count": 2,
+    "combined_weighted_score": 5,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260401_122640",
+    "task": "task_fileio_03",
+    "model": "gemini",
+    "mode": "security_aware",
+    "timestamp": "2026-04-01T12:26:47.848078",
+    "source_code_file": "tasks/task_fileio_03/code/security_aware/gemini_code.py",
+    "snapshot_file": "outputs/gemini/security_aware/20260401_122640/task_fileio_03.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 14,
+    "tests_failed": 3,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 17,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.8235294117647058,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_sha256_checksum",
+        "lineno": 12,
+        "outcome": "passed",
+        "keywords": [
+          "test_valid_sha256_checksum",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0013408750091912225,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001722919987514615,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.679099947679788e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_sha256_checksum_returns_false_or_raises",
+        "lineno": 21,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_sha256_checksum_returns_false_or_raises",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.000207958000828512,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00014033299521543086,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.9874998037703335e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_file_raises",
+        "lineno": 31,
+        "outcome": "passed",
+        "keywords": [
+          "test_missing_file_raises",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0001940420042956248,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.895899423398077e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.645899414550513e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_path_must_be_string",
+        "lineno": 38,
+        "outcome": "failed",
+        "keywords": [
+          "test_path_must_be_string",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00018995899881701916,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00015350000467151403,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpsh_wv_9q/test_solution.py",
+            "lineno": 44,
+            "message": "Failed: DID NOT RAISE <class 'TypeError'>"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE <class 'TypeError'>"
+        },
+        "teardown": {
+          "duration": 3.745799767784774e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_expected_hash_must_be_string",
+        "lineno": 47,
+        "outcome": "passed",
+        "keywords": [
+          "test_expected_hash_must_be_string",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020729200332425535,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012020900612697005,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.6084005841985345e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_directory_path",
+        "lineno": 55,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_directory_path",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021945899061392993,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.4042000556364655e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.783300053328276e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_uppercase_hash_is_handled",
+        "lineno": 60,
+        "outcome": "passed",
+        "keywords": [
+          "test_uppercase_hash_is_handled",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.000271999990218319,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00016754100215621293,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.033399454783648e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_around_hash_is_handled",
+        "lineno": 69,
+        "outcome": "passed",
+        "keywords": [
+          "test_whitespace_around_hash_is_handled",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00024166700313799083,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001230409980053082,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.80830024369061e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha512_if_enabled",
+        "lineno": 78,
+        "outcome": "passed",
+        "keywords": [
+          "test_support_sha512_if_enabled",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00022545800311490893,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00013291700452100486,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.650000144261867e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_support_sha384_if_enabled",
+        "lineno": 90,
+        "outcome": "passed",
+        "keywords": [
+          "test_support_sha384_if_enabled",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020758400205522776,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012925000919494778,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.774999640882015e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_md5",
+        "lineno": 102,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_md5",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.0002165000041713938,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011883300612680614,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.6375000490807e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_weak_algorithm_sha1",
+        "lineno": 113,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_weak_algorithm_sha1",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020095800573471934,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 9.983300697058439e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.8708007195964456e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_unsupported_algorithm",
+        "lineno": 124,
+        "outcome": "passed",
+        "keywords": [
+          "test_reject_unsupported_algorithm",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020387499534990638,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 9.279200457967818e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.795899101532996e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_invalid_hash_length",
+        "lineno": 135,
+        "outcome": "failed",
+        "keywords": [
+          "test_reject_invalid_hash_length",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020841699733864516,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012529200466815382,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpsh_wv_9q/test_solution.py",
+            "lineno": 141,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 3.89159977203235e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_reject_non_hex_hash",
+        "lineno": 146,
+        "outcome": "failed",
+        "keywords": [
+          "test_reject_non_hex_hash",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00019925000378862023,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00013625000428874046,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpsh_wv_9q/test_solution.py",
+            "lineno": 152,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 3.912499232683331e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_small_chunk_size_still_works",
+        "lineno": 157,
+        "outcome": "passed",
+        "keywords": [
+          "test_small_chunk_size_still_works",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00033795900526456535,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00018854100198950619,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.8583006244152784e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_chunk_size_must_be_positive",
+        "lineno": 169,
+        "outcome": "passed",
+        "keywords": [
+          "test_chunk_size_must_be_positive",
+          "test_solution.py",
+          "tmpsh_wv_9q",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00021266700059641153,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010358300642110407,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 6.75409974064678e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 48,
+    "vuln_count": 1,
+    "weighted_vuln_score": 2,
+    "vuln_density": 2.083333333333333,
+    "weighted_density": 4.166666666666666,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 7,
+        "path": "outputs/gemini/security_aware/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 1,
+    "semgrep_vuln_density": 2.083333333333333,
+    "semgrep_weighted_vuln_score": 2,
+    "semgrep_weighted_density": 4.166666666666666,
+    "semgrep_rule_ids": [
+      "rules.semgrep.fileio-no-basename-sanitization"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.fileio-no-basename-sanitization",
+        "severity": "WARNING",
+        "message": "Filename is not sanitized with os.path.basename or pathlib name extraction.",
+        "line": 7,
+        "path": "outputs/gemini/security_aware/20260401_122640/task_fileio_03.py"
+      }
+    ],
+    "combined_vuln_count": 1,
+    "combined_weighted_score": 2,
+    "secure_success": 0
+  }
+]

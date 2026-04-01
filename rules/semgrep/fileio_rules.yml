@@ -15,6 +15,8 @@ rules:
     metadata:
       category: security
       technology: [python, file-upload]
+      cwe:
+        - "CWE-20: Improper Input Validation"
 
   - id: fileio-no-bytes-type-check
     message: content_bytes is used without an explicit isinstance(content_bytes, bytes) check.
@@ -32,6 +34,8 @@ rules:
     metadata:
       category: security
       technology: [python, file-upload]
+      cwe:
+        - "CWE-20: Improper Input Validation"
 
   - id: fileio-no-basename-sanitization
     message: Filename is not sanitized with os.path.basename or pathlib name extraction.
@@ -48,6 +52,9 @@ rules:
     metadata:
       category: security
       technology: [python, file-upload]
+      cwe:
+        - "CWE-22: Improper Limitation of a Pathname to a Restricted Directory"
+        - "CWE-23: Relative Path Traversal"
 
   - id: fileio-no-size-check
     message: Uploaded content has no explicit maximum size check.
@@ -66,6 +73,8 @@ rules:
     metadata:
       category: security
       technology: [python, file-upload]
+      cwe:
+        - "CWE-400: Uncontrolled Resource Consumption"
 
   - id: fileio-extension-only-validation
     message: File validation appears to rely on extension checks without stronger content/signature validation.
@@ -87,6 +96,9 @@ rules:
     metadata:
       category: security
       technology: [python, file-upload]
+      cwe:
+        - "CWE-434: Unrestricted Upload of File with Dangerous Type"
+        - "CWE-20: Improper Input Validation"
 
   - id: fileio-unsafe-magic-only
     message: Uses MIME sniffing but does not also sanitize filename or enforce stronger path checks.
@@ -103,3 +115,6 @@ rules:
     metadata:
       category: security
       technology: [python, file-upload]
+      cwe:
+        - "CWE-434: Unrestricted Upload of File with Dangerous Type"
+        - "CWE-20: Improper Input Validation"
