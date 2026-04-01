@@ -13,9 +13,9 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-from analysis.static_analyzer import StaticAnalyzer
 from analysis.correctness import CorrectnessChecker
 from analysis.reporter import Reporter
+from analysis.static_analyzer import StaticAnalyzer
 from analysis.syntax_checker import SyntaxChecker
 
 
@@ -26,6 +26,22 @@ PROMPT_MODES = ["baseline", "security_aware"]
 def load_task(task_path: str) -> dict:
     with open(task_path, "r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def make_skipped_correctness_result() -> dict:
+    return {
+        "pass_rate": 0.0,
+        "passed": 0,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "executed_total": 0,
+        "total": 0,
+        "details": [],
+        "functional_success": 0,
+        "status": "skipped_invalid_syntax",
+        "note": "Skipped because syntax is invalid.",
+    }
 
 
 def run_pipeline(task_path: str, modes: list[str], models: list[str]):
@@ -58,11 +74,11 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
 
             code = code_file.read_text(encoding="utf-8")
 
-            # Save a copy into outputs for traceability
             out_dir = Path("outputs") / model_name / mode / run_id
             out_dir.mkdir(parents=True, exist_ok=True)
             out_file = out_dir / f"{task_name}.py"
             out_file.write_text(code, encoding="utf-8")
+
             print(f"  ✓ Code loaded from: {code_file}")
             print(f"  ✓ Snapshot saved to: {out_file}")
 
@@ -79,27 +95,21 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
             checker = CorrectnessChecker(task)
             if syntax_result["syntax_valid"]:
                 correctness = checker.check(code)
-                pass_rate = correctness["pass_rate"] if correctness["pass_rate"] is not None else 0.0
-                print(
-                    f"  ✓ Correctness: {pass_rate:.1%} tests passing "
-                    f"({correctness['passed']}/{correctness['total']})"
-                )
-                print(
-                    f"  ✓ Functional success: "
-                    f"{'Yes' if correctness['functional_success'] else 'No'}"
-                )
             else:
-                correctness = {
-                    "pass_rate": 0.0,
-                    "passed": 0,
-                    "failed": 0,
-                    "errors": 0,
-                    "total": 0,
-                    "details": [],
-                    "functional_success": 0,
-                    "status": "skipped_invalid_syntax",
-                    "note": "Skipped because syntax is invalid.",
-                }
+                correctness = make_skipped_correctness_result()
+
+            pass_rate = correctness["pass_rate"] if correctness["pass_rate"] is not None else 0.0
+            executed_total = correctness.get("executed_total", 0)
+            skipped = correctness.get("skipped", 0)
+
+            print(
+                f"  ✓ Correctness: {pass_rate:.1%} tests passing "
+                f"({correctness['passed']}/{executed_total} executed, {skipped} skipped)"
+            )
+            print(
+                f"  ✓ Functional success: "
+                f"{'Yes' if correctness['functional_success'] else 'No'}"
+            )
 
             # 3. Static security analysis
             analyzer = StaticAnalyzer()
@@ -139,7 +149,10 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
                 "tests_passed": correctness["passed"],
                 "tests_failed": correctness["failed"],
                 "tests_errors": correctness["errors"],
+                "tests_skipped": correctness.get("skipped", 0),
+                "tests_executed_total": correctness.get("executed_total", 0),
                 "tests_total": correctness["total"],
+
                 "correctness_pass_rate": correctness["pass_rate"],
                 "correctness_details": correctness["details"],
                 "functional_success": correctness["functional_success"],
@@ -149,7 +162,10 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
                 "vuln_density": vuln_report["density"],
                 "vuln_count": vuln_report["count"],
                 "weighted_vuln_score": weighted_vuln_score,
+                "weighted_density": vuln_report.get("weighted_density", 0.0),
+                "severity_breakdown": vuln_report.get("severity_breakdown", {}),
                 "cwe_categories": cwe_categories,
+                "cwe_breakdown": vuln_report.get("cwe_breakdown", {}),
                 "vuln_issues": vuln_report["issues"],
                 "loc": vuln_report["loc"],
 
@@ -157,7 +173,6 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
             }
             all_results.append(result)
 
-            # Save per-sample JSON
             result_dir = Path("results") / "per_sample" / run_id
             result_dir.mkdir(parents=True, exist_ok=True)
             result_file = result_dir / f"{model_name}_{mode}_{task_name}.json"

@@ -1,0 +1,380 @@
+{
+  "run_id": "20260401_090217",
+  "task": "task_fileio_01",
+  "model": "gemini",
+  "mode": "baseline",
+  "timestamp": "2026-04-01T09:02:18.402574",
+  "source_code_file": "tasks/task_fileio_01/code/baseline/gemini_code.py",
+  "snapshot_file": "outputs/gemini/baseline/20260401_090217/task_fileio_01.py",
+  "syntax_valid": true,
+  "syntax_error": null,
+  "tests_passed": 4,
+  "tests_failed": 4,
+  "tests_errors": 0,
+  "tests_total": 14,
+  "correctness_pass_rate": 0.2857142857142857,
+  "correctness_details": [
+    {
+      "nodeid": "test_solution.py::test_read_valid_utf8_file",
+      "lineno": 8,
+      "outcome": "passed",
+      "keywords": [
+        "test_read_valid_utf8_file",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0013202920090407133,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00031962500361260027,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 5.4917007219046354e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_read_empty_file",
+      "lineno": 16,
+      "outcome": "passed",
+      "keywords": [
+        "test_read_empty_file",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023433299793396145,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00010537500202190131,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.7542005884461105e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_read_unicode_content",
+      "lineno": 23,
+      "outcome": "passed",
+      "keywords": [
+        "test_read_unicode_content",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0001936250046128407,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.000265124996076338,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 4.3082996853627264e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_path_must_be_string",
+      "lineno": 31,
+      "outcome": "failed",
+      "keywords": [
+        "test_path_must_be_string",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020979200780857354,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00014562500291503966,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpwr7kfeiu/test_solution.py",
+          "lineno": 36,
+          "message": "Failed: DID NOT RAISE <class 'TypeError'>"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE <class 'TypeError'>"
+      },
+      "teardown": {
+        "duration": 4.949999856762588e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_missing_file_raises",
+      "lineno": 39,
+      "outcome": "failed",
+      "keywords": [
+        "test_missing_file_raises",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00021233300503809005,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.5791999329812825e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpwr7kfeiu/test_solution.py",
+          "lineno": 43,
+          "message": "Failed: DID NOT RAISE <class 'FileNotFoundError'>"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE <class 'FileNotFoundError'>"
+      },
+      "teardown": {
+        "duration": 3.829201159533113e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_directory_path_raises",
+      "lineno": 46,
+      "outcome": "failed",
+      "keywords": [
+        "test_directory_path_raises",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002016669895965606,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.950000195298344e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpwr7kfeiu/test_solution.py",
+          "lineno": 48,
+          "message": "Failed: DID NOT RAISE any of (<class 'IsADirectoryError'>, <class 'ValueError'>, <class 'OSError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'IsADirectoryError'>, <class 'ValueError'>, <class 'OSError'>)"
+      },
+      "teardown": {
+        "duration": 3.5375007428228855e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_invalid_utf8_raises",
+      "lineno": 51,
+      "outcome": "failed",
+      "keywords": [
+        "test_invalid_utf8_raises",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00019320800493005663,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00013129200669936836,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpwr7kfeiu/test_solution.py",
+          "lineno": 56,
+          "message": "Failed: DID NOT RAISE any of (<class 'UnicodeDecodeError'>, <class 'ValueError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'UnicodeDecodeError'>, <class 'ValueError'>)"
+      },
+      "teardown": {
+        "duration": 3.97080002585426e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_non_regular_file_symlink_behavior",
+      "lineno": 59,
+      "outcome": "passed",
+      "keywords": [
+        "test_non_regular_file_symlink_behavior",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020616700930986553,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0001694590027909726,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.700000524986535e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_allowed_extensions_accepts_valid_extension",
+      "lineno": 76,
+      "outcome": "skipped",
+      "keywords": [
+        "test_allowed_extensions_accepts_valid_extension",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002198330039391294,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00011208299838472158,
+        "outcome": "skipped",
+        "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpwr7kfeiu/test_solution.py', 85, 'Skipped: read_file does not support allowed_extensions')"
+      },
+      "teardown": {
+        "duration": 4.025000089313835e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_allowed_extensions_rejects_invalid_extension",
+      "lineno": 87,
+      "outcome": "skipped",
+      "keywords": [
+        "test_allowed_extensions_rejects_invalid_extension",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020891700114589185,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0001278749987250194,
+        "outcome": "skipped",
+        "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpwr7kfeiu/test_solution.py', 96, 'Skipped: read_file does not support allowed_extensions')"
+      },
+      "teardown": {
+        "duration": 3.9040998672135174e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_max_size_rejects_large_file",
+      "lineno": 98,
+      "outcome": "skipped",
+      "keywords": [
+        "test_max_size_rejects_large_file",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00022341699514072388,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00011591598740778863,
+        "outcome": "skipped",
+        "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpwr7kfeiu/test_solution.py', 107, 'Skipped: read_file does not support max_size')"
+      },
+      "teardown": {
+        "duration": 0.000197458008187823,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_base_dir_allows_file_inside_directory",
+      "lineno": 109,
+      "outcome": "skipped",
+      "keywords": [
+        "test_base_dir_allows_file_inside_directory",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00019758300913963467,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00013966701226308942,
+        "outcome": "skipped",
+        "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpwr7kfeiu/test_solution.py', 119, 'Skipped: read_file does not support base_dir')"
+      },
+      "teardown": {
+        "duration": 4.083399835508317e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_base_dir_blocks_path_traversal",
+      "lineno": 121,
+      "outcome": "skipped",
+      "keywords": [
+        "test_base_dir_blocks_path_traversal",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00021529100195039064,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00014358299085870385,
+        "outcome": "skipped",
+        "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpwr7kfeiu/test_solution.py', 132, 'Skipped: read_file does not support base_dir')"
+      },
+      "teardown": {
+        "duration": 3.879200085066259e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_base_dir_blocks_absolute_escape",
+      "lineno": 134,
+      "outcome": "skipped",
+      "keywords": [
+        "test_base_dir_blocks_absolute_escape",
+        "test_solution.py",
+        "tmpwr7kfeiu",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00021954200929030776,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00014266600192058831,
+        "outcome": "skipped",
+        "longrepr": "('/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpwr7kfeiu/test_solution.py', 145, 'Skipped: read_file does not support base_dir')"
+      },
+      "teardown": {
+        "duration": 6.233299791347235e-05,
+        "outcome": "passed"
+      }
+    }
+  ],
+  "functional_success": 0,
+  "correctness_status": "failed_tests",
+  "correctness_note": null,
+  "vuln_density": 0.0,
+  "vuln_count": 0,
+  "weighted_vuln_score": 0,
+  "cwe_categories": [],
+  "vuln_issues": [],
+  "loc": 23,
+  "secure_success": 0
+}

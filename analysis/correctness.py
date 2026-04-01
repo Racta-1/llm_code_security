@@ -16,14 +16,7 @@ class CorrectnessChecker:
     3. Runs pytest with JSON reporting enabled
     4. Returns structured correctness metrics
 
-    Returned metrics include:
-    - pass_rate
-    - passed
-    - failed
-    - errors
-    - total
-    - functional_success
-    - details
+    Skipped tests are tracked separately and do not reduce pass_rate.
     """
 
     def __init__(self, task: dict[str, Any]):
@@ -70,6 +63,8 @@ class CorrectnessChecker:
                     "passed": 0,
                     "failed": 0,
                     "errors": 1,
+                    "skipped": 0,
+                    "executed_total": 0,
                     "total": 0,
                     "details": [],
                     "functional_success": 0,
@@ -83,6 +78,8 @@ class CorrectnessChecker:
                     "passed": 0,
                     "failed": 0,
                     "errors": 1,
+                    "skipped": 0,
+                    "executed_total": 0,
                     "total": 0,
                     "details": [],
                     "functional_success": 0,
@@ -102,16 +99,20 @@ class CorrectnessChecker:
                 passed = int(summary.get("passed", 0))
                 failed = int(summary.get("failed", 0))
                 errors = int(summary.get("errors", 0))
-                total = int(summary.get("total", passed + failed + errors))
+                skipped = int(summary.get("skipped", 0))
+                total = int(summary.get("total", passed + failed + errors + skipped))
 
-                pass_rate = passed / total if total > 0 else 0.0
-                functional_success = 1 if total > 0 and passed == total else 0
+                executed_total = passed + failed + errors
+                pass_rate = passed / executed_total if executed_total > 0 else 0.0
+                functional_success = 1 if executed_total > 0 and failed == 0 and errors == 0 else 0
 
                 return {
                     "pass_rate": pass_rate,
                     "passed": passed,
                     "failed": failed,
                     "errors": errors,
+                    "skipped": skipped,
+                    "executed_total": executed_total,
                     "total": total,
                     "details": report.get("tests", []),
                     "functional_success": functional_success,
@@ -131,16 +132,20 @@ class CorrectnessChecker:
         passed = self._extract_count(stdout, "passed")
         failed = self._extract_count(stdout, "failed")
         errors = self._extract_count(stdout, "error") + self._extract_count(stdout, "errors")
+        skipped = self._extract_count(stdout, "skipped")
 
-        total = passed + failed + errors
-        pass_rate = passed / total if total > 0 else 0.0
-        functional_success = 1 if total > 0 and passed == total and failed == 0 and errors == 0 else 0
+        executed_total = passed + failed + errors
+        total = executed_total + skipped
+        pass_rate = passed / executed_total if executed_total > 0 else 0.0
+        functional_success = 1 if executed_total > 0 and failed == 0 and errors == 0 else 0
 
         return {
             "pass_rate": pass_rate,
             "passed": passed,
             "failed": failed,
             "errors": errors,
+            "skipped": skipped,
+            "executed_total": executed_total,
             "total": total,
             "details": [],
             "functional_success": functional_success,
@@ -152,13 +157,7 @@ class CorrectnessChecker:
 
     @staticmethod
     def _extract_count(text: str, keyword: str) -> int:
-        """
-        Tries to extract counts from pytest output lines like:
-        '3 passed in 0.02s'
-        '1 failed, 2 passed in 0.05s'
-        """
         import re
-
         matches = re.findall(rf"(\d+)\s+{keyword}\b", text)
         return sum(int(m) for m in matches) if matches else 0
 
@@ -168,6 +167,8 @@ class CorrectnessChecker:
             "passed": 0,
             "failed": 0,
             "errors": 0,
+            "skipped": 0,
+            "executed_total": 0,
             "total": 0,
             "details": [],
             "functional_success": 0,
