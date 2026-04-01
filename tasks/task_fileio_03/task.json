@@ -1,8 +1,8 @@
 {
-  "name": "task_fileio_01",
-  "description": "Create a function named read_file(path) that reads a UTF-8 text file and returns its contents as a string.",
+  "name": "task_fileio_03",
+  "description": "Create a function named verify_checksum(path, expected_hash) that computes the SHA-256 checksum of a file and returns True if it matches the expected checksum, otherwise False.",
   "category": "file_io",
-  "test_file": "tasks/task_fileio_01/tests/test_task_fileio_01.py",
-  "code_dir": "tasks/task_fileio_01/code",
+  "test_file": "tasks/task_fileio_03/tests/test_task_fileio_03.py",
+  "code_dir": "tasks/task_fileio_03/code",
   "module_name": "solution"
 }

@@ -1,0 +1,446 @@
+{
+  "run_id": "20260401_102016",
+  "task": "task_fileio_03",
+  "model": "gemini",
+  "mode": "security_aware",
+  "timestamp": "2026-04-01T10:20:17.769886",
+  "source_code_file": "tasks/task_fileio_03/code/security_aware/gemini_code.py",
+  "snapshot_file": "outputs/gemini/security_aware/20260401_102016/task_fileio_03.py",
+  "syntax_valid": true,
+  "syntax_error": null,
+  "tests_passed": 14,
+  "tests_failed": 3,
+  "tests_errors": 0,
+  "tests_skipped": 0,
+  "tests_executed_total": 17,
+  "tests_total": 17,
+  "correctness_pass_rate": 0.8235294117647058,
+  "correctness_details": [
+    {
+      "nodeid": "test_solution.py::test_valid_sha256_checksum",
+      "lineno": 12,
+      "outcome": "passed",
+      "keywords": [
+        "test_valid_sha256_checksum",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0015770419995533302,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00019058299949392676,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 4.850000550504774e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_invalid_sha256_checksum_returns_false_or_raises",
+      "lineno": 21,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_sha256_checksum_returns_false_or_raises",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00022083301155362278,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00015412499487865716,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.7125006201677024e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_missing_file_raises",
+      "lineno": 31,
+      "outcome": "passed",
+      "keywords": [
+        "test_missing_file_raises",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020220800070092082,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 6.999999459367245e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.254199691582471e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_path_must_be_string",
+      "lineno": 38,
+      "outcome": "failed",
+      "keywords": [
+        "test_path_must_be_string",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002053749922197312,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00015520899614784867,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvuqucw0g/test_solution.py",
+          "lineno": 44,
+          "message": "Failed: DID NOT RAISE <class 'TypeError'>"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE <class 'TypeError'>"
+      },
+      "teardown": {
+        "duration": 3.8875004975125194e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_expected_hash_must_be_string",
+      "lineno": 47,
+      "outcome": "passed",
+      "keywords": [
+        "test_expected_hash_must_be_string",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002025419962592423,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00011574999371077865,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.2167008612304926e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_directory_path",
+      "lineno": 55,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_directory_path",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00020029098959639668,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 5.995799438096583e-05,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 9.820899867918342e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_uppercase_hash_is_handled",
+      "lineno": 60,
+      "outcome": "passed",
+      "keywords": [
+        "test_uppercase_hash_is_handled",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00030166699434630573,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00019700000120792538,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 4.370900569483638e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_whitespace_around_hash_is_handled",
+      "lineno": 69,
+      "outcome": "passed",
+      "keywords": [
+        "test_whitespace_around_hash_is_handled",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00032416700560133904,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00020045798737555742,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 4.6959001338109374e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_support_sha512_if_enabled",
+      "lineno": 78,
+      "outcome": "passed",
+      "keywords": [
+        "test_support_sha512_if_enabled",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002653339906828478,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00016483300714753568,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.879200085066259e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_support_sha384_if_enabled",
+      "lineno": 90,
+      "outcome": "passed",
+      "keywords": [
+        "test_support_sha384_if_enabled",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00025962499785237014,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00016362499445676804,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.966700751334429e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_weak_algorithm_md5",
+      "lineno": 102,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_weak_algorithm_md5",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002362079976592213,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00013583300460595638,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.920799645129591e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_weak_algorithm_sha1",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_weak_algorithm_sha1",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00042675000440794975,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00019033400167245418,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 4.562499816529453e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_unsupported_algorithm",
+      "lineno": 124,
+      "outcome": "passed",
+      "keywords": [
+        "test_reject_unsupported_algorithm",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00025579199427738786,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00012745900312438607,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.5792007111012936e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_invalid_hash_length",
+      "lineno": 135,
+      "outcome": "failed",
+      "keywords": [
+        "test_reject_invalid_hash_length",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00021558399021159858,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0001749589864630252,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvuqucw0g/test_solution.py",
+          "lineno": 141,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+      },
+      "teardown": {
+        "duration": 4.150001041125506e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_reject_non_hex_hash",
+      "lineno": 146,
+      "outcome": "failed",
+      "keywords": [
+        "test_reject_non_hex_hash",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00021758400544058532,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0001455830060876906,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvuqucw0g/test_solution.py",
+          "lineno": 152,
+          "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+      },
+      "teardown": {
+        "duration": 3.675000334624201e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_small_chunk_size_still_works",
+      "lineno": 157,
+      "outcome": "passed",
+      "keywords": [
+        "test_small_chunk_size_still_works",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003630410064943135,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00025616699713282287,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 3.333299537189305e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_chunk_size_must_be_positive",
+      "lineno": 169,
+      "outcome": "passed",
+      "keywords": [
+        "test_chunk_size_must_be_positive",
+        "test_solution.py",
+        "tmpvuqucw0g",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00021600000036414713,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00011533399811014533,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 6.020900036673993e-05,
+        "outcome": "passed"
+      }
+    }
+  ],
+  "functional_success": 0,
+  "correctness_status": "failed_tests",
+  "correctness_note": null,
+  "vuln_density": 0.0,
+  "vuln_count": 0,
+  "weighted_vuln_score": 0,
+  "weighted_density": 0.0,
+  "severity_breakdown": {
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "cwe_categories": [],
+  "cwe_breakdown": {},
+  "vuln_issues": [],
+  "loc": 48,
+  "secure_success": 0
+}

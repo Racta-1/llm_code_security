@@ -17,6 +17,7 @@ from analysis.correctness import CorrectnessChecker
 from analysis.reporter import Reporter
 from analysis.static_analyzer import StaticAnalyzer
 from analysis.syntax_checker import SyntaxChecker
+from analysis.semgrep_analyzer import SemgrepAnalyzer
 
 
 MODELS = ["gpt", "claude", "gemini"]
@@ -111,29 +112,61 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
                 f"{'Yes' if correctness['functional_success'] else 'No'}"
             )
 
-            # 3. Static security analysis
-            analyzer = StaticAnalyzer()
-            vuln_report = analyzer.analyze(str(out_file))
+            # 3. Bandit analysis
+            bandit_analyzer = StaticAnalyzer()
+            bandit_report = bandit_analyzer.analyze(str(out_file))
 
-            weighted_vuln_score = vuln_report.get("weighted_vuln_score", 0)
-            cwe_categories = vuln_report.get("cwe_categories", [])
+            bandit_count = bandit_report.get("count", 0)
+            bandit_density = bandit_report.get("density", 0.0)
+            bandit_weighted = bandit_report.get("weighted_vuln_score", 0)
+            bandit_weighted_density = bandit_report.get("weighted_density", 0.0)
+            severity_breakdown = bandit_report.get("severity_breakdown", {})
+            bandit_cwe_categories = bandit_report.get("cwe_categories", [])
+            bandit_cwe_breakdown = bandit_report.get("cwe_breakdown", {})
+            bandit_issues = bandit_report.get("issues", [])
+            loc = bandit_report.get("loc", 0)
 
-            print(f"  ✓ Vuln density: {vuln_report['density']:.2f} issues/100 LOC")
-            print(f"  ✓ Vulnerability count: {vuln_report['count']}")
-            print(f"  ✓ Weighted vuln score: {weighted_vuln_score}")
+            print(f"  ✓ Bandit findings: {bandit_count}")
+            print(f"  ✓ Bandit density: {bandit_density:.2f} issues/100 LOC")
+            print(f"  ✓ Bandit weighted score: {bandit_weighted}")
             print(
-                f"  ✓ CWE categories: {', '.join(cwe_categories) if cwe_categories else 'None'}"
+                f"  ✓ Bandit CWE categories: "
+                f"{', '.join(bandit_cwe_categories) if bandit_cwe_categories else 'None'}"
             )
 
-            # 4. Combined success metric
+            # 4. Semgrep analysis
+            semgrep_analyzer = SemgrepAnalyzer()
+            semgrep_report = semgrep_analyzer.analyze(str(out_file))
+
+            semgrep_count = semgrep_report.get("count", 0)
+            semgrep_density = semgrep_report.get("density", 0.0)
+            semgrep_weighted = semgrep_report.get("weighted_vuln_score", 0)
+            semgrep_weighted_density = semgrep_report.get("weighted_density", 0.0)
+            semgrep_rule_ids = semgrep_report.get("rule_ids", [])
+            semgrep_issues = semgrep_report.get("issues", [])
+
+            print(f"  ✓ Semgrep findings: {semgrep_count}")
+            print(f"  ✓ Semgrep density: {semgrep_density:.2f} issues/100 LOC")
+            print(f"  ✓ Semgrep weighted score: {semgrep_weighted}")
+            print(
+                f"  ✓ Semgrep rules: "
+                f"{', '.join(semgrep_rule_ids) if semgrep_rule_ids else 'None'}"
+            )
+
+            # 5. Combined security metrics
+            combined_vuln_count = bandit_count + semgrep_count
+            combined_weighted_score = bandit_weighted + semgrep_weighted
+
             secure_success = 1 if (
                 correctness["functional_success"] == 1 and
-                vuln_report["count"] == 0
+                combined_vuln_count == 0
             ) else 0
 
+            print(f"  ✓ Combined security findings: {combined_vuln_count}")
+            print(f"  ✓ Combined weighted score: {combined_weighted_score}")
             print(f"  ✓ Secure success: {'Yes' if secure_success else 'No'}")
 
-            # 5. Aggregate result
+            # 6. Aggregate result
             result = {
                 "run_id": run_id,
                 "task": task_name,
@@ -152,22 +185,41 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
                 "tests_skipped": correctness.get("skipped", 0),
                 "tests_executed_total": correctness.get("executed_total", 0),
                 "tests_total": correctness["total"],
-
                 "correctness_pass_rate": correctness["pass_rate"],
                 "correctness_details": correctness["details"],
                 "functional_success": correctness["functional_success"],
                 "correctness_status": correctness.get("status"),
                 "correctness_note": correctness.get("note"),
 
-                "vuln_density": vuln_report["density"],
-                "vuln_count": vuln_report["count"],
-                "weighted_vuln_score": weighted_vuln_score,
-                "weighted_density": vuln_report.get("weighted_density", 0.0),
-                "severity_breakdown": vuln_report.get("severity_breakdown", {}),
-                "cwe_categories": cwe_categories,
-                "cwe_breakdown": vuln_report.get("cwe_breakdown", {}),
-                "vuln_issues": vuln_report["issues"],
-                "loc": vuln_report["loc"],
+                # Backward-compatible overall fields
+                "loc": loc,
+                "vuln_count": combined_vuln_count,
+                "weighted_vuln_score": combined_weighted_score,
+                "vuln_density": bandit_density + semgrep_density,
+                "weighted_density": bandit_weighted_density + semgrep_weighted_density,
+                "vuln_issues": bandit_issues + semgrep_issues,
+
+                # Bandit-specific fields
+                "bandit_vuln_count": bandit_count,
+                "bandit_vuln_density": bandit_density,
+                "bandit_weighted_vuln_score": bandit_weighted,
+                "bandit_weighted_density": bandit_weighted_density,
+                "severity_breakdown": severity_breakdown,
+                "bandit_cwe_categories": bandit_cwe_categories,
+                "bandit_cwe_breakdown": bandit_cwe_breakdown,
+                "bandit_vuln_issues": bandit_issues,
+
+                # Semgrep-specific fields
+                "semgrep_vuln_count": semgrep_count,
+                "semgrep_vuln_density": semgrep_density,
+                "semgrep_weighted_vuln_score": semgrep_weighted,
+                "semgrep_weighted_density": semgrep_weighted_density,
+                "semgrep_rule_ids": semgrep_rule_ids,
+                "semgrep_vuln_issues": semgrep_issues,
+
+                # Combined fields for convenience
+                "combined_vuln_count": combined_vuln_count,
+                "combined_weighted_score": combined_weighted_score,
 
                 "secure_success": secure_success,
             }
@@ -178,7 +230,7 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
             result_file = result_dir / f"{model_name}_{mode}_{task_name}.json"
             result_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
 
-    # 6. Generate summary report
+    # 7. Generate summary report
     reporter = Reporter(run_id, task_name)
     reporter.generate(all_results)
 

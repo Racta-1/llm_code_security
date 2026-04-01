@@ -10,6 +10,12 @@ class Reporter:
     - summary JSON
     - markdown report
     - terminal summary
+
+    Supports:
+    - correctness metrics
+    - Bandit findings
+    - Semgrep findings
+    - combined security metrics
     """
 
     def __init__(self, run_id: str, task_name: str):
@@ -37,8 +43,8 @@ class Reporter:
             "",
             "## Results",
             "",
-            "| Model | Mode | Syntax | Func Success | Test Pass | Exec Tests | Skipped | Findings | Weighted Score | Secure Success |",
-            "|-------|------|:------:|:------------:|:---------:|:----------:|:-------:|:--------:|:--------------:|:--------------:|",
+            "| Model | Mode | Syntax | Func Success | Test Pass | Exec Tests | Skipped | Bandit | Semgrep | Combined Score | Secure Success |",
+            "|-------|------|:------:|:------------:|:---------:|:----------:|:-------:|:------:|:-------:|:--------------:|:--------------:|",
         ]
 
         for r in results:
@@ -52,10 +58,17 @@ class Reporter:
             executed = r.get("tests_executed_total", 0)
             skipped = r.get("tests_skipped", 0)
 
+            bandit_count = r.get("bandit_vuln_count", r.get("vuln_count", 0))
+            semgrep_count = r.get("semgrep_vuln_count", 0)
+            combined_score = (
+                r.get("bandit_weighted_vuln_score", r.get("weighted_vuln_score", 0))
+                + r.get("semgrep_weighted_vuln_score", 0)
+            )
+
             lines.append(
                 f"| {r['model']} | {r['mode']} | {syntax_str} | {func_str} | "
                 f"{pass_rate_str} | {executed} | {skipped} | "
-                f"{r.get('vuln_count', 0)} | {r.get('weighted_vuln_score', 0)} | {secure_str} |"
+                f"{bandit_count} | {semgrep_count} | {combined_score} | {secure_str} |"
             )
 
         lines += ["", "## Detailed Breakdown", ""]
@@ -73,6 +86,25 @@ class Reporter:
             passed = r.get("tests_passed", 0)
             failed = r.get("tests_failed", 0)
             errors = r.get("tests_errors", 0)
+
+            bandit_count = r.get("bandit_vuln_count", r.get("vuln_count", 0))
+            bandit_density = r.get("bandit_vuln_density", r.get("vuln_density", 0.0))
+            bandit_weighted = r.get("bandit_weighted_vuln_score", r.get("weighted_vuln_score", 0))
+            bandit_weighted_density = r.get("bandit_weighted_density", r.get("weighted_density", 0.0))
+            bandit_issues = r.get("bandit_vuln_issues", r.get("vuln_issues", []))
+            bandit_cwe_categories = r.get("bandit_cwe_categories", r.get("cwe_categories", []))
+            bandit_cwe_breakdown = r.get("bandit_cwe_breakdown", r.get("cwe_breakdown", {}))
+            severity_breakdown = r.get("severity_breakdown", {})
+
+            semgrep_count = r.get("semgrep_vuln_count", 0)
+            semgrep_density = r.get("semgrep_vuln_density", 0.0)
+            semgrep_weighted = r.get("semgrep_weighted_vuln_score", 0)
+            semgrep_weighted_density = r.get("semgrep_weighted_density", 0.0)
+            semgrep_rule_ids = r.get("semgrep_rule_ids", [])
+            semgrep_issues = r.get("semgrep_vuln_issues", [])
+
+            combined_count = bandit_count + semgrep_count
+            combined_score = bandit_weighted + semgrep_weighted
 
             lines.append(f"### {r['model']} ({r['mode']})")
             lines.append("")
@@ -94,18 +126,18 @@ class Reporter:
                 lines.append(f"- **Correctness note:** {r['correctness_note']}")
 
             lines.append(f"- **LOC:** {r.get('loc', 0)}")
-            lines.append(f"- **Vulnerability count:** {r.get('vuln_count', 0)}")
-            lines.append(
-                f"- **Vulnerability density:** {r.get('vuln_density', 0.0):.2f}/100 LOC"
-            )
-            lines.append(
-                f"- **Weighted vulnerability score:** {r.get('weighted_vuln_score', 0)}"
-            )
-            lines.append(
-                f"- **Weighted density:** {r.get('weighted_density', 0.0):.2f}/100 LOC"
-            )
+            lines.append(f"- **Combined security findings:** {combined_count}")
+            lines.append(f"- **Combined weighted security score:** {combined_score}")
+            lines.append(f"- **Secure success:** {secure_str}")
+            lines.append("")
 
-            severity_breakdown = r.get("severity_breakdown", {})
+            lines.append("#### Bandit Summary")
+            lines.append("")
+            lines.append(f"- **Bandit findings:** {bandit_count}")
+            lines.append(f"- **Bandit density:** {bandit_density:.2f}/100 LOC")
+            lines.append(f"- **Bandit weighted score:** {bandit_weighted}")
+            lines.append(f"- **Bandit weighted density:** {bandit_weighted_density:.2f}/100 LOC")
+
             if severity_breakdown:
                 lines.append(
                     "- **Severity breakdown:** "
@@ -114,25 +146,20 @@ class Reporter:
                     f"LOW={severity_breakdown.get('LOW', 0)}"
                 )
 
-            cwe_categories = r.get("cwe_categories", [])
             lines.append(
-                f"- **CWE categories:** {', '.join(cwe_categories) if cwe_categories else 'None'}"
+                f"- **Bandit CWE categories:** {', '.join(bandit_cwe_categories) if bandit_cwe_categories else 'None'}"
             )
 
-            cwe_breakdown = r.get("cwe_breakdown", {})
-            if cwe_breakdown:
-                formatted = ", ".join(f"{k}={v}" for k, v in sorted(cwe_breakdown.items()))
-                lines.append(f"- **CWE breakdown:** {formatted}")
+            if bandit_cwe_breakdown:
+                formatted = ", ".join(f"{k}={v}" for k, v in sorted(bandit_cwe_breakdown.items()))
+                lines.append(f"- **Bandit CWE breakdown:** {formatted}")
 
-            lines.append(f"- **Secure success:** {secure_str}")
+            lines.append("")
+            lines.append("#### Bandit Findings")
             lines.append("")
 
-            vuln_issues = r.get("vuln_issues", [])
-            lines.append("#### Vulnerability Findings")
-            lines.append("")
-
-            if vuln_issues:
-                for issue in vuln_issues:
+            if bandit_issues:
+                for issue in bandit_issues:
                     lines.append(
                         f"- **[{issue.get('severity', 'LOW')}]** "
                         f"{issue.get('test_name', 'Unknown test')} "
@@ -141,7 +168,33 @@ class Reporter:
                         f"{issue.get('text', '')}"
                     )
             else:
-                lines.append("- No issues detected ✅")
+                lines.append("- No Bandit issues detected ✅")
+
+            lines.append("")
+            lines.append("#### Semgrep Summary")
+            lines.append("")
+            lines.append(f"- **Semgrep findings:** {semgrep_count}")
+            lines.append(f"- **Semgrep density:** {semgrep_density:.2f}/100 LOC")
+            lines.append(f"- **Semgrep weighted score:** {semgrep_weighted}")
+            lines.append(f"- **Semgrep weighted density:** {semgrep_weighted_density:.2f}/100 LOC")
+            lines.append(
+                f"- **Semgrep rules triggered:** {', '.join(semgrep_rule_ids) if semgrep_rule_ids else 'None'}"
+            )
+
+            lines.append("")
+            lines.append("#### Semgrep Findings")
+            lines.append("")
+
+            if semgrep_issues:
+                for issue in semgrep_issues:
+                    lines.append(
+                        f"- **[{issue.get('severity', 'INFO')}]** "
+                        f"{issue.get('rule_id', 'unknown')} "
+                        f"(line {issue.get('line', 0)}): "
+                        f"{issue.get('message', '')}"
+                    )
+            else:
+                lines.append("- No Semgrep issues detected ✅")
 
             lines.append("")
 
@@ -150,14 +203,14 @@ class Reporter:
         print(f"  📊 Markdown report: {path}")
 
     def _print_summary(self, results: list[dict[str, Any]]):
-        print(f"\n{'─' * 108}")
+        print(f"\n{'─' * 122}")
         print(f"  SUMMARY — {self.task_name}")
-        print(f"{'─' * 108}")
+        print(f"{'─' * 122}")
         print(
             f"  {'Model':<10} {'Mode':<16} {'Syntax':<8} {'Func OK':<10} "
-            f"{'Pass Rate':>10} {'Exec':>6} {'Skip':>6} {'Findings':>10} {'Wt.Score':>10} {'Secure':>10}"
+            f"{'Pass Rate':>10} {'Exec':>6} {'Skip':>6} {'Bandit':>8} {'Semgrep':>9} {'Comb.Score':>12} {'Secure':>10}"
         )
-        print(f"  {'─' * 104}")
+        print(f"  {'─' * 118}")
 
         for r in results:
             syntax_str = "Yes" if r.get("syntax_valid") else "No"
@@ -167,11 +220,18 @@ class Reporter:
             pass_rate = r.get("correctness_pass_rate")
             pass_rate_str = f"{pass_rate:.1%}" if pass_rate is not None else "N/A"
 
+            bandit_count = r.get("bandit_vuln_count", r.get("vuln_count", 0))
+            semgrep_count = r.get("semgrep_vuln_count", 0)
+            combined_score = (
+                r.get("bandit_weighted_vuln_score", r.get("weighted_vuln_score", 0))
+                + r.get("semgrep_weighted_vuln_score", 0)
+            )
+
             print(
                 f"  {r['model']:<10} {r['mode']:<16} {syntax_str:<8} {func_str:<10} "
                 f"{pass_rate_str:>10} {r.get('tests_executed_total', 0):>6} "
-                f"{r.get('tests_skipped', 0):>6} {r.get('vuln_count', 0):>10} "
-                f"{r.get('weighted_vuln_score', 0):>10} {secure_str:>10}"
+                f"{r.get('tests_skipped', 0):>6} {bandit_count:>8} "
+                f"{semgrep_count:>9} {combined_score:>12} {secure_str:>10}"
             )
 
-        print(f"{'─' * 108}")
+        print(f"{'─' * 122}")

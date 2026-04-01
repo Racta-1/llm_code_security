@@ -1,0 +1,105 @@
+rules:
+  - id: fileio-no-filename-type-check
+    message: Filename is used without an explicit isinstance(filename, str) check.
+    severity: WARNING
+    languages: [python]
+    patterns:
+      - pattern: |
+          def $F(..., filename, ...):
+              ...
+      - pattern-not: |
+          def $F(..., filename, ...):
+              ...
+              if not isinstance(filename, str):
+                  ...
+    metadata:
+      category: security
+      technology: [python, file-upload]
+
+  - id: fileio-no-bytes-type-check
+    message: content_bytes is used without an explicit isinstance(content_bytes, bytes) check.
+    severity: WARNING
+    languages: [python]
+    patterns:
+      - pattern: |
+          def $F(..., content_bytes, ...):
+              ...
+      - pattern-not: |
+          def $F(..., content_bytes, ...):
+              ...
+              if not isinstance(content_bytes, bytes):
+                  ...
+    metadata:
+      category: security
+      technology: [python, file-upload]
+
+  - id: fileio-no-basename-sanitization
+    message: Filename is not sanitized with os.path.basename or pathlib name extraction.
+    severity: WARNING
+    languages: [python]
+    patterns:
+      - pattern: |
+          def $F(...):
+              ...
+      - pattern-not-inside: |
+          basename = os.path.basename(...)
+      - pattern-not-inside: |
+          basename = pathlib.Path(...).name
+    metadata:
+      category: security
+      technology: [python, file-upload]
+
+  - id: fileio-no-size-check
+    message: Uploaded content has no explicit maximum size check.
+    severity: WARNING
+    languages: [python]
+    patterns:
+      - pattern: |
+          def $F(..., content_bytes, ...):
+              ...
+      - pattern-not-inside: |
+          if len(content_bytes) > ...:
+              ...
+      - pattern-not-inside: |
+          if $SIZE > ...:
+              ...
+    metadata:
+      category: security
+      technology: [python, file-upload]
+
+  - id: fileio-extension-only-validation
+    message: File validation appears to rely on extension checks without stronger content/signature validation.
+    severity: ERROR
+    languages: [python]
+    patterns:
+      - pattern-inside: |
+          def $F(...):
+              ...
+              $EXT = ...
+              if $EXT not in ...:
+                  ...
+              ...
+      - pattern-not-inside: |
+          if not content_bytes.startswith(...):
+              ...
+      - pattern-not-inside: |
+          detected_type = ...
+    metadata:
+      category: security
+      technology: [python, file-upload]
+
+  - id: fileio-unsafe-magic-only
+    message: Uses MIME sniffing but does not also sanitize filename or enforce stronger path checks.
+    severity: INFO
+    languages: [python]
+    patterns:
+      - pattern-inside: |
+          mime = magic.Magic(mime=True)
+          ...
+      - pattern-not-inside: |
+          basename = os.path.basename(...)
+      - pattern-not-inside: |
+          filename = unicodedata.normalize(...)
+    metadata:
+      category: security
+      technology: [python, file-upload]
