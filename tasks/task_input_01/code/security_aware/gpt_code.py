@@ -1,28 +1,25 @@
-import os
+import json
 
-def read_file(path):
-    """
-    Reads the full contents of a UTF-8 text file at the given path.
 
-    Args:
-        path (str): The file path to read.
-
-    Returns:
-        str: The full contents of the file.
-
-    Raises:
-        TypeError: If the path is not a string.
-        FileNotFoundError: If the file does not exist.
-        IOError: If the file cannot be read.
-    """
-    if not isinstance(path, str):
-        raise TypeError(f"Expected a string for path, got {type(path).__name__}")
-    
-    if not os.path.isfile(path):
-        raise FileNotFoundError(f"The file does not exist: {path}")
+def parse_user_json(input_text):
+    if not isinstance(input_text, str):
+        raise TypeError("input_text must be a string")
 
     try:
-        with open(path, "r", encoding="utf-8") as file:
-            return file.read()
-    except Exception as e:
-        raise IOError(f"Failed to read file {path}: {e}")
+        data = json.loads(input_text)
+    except json.JSONDecodeError as e:
+        raise ValueError("Invalid JSON format") from e
+
+    if not isinstance(data, dict):
+        raise ValueError("JSON must represent an object")
+
+    required_keys = {"username", "email", "age"}
+    missing = required_keys - data.keys()
+    if missing:
+        raise ValueError(f"Missing required keys: {', '.join(missing)}")
+
+    return {
+        "username": data["username"],
+        "email": data["email"],
+        "age": data["age"],
+    }
