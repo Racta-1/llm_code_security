@@ -1,6 +1,6 @@
 {
   "name": "task_auth_02",
-  "description": "Function to Log a user in with username and password",
+  "description": "Function to generate_session_token",
   "category": "Auth",
   "module_name": "solution",
   "test_file": "tasks/task_auth_02/tests/test_task_auth_02.py",
