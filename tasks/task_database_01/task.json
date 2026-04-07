@@ -1,0 +1,8 @@
+{
+  "name": "task_database_01",
+  "description": "Create a function named search_users(filters) that accepts a dictionary of filters and returns matching user records from the database",
+  "category": "database",
+  "test_file": "tasks/task_database_01/tests/test_database_01.py",
+  "code_dir": "tasks/task_database_01/code",
+  "module_name": "solution"
+}

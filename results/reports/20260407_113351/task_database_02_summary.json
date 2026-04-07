@@ -1,0 +1,1848 @@
+[
+  {
+    "run_id": "20260407_113351",
+    "task": "task_database_02",
+    "model": "gpt",
+    "mode": "baseline",
+    "timestamp": "2026-04-07T11:33:52.534925",
+    "source_code_file": "tasks/task_database_02/code/baseline/gpt_code.py",
+    "snapshot_file": "outputs/gpt/baseline/20260407_113351/task_database_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 6,
+    "tests_failed": 1,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 7,
+    "tests_total": 7,
+    "correctness_pass_rate": 0.8571428571428571,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_parameterised_query_used",
+        "lineno": 36,
+        "outcome": "passed",
+        "keywords": [
+          "test_parameterised_query_used",
+          "test_solution.py",
+          "tmpu59nzp3g",
+          ""
+        ],
+        "setup": {
+          "duration": 6.695900083286688e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011887499567819759,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.054099892731756e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_cannot_delete_another_users_record",
+        "lineno": 55,
+        "outcome": "failed",
+        "keywords": [
+          "test_cannot_delete_another_users_record",
+          "test_solution.py",
+          "tmpu59nzp3g",
+          ""
+        ],
+        "setup": {
+          "duration": 3.9749997085891664e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.6083998060785234e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmpu59nzp3g/solution.py",
+            "lineno": 30,
+            "message": "TypeError: expected str, bytes or os.PathLike object, not int"
+          },
+          "longrepr": "E   TypeError: expected str, bytes or os.PathLike object, not int"
+        },
+        "teardown": {
+          "duration": 4.17909977841191e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[' OR '1'='1]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[' OR '1'='1]",
+          "parametrize",
+          "pytestmark",
+          "' OR '1'='1",
+          "test_solution.py",
+          "tmpu59nzp3g",
+          ""
+        ],
+        "setup": {
+          "duration": 8.46659968374297e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.28749990533106e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.941600152757019e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[-1]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[-1]",
+          "parametrize",
+          "pytestmark",
+          "-1",
+          "test_solution.py",
+          "tmpu59nzp3g",
+          ""
+        ],
+        "setup": {
+          "duration": 6.81669989717193e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.929100057575852e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.3125000956933945e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[0]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[0]",
+          "parametrize",
+          "pytestmark",
+          "0",
+          "test_solution.py",
+          "tmpu59nzp3g",
+          ""
+        ],
+        "setup": {
+          "duration": 6.37500052107498e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.720900713233277e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.5541001125238836e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[None]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[None]",
+          "parametrize",
+          "pytestmark",
+          "None",
+          "test_solution.py",
+          "tmpu59nzp3g",
+          ""
+        ],
+        "setup": {
+          "duration": 6.224999378900975e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.6084005841985345e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.5416000173427165e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[abc]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[abc]",
+          "parametrize",
+          "pytestmark",
+          "abc",
+          "test_solution.py",
+          "tmpu59nzp3g",
+          ""
+        ],
+        "setup": {
+          "duration": 5.9374993725214154e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.5958000808022916e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.029100091429427e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 42,
+    "vuln_count": 2,
+    "weighted_vuln_score": 5,
+    "vuln_density": 4.761904761904762,
+    "weighted_density": 11.904761904761903,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-authorisation-check",
+        "severity": "ERROR",
+        "message": "delete_user does not verify the requesting user is authorised to delete the target record \u2014 vulnerable to IDOR.",
+        "line": 26,
+        "path": "outputs/gpt/baseline/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-284: Improper Access Control",
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-284",
+          "CWE-639"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 26,
+        "path": "outputs/gpt/baseline/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 2,
+    "semgrep_vuln_density": 4.761904761904762,
+    "semgrep_weighted_vuln_score": 5,
+    "semgrep_weighted_density": 11.904761904761903,
+    "semgrep_rule_ids": [
+      "rules.semgrep.delete-user-no-authorisation-check",
+      "rules.semgrep.delete-user-no-input-validation"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-authorisation-check",
+        "severity": "ERROR",
+        "message": "delete_user does not verify the requesting user is authorised to delete the target record \u2014 vulnerable to IDOR.",
+        "line": 26,
+        "path": "outputs/gpt/baseline/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-284: Improper Access Control",
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-284",
+          "CWE-639"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 26,
+        "path": "outputs/gpt/baseline/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 2,
+    "combined_weighted_score": 5,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260407_113351",
+    "task": "task_database_02",
+    "model": "claude",
+    "mode": "baseline",
+    "timestamp": "2026-04-07T11:33:53.763026",
+    "source_code_file": "tasks/task_database_02/code/baseline/claude_code.py",
+    "snapshot_file": "outputs/claude/baseline/20260407_113351/task_database_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 6,
+    "tests_failed": 1,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 7,
+    "tests_total": 7,
+    "correctness_pass_rate": 0.8571428571428571,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_parameterised_query_used",
+        "lineno": 36,
+        "outcome": "passed",
+        "keywords": [
+          "test_parameterised_query_used",
+          "test_solution.py",
+          "tmpj4mi452a",
+          ""
+        ],
+        "setup": {
+          "duration": 6.316600047284737e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001298749994020909,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.4749998778570443e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_cannot_delete_another_users_record",
+        "lineno": 55,
+        "outcome": "failed",
+        "keywords": [
+          "test_cannot_delete_another_users_record",
+          "test_solution.py",
+          "tmpj4mi452a",
+          ""
+        ],
+        "setup": {
+          "duration": 4.229099431540817e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.6832999689504504e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmpj4mi452a/solution.py",
+            "lineno": 33,
+            "message": "TypeError: expected str, bytes or os.PathLike object, not int"
+          },
+          "longrepr": "E   TypeError: expected str, bytes or os.PathLike object, not int"
+        },
+        "teardown": {
+          "duration": 4.120900121051818e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[' OR '1'='1]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[' OR '1'='1]",
+          "parametrize",
+          "pytestmark",
+          "' OR '1'='1",
+          "test_solution.py",
+          "tmpj4mi452a",
+          ""
+        ],
+        "setup": {
+          "duration": 8.675000572111458e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.4749998778570443e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.7957994209136814e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[-1]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[-1]",
+          "parametrize",
+          "pytestmark",
+          "-1",
+          "test_solution.py",
+          "tmpj4mi452a",
+          ""
+        ],
+        "setup": {
+          "duration": 7.041700155241415e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.850000211969018e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.1125000279862434e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[0]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[0]",
+          "parametrize",
+          "pytestmark",
+          "0",
+          "test_solution.py",
+          "tmpj4mi452a",
+          ""
+        ],
+        "setup": {
+          "duration": 6.220900104381144e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.716699575306848e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.5333003324922174e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[None]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[None]",
+          "parametrize",
+          "pytestmark",
+          "None",
+          "test_solution.py",
+          "tmpj4mi452a",
+          ""
+        ],
+        "setup": {
+          "duration": 6.0083002608735114e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.004200309282169e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.47500026691705e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[abc]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[abc]",
+          "parametrize",
+          "pytestmark",
+          "abc",
+          "test_solution.py",
+          "tmpj4mi452a",
+          ""
+        ],
+        "setup": {
+          "duration": 5.8707999414764345e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.650000144261867e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.887499769916758e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 137,
+    "vuln_count": 2,
+    "weighted_vuln_score": 5,
+    "vuln_density": 1.4598540145985401,
+    "weighted_density": 3.64963503649635,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-authorisation-check",
+        "severity": "ERROR",
+        "message": "delete_user does not verify the requesting user is authorised to delete the target record \u2014 vulnerable to IDOR.",
+        "line": 65,
+        "path": "outputs/claude/baseline/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-284: Improper Access Control",
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-284",
+          "CWE-639"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 65,
+        "path": "outputs/claude/baseline/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 2,
+    "semgrep_vuln_density": 1.4598540145985401,
+    "semgrep_weighted_vuln_score": 5,
+    "semgrep_weighted_density": 3.64963503649635,
+    "semgrep_rule_ids": [
+      "rules.semgrep.delete-user-no-authorisation-check",
+      "rules.semgrep.delete-user-no-input-validation"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-authorisation-check",
+        "severity": "ERROR",
+        "message": "delete_user does not verify the requesting user is authorised to delete the target record \u2014 vulnerable to IDOR.",
+        "line": 65,
+        "path": "outputs/claude/baseline/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-284: Improper Access Control",
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-284",
+          "CWE-639"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 65,
+        "path": "outputs/claude/baseline/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 2,
+    "combined_weighted_score": 5,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260407_113351",
+    "task": "task_database_02",
+    "model": "gemini",
+    "mode": "baseline",
+    "timestamp": "2026-04-07T11:33:55.018363",
+    "source_code_file": "tasks/task_database_02/code/baseline/gemini_code.py",
+    "snapshot_file": "outputs/gemini/baseline/20260407_113351/task_database_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 5,
+    "tests_failed": 2,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 7,
+    "tests_total": 7,
+    "correctness_pass_rate": 0.7142857142857143,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_parameterised_query_used",
+        "lineno": 36,
+        "outcome": "failed",
+        "keywords": [
+          "test_parameterised_query_used",
+          "test_solution.py",
+          "tmpp8i9uv80",
+          ""
+        ],
+        "setup": {
+          "duration": 6.954200216569006e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00018241700308863074,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmpp8i9uv80/test_solution.py",
+            "lineno": 46,
+            "message": "AssertionError: DELETE query built with an f-string \u2014 vulnerable to injection.\n  Use a parameterised placeholder: DELETE FROM users WHERE id = ?\nassert <re.Match object; span=(757, 804), match='f\"Successfully deleted user with ID: {user_id}\"'> is None"
+          },
+          "longrepr": "E   AssertionError: DELETE query built with an f-string \u2014 vulnerable to injection.\n      Use a parameterised placeholder: DELETE FROM users WHERE id = ?\n    assert <re.Match object; span=(757, 804), match='f\"Successfully deleted user with ID: {user_id}\"'> is None"
+        },
+        "teardown": {
+          "duration": 0.00017145799938589334,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_cannot_delete_another_users_record",
+        "lineno": 55,
+        "outcome": "failed",
+        "keywords": [
+          "test_cannot_delete_another_users_record",
+          "test_solution.py",
+          "tmpp8i9uv80",
+          ""
+        ],
+        "setup": {
+          "duration": 4.220799746690318e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.749999789055437e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmpp8i9uv80/test_solution.py",
+            "lineno": 65,
+            "message": "TypeError: delete_user() takes 1 positional argument but 2 were given"
+          },
+          "longrepr": "E   TypeError: delete_user() takes 1 positional argument but 2 were given"
+        },
+        "teardown": {
+          "duration": 3.9375001506414264e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[' OR '1'='1]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[' OR '1'='1]",
+          "parametrize",
+          "pytestmark",
+          "' OR '1'='1",
+          "test_solution.py",
+          "tmpp8i9uv80",
+          ""
+        ],
+        "setup": {
+          "duration": 8.90829978743568e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.074999742442742e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.7707999581471086e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[-1]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[-1]",
+          "parametrize",
+          "pytestmark",
+          "-1",
+          "test_solution.py",
+          "tmpp8i9uv80",
+          ""
+        ],
+        "setup": {
+          "duration": 6.61249941913411e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.929100057575852e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.962499613407999e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[0]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[0]",
+          "parametrize",
+          "pytestmark",
+          "0",
+          "test_solution.py",
+          "tmpp8i9uv80",
+          ""
+        ],
+        "setup": {
+          "duration": 6.333300552796572e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.7707999581471086e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.2582996936980635e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[None]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[None]",
+          "parametrize",
+          "pytestmark",
+          "None",
+          "test_solution.py",
+          "tmpp8i9uv80",
+          ""
+        ],
+        "setup": {
+          "duration": 5.812499875901267e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.7500001781154424e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.858299896819517e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[abc]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[abc]",
+          "parametrize",
+          "pytestmark",
+          "abc",
+          "test_solution.py",
+          "tmpp8i9uv80",
+          ""
+        ],
+        "setup": {
+          "duration": 6.725000275764614e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.0750004700385034e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.220799746690318e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 36,
+    "vuln_count": 1,
+    "weighted_vuln_score": 2,
+    "vuln_density": 2.7777777777777777,
+    "weighted_density": 5.555555555555555,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 4,
+        "path": "outputs/gemini/baseline/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 1,
+    "semgrep_vuln_density": 2.7777777777777777,
+    "semgrep_weighted_vuln_score": 2,
+    "semgrep_weighted_density": 5.555555555555555,
+    "semgrep_rule_ids": [
+      "rules.semgrep.delete-user-no-input-validation"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 4,
+        "path": "outputs/gemini/baseline/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 1,
+    "combined_weighted_score": 2,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260407_113351",
+    "task": "task_database_02",
+    "model": "gpt",
+    "mode": "security_aware",
+    "timestamp": "2026-04-07T11:33:56.234242",
+    "source_code_file": "tasks/task_database_02/code/security_aware/gpt_code.py",
+    "snapshot_file": "outputs/gpt/security_aware/20260407_113351/task_database_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 6,
+    "tests_failed": 1,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 7,
+    "tests_total": 7,
+    "correctness_pass_rate": 0.8571428571428571,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_parameterised_query_used",
+        "lineno": 36,
+        "outcome": "passed",
+        "keywords": [
+          "test_parameterised_query_used",
+          "test_solution.py",
+          "tmpdwedb37d",
+          ""
+        ],
+        "setup": {
+          "duration": 6.570899859070778e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.0001205829976242967,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.966700362274423e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_cannot_delete_another_users_record",
+        "lineno": 55,
+        "outcome": "failed",
+        "keywords": [
+          "test_cannot_delete_another_users_record",
+          "test_solution.py",
+          "tmpdwedb37d",
+          ""
+        ],
+        "setup": {
+          "duration": 4.120900121051818e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00024370799656026065,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmpdwedb37d/solution.py",
+            "lineno": 69,
+            "message": "sqlite3.OperationalError: no such table: users"
+          },
+          "longrepr": "E   sqlite3.OperationalError: no such table: users"
+        },
+        "teardown": {
+          "duration": 4.0833001548890024e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[' OR '1'='1]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[' OR '1'='1]",
+          "parametrize",
+          "pytestmark",
+          "' OR '1'='1",
+          "test_solution.py",
+          "tmpdwedb37d",
+          ""
+        ],
+        "setup": {
+          "duration": 8.683300256961957e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.187500599073246e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.570800228975713e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[-1]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[-1]",
+          "parametrize",
+          "pytestmark",
+          "-1",
+          "test_solution.py",
+          "tmpdwedb37d",
+          ""
+        ],
+        "setup": {
+          "duration": 7.375000132014975e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.683300358010456e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.995899896835908e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[0]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[0]",
+          "parametrize",
+          "pytestmark",
+          "0",
+          "test_solution.py",
+          "tmpdwedb37d",
+          ""
+        ],
+        "setup": {
+          "duration": 6.129199755378067e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.7208003050182015e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.533299604896456e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[None]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[None]",
+          "parametrize",
+          "pytestmark",
+          "None",
+          "test_solution.py",
+          "tmpdwedb37d",
+          ""
+        ],
+        "setup": {
+          "duration": 6.112499977461994e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.633400046965107e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.38749960064888e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[abc]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[abc]",
+          "parametrize",
+          "pytestmark",
+          "abc",
+          "test_solution.py",
+          "tmpdwedb37d",
+          ""
+        ],
+        "setup": {
+          "duration": 5.837500066263601e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.8958001823630184e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.6833000194747e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 82,
+    "vuln_count": 1,
+    "weighted_vuln_score": 2,
+    "vuln_density": 1.2195121951219512,
+    "weighted_density": 2.4390243902439024,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 73,
+        "path": "outputs/gpt/security_aware/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 1,
+    "semgrep_vuln_density": 1.2195121951219512,
+    "semgrep_weighted_vuln_score": 2,
+    "semgrep_weighted_density": 2.4390243902439024,
+    "semgrep_rule_ids": [
+      "rules.semgrep.delete-user-no-input-validation"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 73,
+        "path": "outputs/gpt/security_aware/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 1,
+    "combined_weighted_score": 2,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260407_113351",
+    "task": "task_database_02",
+    "model": "claude",
+    "mode": "security_aware",
+    "timestamp": "2026-04-07T11:33:57.454183",
+    "source_code_file": "tasks/task_database_02/code/security_aware/claude_code.py",
+    "snapshot_file": "outputs/claude/security_aware/20260407_113351/task_database_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 1,
+    "tests_failed": 6,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 7,
+    "tests_total": 7,
+    "correctness_pass_rate": 0.14285714285714285,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_parameterised_query_used",
+        "lineno": 36,
+        "outcome": "passed",
+        "keywords": [
+          "test_parameterised_query_used",
+          "test_solution.py",
+          "tmp4vhp0sbs",
+          ""
+        ],
+        "setup": {
+          "duration": 6.937499711057171e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012237500050105155,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.858300235355273e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_cannot_delete_another_users_record",
+        "lineno": 55,
+        "outcome": "failed",
+        "keywords": [
+          "test_cannot_delete_another_users_record",
+          "test_solution.py",
+          "tmp4vhp0sbs",
+          ""
+        ],
+        "setup": {
+          "duration": 3.862500307150185e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00034225000126753,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmp4vhp0sbs/solution.py",
+            "lineno": 121,
+            "message": "sqlite3.OperationalError: no such table: users"
+          },
+          "log": [
+            {
+              "name": "solution",
+              "msg": "Database error during delete_user(10, 99): no such table: users",
+              "args": null,
+              "levelname": "ERROR",
+              "levelno": 40,
+              "pathname": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmp4vhp0sbs/solution.py",
+              "filename": "solution.py",
+              "module": "solution",
+              "exc_info": null,
+              "exc_text": null,
+              "stack_info": null,
+              "lineno": 221,
+              "funcName": "delete_user",
+              "created": 1775579636.353066,
+              "msecs": 353.0,
+              "relativeCreated": 62.49,
+              "thread": 8292994880,
+              "threadName": "MainThread",
+              "processName": "MainProcess",
+              "process": 44438,
+              "taskName": null
+            }
+          ],
+          "longrepr": "E   sqlite3.OperationalError: no such table: users"
+        },
+        "teardown": {
+          "duration": 4.433400317793712e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[' OR '1'='1]",
+        "lineno": 80,
+        "outcome": "failed",
+        "keywords": [
+          "test_invalid_user_id_rejected[' OR '1'='1]",
+          "parametrize",
+          "pytestmark",
+          "' OR '1'='1",
+          "test_solution.py",
+          "tmp4vhp0sbs",
+          ""
+        ],
+        "setup": {
+          "duration": 8.841599628794938e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.233300180407241e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmp4vhp0sbs/solution.py",
+            "lineno": 141,
+            "message": "solution.InvalidUserIdError: 'user_id' must be a positive integer; got \"' OR '1'='1\" (str)."
+          },
+          "longrepr": "E   solution.InvalidUserIdError: 'user_id' must be a positive integer; got \"' OR '1'='1\" (str)."
+        },
+        "teardown": {
+          "duration": 4.525000258581713e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[-1]",
+        "lineno": 80,
+        "outcome": "failed",
+        "keywords": [
+          "test_invalid_user_id_rejected[-1]",
+          "parametrize",
+          "pytestmark",
+          "-1",
+          "test_solution.py",
+          "tmp4vhp0sbs",
+          ""
+        ],
+        "setup": {
+          "duration": 6.933300028322265e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.083300493424758e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmp4vhp0sbs/solution.py",
+            "lineno": 143,
+            "message": "solution.InvalidUserIdError: 'user_id' must be a positive integer; got -1 (int)."
+          },
+          "longrepr": "E   solution.InvalidUserIdError: 'user_id' must be a positive integer; got -1 (int)."
+        },
+        "teardown": {
+          "duration": 4.383299528853968e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[0]",
+        "lineno": 80,
+        "outcome": "failed",
+        "keywords": [
+          "test_invalid_user_id_rejected[0]",
+          "parametrize",
+          "pytestmark",
+          "0",
+          "test_solution.py",
+          "tmp4vhp0sbs",
+          ""
+        ],
+        "setup": {
+          "duration": 6.945800123503432e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.424999497132376e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmp4vhp0sbs/solution.py",
+            "lineno": 143,
+            "message": "solution.InvalidUserIdError: 'user_id' must be a positive integer; got 0 (int)."
+          },
+          "longrepr": "E   solution.InvalidUserIdError: 'user_id' must be a positive integer; got 0 (int)."
+        },
+        "teardown": {
+          "duration": 4.004200309282169e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[None]",
+        "lineno": 80,
+        "outcome": "failed",
+        "keywords": [
+          "test_invalid_user_id_rejected[None]",
+          "parametrize",
+          "pytestmark",
+          "None",
+          "test_solution.py",
+          "tmp4vhp0sbs",
+          ""
+        ],
+        "setup": {
+          "duration": 6.245799886528403e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.2583000322338194e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmp4vhp0sbs/solution.py",
+            "lineno": 141,
+            "message": "solution.InvalidUserIdError: 'user_id' must be a positive integer; got None (NoneType)."
+          },
+          "longrepr": "E   solution.InvalidUserIdError: 'user_id' must be a positive integer; got None (NoneType)."
+        },
+        "teardown": {
+          "duration": 4.291699588065967e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[abc]",
+        "lineno": 80,
+        "outcome": "failed",
+        "keywords": [
+          "test_invalid_user_id_rejected[abc]",
+          "parametrize",
+          "pytestmark",
+          "abc",
+          "test_solution.py",
+          "tmp4vhp0sbs",
+          ""
+        ],
+        "setup": {
+          "duration": 6.083300104364753e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.804100171895698e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/4d/jfl4_wz91bjg0q_3c11wynlr0000gn/T/tmp4vhp0sbs/solution.py",
+            "lineno": 141,
+            "message": "solution.InvalidUserIdError: 'user_id' must be a positive integer; got 'abc' (str)."
+          },
+          "longrepr": "E   solution.InvalidUserIdError: 'user_id' must be a positive integer; got 'abc' (str)."
+        },
+        "teardown": {
+          "duration": 4.108400025870651e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 223,
+    "vuln_count": 1,
+    "weighted_vuln_score": 2,
+    "vuln_density": 0.4484304932735426,
+    "weighted_density": 0.8968609865470852,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 149,
+        "path": "outputs/claude/security_aware/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 1,
+    "semgrep_vuln_density": 0.4484304932735426,
+    "semgrep_weighted_vuln_score": 2,
+    "semgrep_weighted_density": 0.8968609865470852,
+    "semgrep_rule_ids": [
+      "rules.semgrep.delete-user-no-input-validation"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 149,
+        "path": "outputs/claude/security_aware/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 1,
+    "combined_weighted_score": 2,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260407_113351",
+    "task": "task_database_02",
+    "model": "gemini",
+    "mode": "security_aware",
+    "timestamp": "2026-04-07T11:33:58.665776",
+    "source_code_file": "tasks/task_database_02/code/security_aware/gemini_code.py",
+    "snapshot_file": "outputs/gemini/security_aware/20260407_113351/task_database_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 7,
+    "tests_failed": 0,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 7,
+    "tests_total": 7,
+    "correctness_pass_rate": 1.0,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_parameterised_query_used",
+        "lineno": 36,
+        "outcome": "passed",
+        "keywords": [
+          "test_parameterised_query_used",
+          "test_solution.py",
+          "tmpim8epd9y",
+          ""
+        ],
+        "setup": {
+          "duration": 6.379200203809887e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012708300346275792,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.562499816529453e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_cannot_delete_another_users_record",
+        "lineno": 55,
+        "outcome": "passed",
+        "keywords": [
+          "test_cannot_delete_another_users_record",
+          "test_solution.py",
+          "tmpim8epd9y",
+          ""
+        ],
+        "setup": {
+          "duration": 3.954100247938186e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00024029199994402006,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.1541999962646514e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[' OR '1'='1]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[' OR '1'='1]",
+          "parametrize",
+          "pytestmark",
+          "' OR '1'='1",
+          "test_solution.py",
+          "tmpim8epd9y",
+          ""
+        ],
+        "setup": {
+          "duration": 8.554200030630454e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.8833997678011656e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.99169948650524e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[-1]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[-1]",
+          "parametrize",
+          "pytestmark",
+          "-1",
+          "test_solution.py",
+          "tmpim8epd9y",
+          ""
+        ],
+        "setup": {
+          "duration": 6.649999704677612e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.733299672603607e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.141699901083484e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[0]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[0]",
+          "parametrize",
+          "pytestmark",
+          "0",
+          "test_solution.py",
+          "tmpim8epd9y",
+          ""
+        ],
+        "setup": {
+          "duration": 6.150000263005495e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.608300175983459e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.333299537189305e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[None]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[None]",
+          "parametrize",
+          "pytestmark",
+          "None",
+          "test_solution.py",
+          "tmpim8epd9y",
+          ""
+        ],
+        "setup": {
+          "duration": 5.824999971082434e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 3.8291997043415904e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 3.333299537189305e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_invalid_user_id_rejected[abc]",
+        "lineno": 80,
+        "outcome": "passed",
+        "keywords": [
+          "test_invalid_user_id_rejected[abc]",
+          "parametrize",
+          "pytestmark",
+          "abc",
+          "test_solution.py",
+          "tmpim8epd9y",
+          ""
+        ],
+        "setup": {
+          "duration": 0.00020441700326045975,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.07920015277341e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.5291999413166195e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 1,
+    "correctness_status": "ok",
+    "correctness_note": null,
+    "loc": 45,
+    "vuln_count": 2,
+    "weighted_vuln_score": 5,
+    "vuln_density": 4.444444444444445,
+    "weighted_density": 11.11111111111111,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-authorisation-check",
+        "severity": "ERROR",
+        "message": "delete_user does not verify the requesting user is authorised to delete the target record \u2014 vulnerable to IDOR.",
+        "line": 3,
+        "path": "outputs/gemini/security_aware/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-284: Improper Access Control",
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-284",
+          "CWE-639"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 3,
+        "path": "outputs/gemini/security_aware/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 2,
+    "semgrep_vuln_density": 4.444444444444445,
+    "semgrep_weighted_vuln_score": 5,
+    "semgrep_weighted_density": 11.11111111111111,
+    "semgrep_rule_ids": [
+      "rules.semgrep.delete-user-no-authorisation-check",
+      "rules.semgrep.delete-user-no-input-validation"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.delete-user-no-authorisation-check",
+        "severity": "ERROR",
+        "message": "delete_user does not verify the requesting user is authorised to delete the target record \u2014 vulnerable to IDOR.",
+        "line": 3,
+        "path": "outputs/gemini/security_aware/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-284: Improper Access Control",
+            "CWE-639: Authorization Bypass Through User-Controlled Key"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-284",
+          "CWE-639"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.delete-user-no-input-validation",
+        "severity": "WARNING",
+        "message": "delete_user does not validate that user_id is a positive integer before querying.",
+        "line": 3,
+        "path": "outputs/gemini/security_aware/20260407_113351/task_database_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "database"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 2,
+    "combined_weighted_score": 5,
+    "secure_success": 0
+  }
+]

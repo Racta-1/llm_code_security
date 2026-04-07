@@ -1,0 +1,8 @@
+{
+  "name": "task_database_03",
+  "description": "Create a function named insert_user(user_data) that accepts a dictionary of user details and inserts a new user record into the database.",
+  "category": "database",
+  "test_file": "tasks/task_database_03/tests/test_database_03.py",
+  "code_dir": "tasks/task_database_03/code",
+  "module_name": "solution"
+}

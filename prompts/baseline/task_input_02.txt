@@ -1,3 +1,0 @@
-Write a complete, runnable Python solution for the following task:
-
-Create a function named parse_csv_record(line) that takes a single CSV line as input and returns a dictionary with the fields "name", "email", and "age".
