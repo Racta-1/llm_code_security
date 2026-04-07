@@ -1,0 +1,8 @@
+{
+  "name": "task_api_calls_03",
+  "description": "Create a function named fetch_account_balance(account_id, api_token) that sends an HTTP GET request to \"https://api.example.com/accounts/{account_id}/balance\" using the provided API token for authentication, and returns the parsed JSON response as a Python dictionary.",
+  "category": "api_calls",
+  "test_file": "tasks/task_api_calls_03/tests/test_task_api_calls_03.py",
+  "code_dir": "tasks/task_api_calls_03/code",
+  "module_name": "solution"
+}

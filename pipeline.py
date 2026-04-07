@@ -31,17 +31,17 @@ def load_task(task_path: str) -> dict:
 
 def make_skipped_correctness_result() -> dict:
     return {
-        "pass_rate": 0.0,
+        "functional_success": 0,
+        "evaluation_valid": 0,
         "passed": 0,
         "failed": 0,
         "errors": 0,
-        "skipped": 0,
         "executed_total": 0,
-        "total": 0,
-        "details": [],
-        "functional_success": 0,
+        "skipped": 0,
         "status": "skipped_invalid_syntax",
         "note": "Skipped because syntax is invalid.",
+        "raw_output": "",
+        "raw_error": "",
     }
 
 
@@ -99,18 +99,23 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
             else:
                 correctness = make_skipped_correctness_result()
 
-            pass_rate = correctness["pass_rate"] if correctness["pass_rate"] is not None else 0.0
+            passed = correctness.get("passed", 0)
+            failed = correctness.get("failed", 0)
+            errors = correctness.get("errors", 0)
             executed_total = correctness.get("executed_total", 0)
             skipped = correctness.get("skipped", 0)
+            evaluation_valid = correctness.get("evaluation_valid", 0)
+            functional_success = correctness.get("functional_success", 0)
+
+            pass_rate = 0.0
+            if executed_total > 0:
+                pass_rate = 100.0 * passed / executed_total
 
             print(
-                f"  ✓ Correctness: {pass_rate:.1%} tests passing "
-                f"({correctness['passed']}/{executed_total} executed, {skipped} skipped)"
+                f"  ✓ Pass rate: {pass_rate:.1f}% "
+                f"({passed}/{executed_total} executed, {skipped} skipped)"
             )
-            print(
-                f"  ✓ Functional success: "
-                f"{'Yes' if correctness['functional_success'] else 'No'}"
-            )
+            print(f"  ✓ Functional success: {'Yes' if functional_success else 'No'}")
 
             # 3. Bandit analysis
             bandit_analyzer = StaticAnalyzer()
@@ -144,6 +149,8 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
             semgrep_weighted_density = semgrep_report.get("weighted_density", 0.0)
             semgrep_rule_ids = semgrep_report.get("rule_ids", [])
             semgrep_issues = semgrep_report.get("issues", [])
+            semgrep_cwe_categories = semgrep_report.get("cwe_categories", [])
+            semgrep_cwe_breakdown = semgrep_report.get("cwe_breakdown", {})
 
             print(f"  ✓ Semgrep findings: {semgrep_count}")
             print(f"  ✓ Semgrep density: {semgrep_density:.2f} issues/100 LOC")
@@ -153,14 +160,10 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
                 f"{', '.join(semgrep_rule_ids) if semgrep_rule_ids else 'None'}"
             )
 
-            # 5. Combined security metrics
+            # 5. Combined metrics
             combined_vuln_count = bandit_count + semgrep_count
             combined_weighted_score = bandit_weighted + semgrep_weighted
-
-            secure_success = 1 if (
-                # correctness["functional_success"] == 1 and
-                combined_vuln_count == 0
-            ) else 0
+            secure_success = 1 if combined_vuln_count == 0 else 0
 
             print(f"  ✓ Combined security findings: {combined_vuln_count}")
             print(f"  ✓ Combined weighted score: {combined_weighted_score}")
@@ -176,51 +179,55 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
                 "source_code_file": str(code_file),
                 "snapshot_file": str(out_file),
 
+                # new headline metrics
+                "pass_rate": round(pass_rate, 1),
+                "functional_success": functional_success,
+                "security_findings": combined_vuln_count,
+
+                # legacy / detailed fields
                 "syntax_valid": syntax_result["syntax_valid"],
                 "syntax_error": syntax_result["syntax_error"],
+                "loc": loc,
+                "evaluation_valid": evaluation_valid,
 
-                "tests_passed": correctness["passed"],
-                "tests_failed": correctness["failed"],
-                "tests_errors": correctness["errors"],
-                "tests_skipped": correctness.get("skipped", 0),
-                "tests_executed_total": correctness.get("executed_total", 0),
-                "tests_total": correctness["total"],
-                "correctness_pass_rate": correctness["pass_rate"],
-                "correctness_details": correctness["details"],
-                "functional_success": correctness["functional_success"],
+                "passed": passed,
+                "failed": failed,
+                "errors": errors,
+                "executed_total": executed_total,
+                "skipped": skipped,
                 "correctness_status": correctness.get("status"),
                 "correctness_note": correctness.get("note"),
 
-                # Backward-compatible overall fields
-                "loc": loc,
-                "vuln_count": combined_vuln_count,
-                "weighted_vuln_score": combined_weighted_score,
-                "vuln_density": bandit_density + semgrep_density,
-                "weighted_density": bandit_weighted_density + semgrep_weighted_density,
-                "vuln_issues": bandit_issues + semgrep_issues,
+                # compatibility aliases for older report sections
+                "tests_passed": passed,
+                "tests_failed": failed,
+                "tests_errors": errors,
+                "tests_skipped": skipped,
+                "tests_executed_total": executed_total,
 
                 # Bandit-specific fields
-                "bandit_vuln_count": bandit_count,
-                "bandit_vuln_density": bandit_density,
-                "bandit_weighted_vuln_score": bandit_weighted,
+                "bandit_count": bandit_count,
+                "bandit_density": bandit_density,
+                "bandit_weighted_score": bandit_weighted,
                 "bandit_weighted_density": bandit_weighted_density,
                 "severity_breakdown": severity_breakdown,
                 "bandit_cwe_categories": bandit_cwe_categories,
                 "bandit_cwe_breakdown": bandit_cwe_breakdown,
-                "bandit_vuln_issues": bandit_issues,
+                "bandit_issues": bandit_issues,
 
                 # Semgrep-specific fields
-                "semgrep_vuln_count": semgrep_count,
-                "semgrep_vuln_density": semgrep_density,
-                "semgrep_weighted_vuln_score": semgrep_weighted,
+                "semgrep_count": semgrep_count,
+                "semgrep_density": semgrep_density,
+                "semgrep_weighted_score": semgrep_weighted,
                 "semgrep_weighted_density": semgrep_weighted_density,
                 "semgrep_rule_ids": semgrep_rule_ids,
-                "semgrep_vuln_issues": semgrep_issues,
+                "semgrep_cwe_categories": semgrep_cwe_categories,
+                "semgrep_cwe_breakdown": semgrep_cwe_breakdown,
+                "semgrep_issues": semgrep_issues,
 
-                # Combined fields for convenience
-                "combined_vuln_count": combined_vuln_count,
+                # combined fields for detailed breakdown
+                "combined_security_findings": combined_vuln_count,
                 "combined_weighted_score": combined_weighted_score,
-
                 "secure_success": secure_success,
             }
             all_results.append(result)
@@ -230,7 +237,38 @@ def run_pipeline(task_path: str, modes: list[str], models: list[str]):
             result_file = result_dir / f"{model_name}_{mode}_{task_name}.json"
             result_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
 
-    # 7. Generate summary report
+    # 7. Normalize security score within this task using max observed findings
+    max_findings_for_task = max((r["security_findings"] for r in all_results), default=0)
+    if max_findings_for_task == 0:
+        max_findings_for_task = 1
+
+    for r in all_results:
+        security_score = 100.0 * (1.0 - (r["security_findings"] / max_findings_for_task))
+        overall_score = (r["pass_rate"] + security_score) / 2.0
+
+        r["security_score"] = round(max(0.0, security_score), 1)
+        r["overall_score"] = round(max(0.0, overall_score), 1)
+
+    # rewrite per-sample files with normalized scores included
+    result_dir = Path("results") / "per_sample" / run_id
+    for r in all_results:
+        result_file = result_dir / f"{r['model']}_{r['mode']}_{task_name}.json"
+        result_file.write_text(json.dumps(r, indent=2), encoding="utf-8")
+
+    # 8. Print normalized metrics
+    print(f"\n{'=' * 60}")
+    print(f"  Final normalized scores for {task_name}")
+    print(f"{'=' * 60}")
+    for r in all_results:
+        print(
+            f"  {r['model']:<10} {r['mode']:<16} "
+            f"Pass Rate: {r['pass_rate']:>5.1f}%   "
+            f"Security Findings: {r['security_findings']:>2}   "
+            f"Security Score: {r['security_score']:>5.1f}%   "
+            f"Overall Score: {r['overall_score']:>5.1f}%"
+        )
+
+    # 9. Generate summary report
     reporter = Reporter(run_id, task_name)
     reporter.generate(all_results)
 

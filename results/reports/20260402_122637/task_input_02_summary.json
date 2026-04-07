@@ -1,0 +1,3926 @@
+[
+  {
+    "run_id": "20260402_122637",
+    "task": "task_api_calls_02",
+    "model": "gpt",
+    "mode": "baseline",
+    "timestamp": "2026-04-02T12:26:39.483289",
+    "source_code_file": "tasks/task_api_calls_02/code/baseline/gpt_code.py",
+    "snapshot_file": "outputs/gpt/baseline/20260402_122637/task_api_calls_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 12,
+    "tests_failed": 5,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 17,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.7058823529411765,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_csv_record_returns_dict",
+        "lineno": 4,
+        "outcome": "passed",
+        "keywords": [
+          "test_valid_csv_record_returns_dict",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 7.108399999999904e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.762499999998783e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.7667000000001236e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_trimmed",
+        "lineno": 12,
+        "outcome": "failed",
+        "keywords": [
+          "test_whitespace_trimmed",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.850000000000687e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00014495800000000059,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp3ipvhvk8/test_solution.py",
+            "lineno": 15,
+            "message": "AssertionError: assert '  Alice  ' == 'Alice'\n  \n  - Alice\n  +   Alice"
+          },
+          "longrepr": "E   AssertionError: assert '  Alice  ' == 'Alice'\n      \n      - Alice\n      +   Alice"
+        },
+        "teardown": {
+          "duration": 5.279099999999648e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_input_must_be_string",
+        "lineno": 19,
+        "outcome": "passed",
+        "keywords": [
+          "test_input_must_be_string",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.5875000000000776e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.220900000000751e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.458299999998694e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_empty_string_raises",
+        "lineno": 24,
+        "outcome": "passed",
+        "keywords": [
+          "test_empty_string_raises",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.154200000000552e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.4499999999985116e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.816699999998786e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_only_raises",
+        "lineno": 29,
+        "outcome": "passed",
+        "keywords": [
+          "test_whitespace_only_raises",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.3666999999997236e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.5957999999994845e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.09580000000076e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_few_fields_raises",
+        "lineno": 34,
+        "outcome": "passed",
+        "keywords": [
+          "test_too_few_fields_raises",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.391600000000495e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.2917000000013426e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.049999999999887e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_many_fields_raises",
+        "lineno": 39,
+        "outcome": "failed",
+        "keywords": [
+          "test_too_many_fields_raises",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.0708999999999884e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.791699999999067e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp3ipvhvk8/test_solution.py",
+            "lineno": 42,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'IndexError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'IndexError'>)"
+        },
+        "teardown": {
+          "duration": 5.004200000000014e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_name_raises",
+        "lineno": 44,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_name_raises",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.662499999999459e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 9.47079999999989e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp3ipvhvk8/test_solution.py",
+            "lineno": 47,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.3165999999983384e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_email_raises",
+        "lineno": 49,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_email_raises",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.125000000002044e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.4999999999999494e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp3ipvhvk8/test_solution.py",
+            "lineno": 52,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.8959000000015074e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_age_raises",
+        "lineno": 54,
+        "outcome": "passed",
+        "keywords": [
+          "test_missing_age_raises",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.5875000000000776e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.450000000001287e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.645799999999922e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_age_must_be_integer",
+        "lineno": 59,
+        "outcome": "passed",
+        "keywords": [
+          "test_age_must_be_integer",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.220900000001526e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.4125000000015966e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.304199999999314e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_negative_age_rejected",
+        "lineno": 64,
+        "outcome": "failed",
+        "keywords": [
+          "test_negative_age_rejected",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.09580000000076e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.683300000000613e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp3ipvhvk8/test_solution.py",
+            "lineno": 67,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.362499999999159e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_float_age_rejected",
+        "lineno": 69,
+        "outcome": "passed",
+        "keywords": [
+          "test_float_age_rejected",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.09580000000076e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.616699999999586e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.5749999999983304e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_quoted_field_supported_if_parser_uses_csv_module",
+        "lineno": 74,
+        "outcome": "passed",
+        "keywords": [
+          "test_quoted_field_supported_if_parser_uses_csv_module",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.200000000001425e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.824999999999968e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.025000000001944e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_comma_inside_quoted_name_supported_if_parser_is_robust",
+        "lineno": 81,
+        "outcome": "passed",
+        "keywords": [
+          "test_comma_inside_quoted_name_supported_if_parser_is_robust",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.045799999999322e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.758400000001717e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.29580000000096e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+        "lineno": 88,
+        "outcome": "passed",
+        "keywords": [
+          "test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.049999999999887e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.750000000000587e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.68339999999956e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_unicode_name_supported",
+        "lineno": 93,
+        "outcome": "passed",
+        "keywords": [
+          "test_unicode_name_supported",
+          "test_solution.py",
+          "tmp3ipvhvk8",
+          ""
+        ],
+        "setup": {
+          "duration": 4.241599999998957e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.7167000000014614e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.754200000001152e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 30,
+    "vuln_count": 4,
+    "weighted_vuln_score": 8,
+    "vuln_density": 13.333333333333334,
+    "weighted_density": 26.666666666666668,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/gpt/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/gpt/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/gpt/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/gpt/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 4,
+    "semgrep_vuln_density": 13.333333333333334,
+    "semgrep_weighted_vuln_score": 8,
+    "semgrep_weighted_density": 26.666666666666668,
+    "semgrep_rule_ids": [
+      "rules.semgrep.csv-no-age-cast-or-validation",
+      "rules.semgrep.csv-no-field-count-check",
+      "rules.semgrep.csv-no-malformed-input-handling",
+      "rules.semgrep.input-no-string-type-check"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/gpt/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/gpt/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/gpt/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/gpt/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 4,
+    "combined_weighted_score": 8,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260402_122637",
+    "task": "task_input_02",
+    "model": "claude",
+    "mode": "baseline",
+    "timestamp": "2026-04-02T12:26:40.577284",
+    "source_code_file": "tasks/task_input_02/code/baseline/claude_code.py",
+    "snapshot_file": "outputs/claude/baseline/20260402_122637/task_input_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 2,
+    "tests_failed": 15,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 17,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.11764705882352941,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_csv_record_returns_dict",
+        "lineno": 4,
+        "outcome": "failed",
+        "keywords": [
+          "test_valid_csv_record_returns_dict",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 6.737499999999452e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010454199999999914,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 10,
+            "message": "AssertionError: assert '30' == 30"
+          },
+          "longrepr": "E   AssertionError: assert '30' == 30"
+        },
+        "teardown": {
+          "duration": 5.8457999999997345e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_trimmed",
+        "lineno": 12,
+        "outcome": "failed",
+        "keywords": [
+          "test_whitespace_trimmed",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.662499999999459e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 8.01669999999921e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 17,
+            "message": "AssertionError: assert '30' == 30"
+          },
+          "longrepr": "E   AssertionError: assert '30' == 30"
+        },
+        "teardown": {
+          "duration": 4.683299999999613e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_input_must_be_string",
+        "lineno": 19,
+        "outcome": "passed",
+        "keywords": [
+          "test_input_must_be_string",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.3666999999997236e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.88749999999999e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.241600000000345e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_empty_string_raises",
+        "lineno": 24,
+        "outcome": "failed",
+        "keywords": [
+          "test_empty_string_raises",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.250000000000087e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.991700000000655e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/solution.py",
+            "lineno": 6,
+            "message": "StopIteration"
+          },
+          "longrepr": "E   StopIteration"
+        },
+        "teardown": {
+          "duration": 0.00010324999999999918,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_only_raises",
+        "lineno": 29,
+        "outcome": "failed",
+        "keywords": [
+          "test_whitespace_only_raises",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.500000000000337e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.8292000000001454e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/solution.py",
+            "lineno": 9,
+            "message": "IndexError: list index out of range"
+          },
+          "longrepr": "E   IndexError: list index out of range"
+        },
+        "teardown": {
+          "duration": 4.458400000000029e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_few_fields_raises",
+        "lineno": 34,
+        "outcome": "passed",
+        "keywords": [
+          "test_too_few_fields_raises",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.520800000000491e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.541699999998817e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.1709000000000884e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_many_fields_raises",
+        "lineno": 39,
+        "outcome": "failed",
+        "keywords": [
+          "test_too_many_fields_raises",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.183400000000448e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.79590000000102e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 42,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'IndexError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'IndexError'>)"
+        },
+        "teardown": {
+          "duration": 5.075000000000218e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_name_raises",
+        "lineno": 44,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_name_raises",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.400000000000237e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.595800000000872e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 47,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.350000000000187e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_email_raises",
+        "lineno": 49,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_email_raises",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.133299999999063e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.425000000000568e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 52,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.379200000000083e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_age_raises",
+        "lineno": 54,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_age_raises",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 9.0332999999998e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.791699999999067e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 57,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.970899999999501e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_age_must_be_integer",
+        "lineno": 59,
+        "outcome": "failed",
+        "keywords": [
+          "test_age_must_be_integer",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.324999999999468e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.462499999998871e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 62,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.395799999999672e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_negative_age_rejected",
+        "lineno": 64,
+        "outcome": "failed",
+        "keywords": [
+          "test_negative_age_rejected",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.191599999998907e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.404200000000414e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 67,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.350000000000187e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_float_age_rejected",
+        "lineno": 69,
+        "outcome": "failed",
+        "keywords": [
+          "test_float_age_rejected",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.29580000000096e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.362500000000159e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 72,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.320800000000291e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_quoted_field_supported_if_parser_uses_csv_module",
+        "lineno": 74,
+        "outcome": "failed",
+        "keywords": [
+          "test_quoted_field_supported_if_parser_uses_csv_module",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.320800000000291e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 7.641599999999582e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 79,
+            "message": "AssertionError: assert '30' == 30"
+          },
+          "longrepr": "E   AssertionError: assert '30' == 30"
+        },
+        "teardown": {
+          "duration": 4.825000000001356e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_comma_inside_quoted_name_supported_if_parser_is_robust",
+        "lineno": 81,
+        "outcome": "failed",
+        "keywords": [
+          "test_comma_inside_quoted_name_supported_if_parser_is_robust",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.13749999999824e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012224999999999042,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 86,
+            "message": "AssertionError: assert '30' == 30"
+          },
+          "longrepr": "E   AssertionError: assert '30' == 30"
+        },
+        "teardown": {
+          "duration": 4.941699999999605e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+        "lineno": 88,
+        "outcome": "failed",
+        "keywords": [
+          "test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.291600000000395e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 7.133300000000675e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 91,
+            "message": "AssertionError: assert '30' == 30"
+          },
+          "longrepr": "E   AssertionError: assert '30' == 30"
+        },
+        "teardown": {
+          "duration": 4.362500000001934e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_unicode_name_supported",
+        "lineno": 93,
+        "outcome": "failed",
+        "keywords": [
+          "test_unicode_name_supported",
+          "test_solution.py",
+          "tmpruu8rain",
+          ""
+        ],
+        "setup": {
+          "duration": 4.1458999999993695e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 7.154200000000777e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpruu8rain/test_solution.py",
+            "lineno": 98,
+            "message": "AssertionError: assert '28' == 28"
+          },
+          "longrepr": "E   AssertionError: assert '28' == 28"
+        },
+        "teardown": {
+          "duration": 4.2583000000012694e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 14,
+    "vuln_count": 4,
+    "weighted_vuln_score": 8,
+    "vuln_density": 28.57142857142857,
+    "weighted_density": 57.14285714285714,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/claude/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/claude/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/claude/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/claude/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 4,
+    "semgrep_vuln_density": 28.57142857142857,
+    "semgrep_weighted_vuln_score": 8,
+    "semgrep_weighted_density": 57.14285714285714,
+    "semgrep_rule_ids": [
+      "rules.semgrep.csv-no-age-cast-or-validation",
+      "rules.semgrep.csv-no-field-count-check",
+      "rules.semgrep.csv-no-malformed-input-handling",
+      "rules.semgrep.input-no-string-type-check"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/claude/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/claude/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/claude/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/claude/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 4,
+    "combined_weighted_score": 8,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260402_122637",
+    "task": "task_input_02",
+    "model": "gemini",
+    "mode": "baseline",
+    "timestamp": "2026-04-02T12:26:41.686610",
+    "source_code_file": "tasks/task_input_02/code/baseline/gemini_code.py",
+    "snapshot_file": "outputs/gemini/baseline/20260402_122637/task_input_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 1,
+    "tests_failed": 16,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 17,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.058823529411764705,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_csv_record_returns_dict",
+        "lineno": 4,
+        "outcome": "failed",
+        "keywords": [
+          "test_valid_csv_record_returns_dict",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 6.804099999999091e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011429200000000195,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 10,
+            "message": "AssertionError: assert '30' == 30"
+          },
+          "longrepr": "E   AssertionError: assert '30' == 30"
+        },
+        "teardown": {
+          "duration": 5.98750000000009e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_trimmed",
+        "lineno": 12,
+        "outcome": "failed",
+        "keywords": [
+          "test_whitespace_trimmed",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 5.125000000000268e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012374999999999192,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 15,
+            "message": "AssertionError: assert '  Alice  ' == 'Alice'\n  \n  - Alice\n  +   Alice"
+          },
+          "longrepr": "E   AssertionError: assert '  Alice  ' == 'Alice'\n      \n      - Alice\n      +   Alice"
+        },
+        "teardown": {
+          "duration": 5.525000000000668e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_input_must_be_string",
+        "lineno": 19,
+        "outcome": "passed",
+        "keywords": [
+          "test_input_must_be_string",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.650000000000487e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.383399999999873e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.195900000000807e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_empty_string_raises",
+        "lineno": 24,
+        "outcome": "failed",
+        "keywords": [
+          "test_empty_string_raises",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.304099999999367e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.13750000000024e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 27,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.7875000000002776e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_only_raises",
+        "lineno": 29,
+        "outcome": "failed",
+        "keywords": [
+          "test_whitespace_only_raises",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.420800000000391e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.20000000000065e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 32,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.5166999999998736e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_few_fields_raises",
+        "lineno": 34,
+        "outcome": "failed",
+        "keywords": [
+          "test_too_few_fields_raises",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.2917000000003425e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.9541999999995765e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 37,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'IndexError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'IndexError'>)"
+        },
+        "teardown": {
+          "duration": 4.474999999999618e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_many_fields_raises",
+        "lineno": 39,
+        "outcome": "failed",
+        "keywords": [
+          "test_too_many_fields_raises",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.2458999999994695e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.012500000000809e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 42,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'IndexError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'IndexError'>)"
+        },
+        "teardown": {
+          "duration": 4.670899999999201e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_name_raises",
+        "lineno": 44,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_name_raises",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.3125000000004965e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.6749999999994305e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 47,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.400000000000237e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_email_raises",
+        "lineno": 49,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_email_raises",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.2209000000001384e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00010629199999999395,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 52,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.479100000000236e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_age_raises",
+        "lineno": 54,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_age_raises",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.708400000000279e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.895800000000785e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 57,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.6583000000002817e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_age_must_be_integer",
+        "lineno": 59,
+        "outcome": "failed",
+        "keywords": [
+          "test_age_must_be_integer",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.4417000000004925e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.641700000000305e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 62,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 5.445899999999282e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_negative_age_rejected",
+        "lineno": 64,
+        "outcome": "failed",
+        "keywords": [
+          "test_negative_age_rejected",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.908399999999091e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.483300000000025e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 67,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.424999999999568e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_float_age_rejected",
+        "lineno": 69,
+        "outcome": "failed",
+        "keywords": [
+          "test_float_age_rejected",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.175000000000706e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.658299999999894e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 72,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.583299999999513e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_quoted_field_supported_if_parser_uses_csv_module",
+        "lineno": 74,
+        "outcome": "failed",
+        "keywords": [
+          "test_quoted_field_supported_if_parser_uses_csv_module",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.299999999998749e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00012358399999999603,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 79,
+            "message": "AssertionError: assert '30' == 30"
+          },
+          "longrepr": "E   AssertionError: assert '30' == 30"
+        },
+        "teardown": {
+          "duration": 4.5375000000000276e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_comma_inside_quoted_name_supported_if_parser_is_robust",
+        "lineno": 81,
+        "outcome": "failed",
+        "keywords": [
+          "test_comma_inside_quoted_name_supported_if_parser_is_robust",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.3833000000007005e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 7.441599999999382e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 86,
+            "message": "AssertionError: assert '30' == 30"
+          },
+          "longrepr": "E   AssertionError: assert '30' == 30"
+        },
+        "teardown": {
+          "duration": 4.412499999999209e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+        "lineno": 88,
+        "outcome": "failed",
+        "keywords": [
+          "test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.1041000000005545e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 7.250000000000312e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 91,
+            "message": "AssertionError: assert ' 30 ' == 30"
+          },
+          "longrepr": "E   AssertionError: assert ' 30 ' == 30"
+        },
+        "teardown": {
+          "duration": 4.3833000000007005e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_unicode_name_supported",
+        "lineno": 93,
+        "outcome": "failed",
+        "keywords": [
+          "test_unicode_name_supported",
+          "test_solution.py",
+          "tmp8yrrfxrk",
+          ""
+        ],
+        "setup": {
+          "duration": 4.1041000000005545e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 7.229200000000158e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp8yrrfxrk/test_solution.py",
+            "lineno": 98,
+            "message": "AssertionError: assert '28' == 28"
+          },
+          "longrepr": "E   AssertionError: assert '28' == 28"
+        },
+        "teardown": {
+          "duration": 4.579200000000283e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 21,
+    "vuln_count": 4,
+    "weighted_vuln_score": 8,
+    "vuln_density": 19.047619047619047,
+    "weighted_density": 38.095238095238095,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/gemini/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/gemini/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/gemini/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/gemini/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 4,
+    "semgrep_vuln_density": 19.047619047619047,
+    "semgrep_weighted_vuln_score": 8,
+    "semgrep_weighted_density": 38.095238095238095,
+    "semgrep_rule_ids": [
+      "rules.semgrep.csv-no-age-cast-or-validation",
+      "rules.semgrep.csv-no-field-count-check",
+      "rules.semgrep.csv-no-malformed-input-handling",
+      "rules.semgrep.input-no-string-type-check"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/gemini/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/gemini/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/gemini/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/gemini/baseline/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 4,
+    "combined_weighted_score": 8,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260402_122637",
+    "task": "task_input_02",
+    "model": "gpt",
+    "mode": "security_aware",
+    "timestamp": "2026-04-02T12:26:42.800002",
+    "source_code_file": "tasks/task_input_02/code/security_aware/gpt_code.py",
+    "snapshot_file": "outputs/gpt/security_aware/20260402_122637/task_input_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 14,
+    "tests_failed": 3,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 17,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.8235294117647058,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_csv_record_returns_dict",
+        "lineno": 4,
+        "outcome": "passed",
+        "keywords": [
+          "test_valid_csv_record_returns_dict",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 6.854100000000529e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.366600000000389e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.604100000000667e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_trimmed",
+        "lineno": 12,
+        "outcome": "passed",
+        "keywords": [
+          "test_whitespace_trimmed",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.7375000000002276e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.333300000000263e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.100000000000937e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_input_must_be_string",
+        "lineno": 19,
+        "outcome": "passed",
+        "keywords": [
+          "test_input_must_be_string",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.3125000000004965e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.258400000000441e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.104100000000167e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_empty_string_raises",
+        "lineno": 24,
+        "outcome": "passed",
+        "keywords": [
+          "test_empty_string_raises",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.254200000000652e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.483300000000413e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.3749999999991305e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_only_raises",
+        "lineno": 29,
+        "outcome": "passed",
+        "keywords": [
+          "test_whitespace_only_raises",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.6333000000009505e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.354100000000417e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.7665999999987885e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_few_fields_raises",
+        "lineno": 34,
+        "outcome": "passed",
+        "keywords": [
+          "test_too_few_fields_raises",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.654199999999664e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.9500000000003994e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.108399999999291e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_many_fields_raises",
+        "lineno": 39,
+        "outcome": "passed",
+        "keywords": [
+          "test_too_many_fields_raises",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.6583000000002817e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.9000000000003494e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.208300000000832e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_name_raises",
+        "lineno": 44,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_name_raises",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.795800000000072e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.94169999999883e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpu97wpy6e/test_solution.py",
+            "lineno": 47,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 5.087500000000578e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_email_raises",
+        "lineno": 49,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_email_raises",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.812499999999609e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.462499999999871e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpu97wpy6e/test_solution.py",
+            "lineno": 52,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.979100000000736e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_age_raises",
+        "lineno": 54,
+        "outcome": "passed",
+        "keywords": [
+          "test_missing_age_raises",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 9.562500000000196e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.145800000000035e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.08339999999996e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_age_must_be_integer",
+        "lineno": 59,
+        "outcome": "passed",
+        "keywords": [
+          "test_age_must_be_integer",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.895800000000172e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.212500000001009e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.958299999999194e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_negative_age_rejected",
+        "lineno": 64,
+        "outcome": "failed",
+        "keywords": [
+          "test_negative_age_rejected",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.683299999999613e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.333299999999875e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpu97wpy6e/test_solution.py",
+            "lineno": 67,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 5.179199999999495e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_float_age_rejected",
+        "lineno": 69,
+        "outcome": "passed",
+        "keywords": [
+          "test_float_age_rejected",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.7875000000002776e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.20000000000065e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.095899999998932e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_quoted_field_supported_if_parser_uses_csv_module",
+        "lineno": 74,
+        "outcome": "passed",
+        "keywords": [
+          "test_quoted_field_supported_if_parser_uses_csv_module",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.854199999999864e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.88749999999999e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.679099999999048e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_comma_inside_quoted_name_supported_if_parser_is_robust",
+        "lineno": 81,
+        "outcome": "passed",
+        "keywords": [
+          "test_comma_inside_quoted_name_supported_if_parser_is_robust",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.8959000000015074e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.6416000000003574e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.087500000000578e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+        "lineno": 88,
+        "outcome": "passed",
+        "keywords": [
+          "test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.724999999999868e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.73749999999984e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.5957999999984844e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_unicode_name_supported",
+        "lineno": 93,
+        "outcome": "passed",
+        "keywords": [
+          "test_unicode_name_supported",
+          "test_solution.py",
+          "tmpu97wpy6e",
+          ""
+        ],
+        "setup": {
+          "duration": 4.73749999999884e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.516699999999486e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.6541999999982764e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 33,
+    "vuln_count": 4,
+    "weighted_vuln_score": 8,
+    "vuln_density": 12.121212121212121,
+    "weighted_density": 24.242424242424242,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/gpt/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/gpt/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/gpt/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/gpt/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 4,
+    "semgrep_vuln_density": 12.121212121212121,
+    "semgrep_weighted_vuln_score": 8,
+    "semgrep_weighted_density": 24.242424242424242,
+    "semgrep_rule_ids": [
+      "rules.semgrep.csv-no-age-cast-or-validation",
+      "rules.semgrep.csv-no-field-count-check",
+      "rules.semgrep.csv-no-malformed-input-handling",
+      "rules.semgrep.input-no-string-type-check"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/gpt/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/gpt/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/gpt/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/gpt/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 4,
+    "combined_weighted_score": 8,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260402_122637",
+    "task": "task_input_02",
+    "model": "claude",
+    "mode": "security_aware",
+    "timestamp": "2026-04-02T12:26:43.888216",
+    "source_code_file": "tasks/task_input_02/code/security_aware/claude_code.py",
+    "snapshot_file": "outputs/claude/security_aware/20260402_122637/task_input_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 14,
+    "tests_failed": 3,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 17,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.8235294117647058,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_csv_record_returns_dict",
+        "lineno": 4,
+        "outcome": "passed",
+        "keywords": [
+          "test_valid_csv_record_returns_dict",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 6.520799999999716e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 9.779199999999932e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.770799999999353e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_trimmed",
+        "lineno": 12,
+        "outcome": "passed",
+        "keywords": [
+          "test_whitespace_trimmed",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.8667000000002236e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.2999999999997494e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.1874999999996776e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_input_must_be_string",
+        "lineno": 19,
+        "outcome": "passed",
+        "keywords": [
+          "test_input_must_be_string",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.254200000000652e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.166600000000189e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.2583000000012694e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_empty_string_raises",
+        "lineno": 24,
+        "outcome": "passed",
+        "keywords": [
+          "test_empty_string_raises",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.345799999999622e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.629200000001333e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.3209000000002384e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_only_raises",
+        "lineno": 29,
+        "outcome": "passed",
+        "keywords": [
+          "test_whitespace_only_raises",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.149999999999987e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.325000000000468e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.345799999999622e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_few_fields_raises",
+        "lineno": 34,
+        "outcome": "passed",
+        "keywords": [
+          "test_too_few_fields_raises",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.2082999999998316e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.275000000000418e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.0582999999996816e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_many_fields_raises",
+        "lineno": 39,
+        "outcome": "passed",
+        "keywords": [
+          "test_too_many_fields_raises",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.2582999999998816e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.520899999998663e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.270800000000241e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_name_raises",
+        "lineno": 44,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_name_raises",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.5458999999997696e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.37500000000013e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp_8exyxvy/test_solution.py",
+            "lineno": 47,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.466599999999876e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_email_raises",
+        "lineno": 49,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_email_raises",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.866600000000276e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.279100000000648e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp_8exyxvy/test_solution.py",
+            "lineno": 52,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.412499999999209e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_age_raises",
+        "lineno": 54,
+        "outcome": "passed",
+        "keywords": [
+          "test_missing_age_raises",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 8.645800000001147e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.7500000000001994e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.095900000000707e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_age_must_be_integer",
+        "lineno": 59,
+        "outcome": "passed",
+        "keywords": [
+          "test_age_must_be_integer",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.125000000000656e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.366700000000724e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.0374999999995276e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_negative_age_rejected",
+        "lineno": 64,
+        "outcome": "failed",
+        "keywords": [
+          "test_negative_age_rejected",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.079200000001171e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.4541999999990765e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmp_8exyxvy/test_solution.py",
+            "lineno": 67,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 4.320800000000291e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_float_age_rejected",
+        "lineno": 69,
+        "outcome": "passed",
+        "keywords": [
+          "test_float_age_rejected",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.2791000000000357e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.758299999999994e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.099999999999937e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_quoted_field_supported_if_parser_uses_csv_module",
+        "lineno": 74,
+        "outcome": "passed",
+        "keywords": [
+          "test_quoted_field_supported_if_parser_uses_csv_module",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.3209000000002384e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.858300000000482e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.224999999999368e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_comma_inside_quoted_name_supported_if_parser_is_robust",
+        "lineno": 81,
+        "outcome": "passed",
+        "keywords": [
+          "test_comma_inside_quoted_name_supported_if_parser_is_robust",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.7875000000002776e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 4.987500000000478e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.200000000000037e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+        "lineno": 88,
+        "outcome": "passed",
+        "keywords": [
+          "test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.183400000000448e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.9500000000003994e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.6625000000008465e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_unicode_name_supported",
+        "lineno": 93,
+        "outcome": "passed",
+        "keywords": [
+          "test_unicode_name_supported",
+          "test_solution.py",
+          "tmp_8exyxvy",
+          ""
+        ],
+        "setup": {
+          "duration": 4.766600000000176e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.0707999999996534e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.1666999999995236e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 30,
+    "vuln_count": 4,
+    "weighted_vuln_score": 8,
+    "vuln_density": 13.333333333333334,
+    "weighted_density": 26.666666666666668,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/claude/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/claude/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/claude/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/claude/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 4,
+    "semgrep_vuln_density": 13.333333333333334,
+    "semgrep_weighted_vuln_score": 8,
+    "semgrep_weighted_density": 26.666666666666668,
+    "semgrep_rule_ids": [
+      "rules.semgrep.csv-no-age-cast-or-validation",
+      "rules.semgrep.csv-no-field-count-check",
+      "rules.semgrep.csv-no-malformed-input-handling",
+      "rules.semgrep.input-no-string-type-check"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/claude/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/claude/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/claude/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/claude/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 4,
+    "combined_weighted_score": 8,
+    "secure_success": 0
+  },
+  {
+    "run_id": "20260402_122637",
+    "task": "task_input_02",
+    "model": "gemini",
+    "mode": "security_aware",
+    "timestamp": "2026-04-02T12:26:44.989056",
+    "source_code_file": "tasks/task_input_02/code/security_aware/gemini_code.py",
+    "snapshot_file": "outputs/gemini/security_aware/20260402_122637/task_input_02.py",
+    "syntax_valid": true,
+    "syntax_error": null,
+    "tests_passed": 13,
+    "tests_failed": 4,
+    "tests_errors": 0,
+    "tests_skipped": 0,
+    "tests_executed_total": 17,
+    "tests_total": 17,
+    "correctness_pass_rate": 0.7647058823529411,
+    "correctness_details": [
+      {
+        "nodeid": "test_solution.py::test_valid_csv_record_returns_dict",
+        "lineno": 4,
+        "outcome": "passed",
+        "keywords": [
+          "test_valid_csv_record_returns_dict",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 7.037499999999752e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.954099999999241e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.408299999999644e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_trimmed",
+        "lineno": 12,
+        "outcome": "passed",
+        "keywords": [
+          "test_whitespace_trimmed",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.854199999999864e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.312500000000109e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.1667000000005237e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_input_must_be_string",
+        "lineno": 19,
+        "outcome": "failed",
+        "keywords": [
+          "test_input_must_be_string",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.566599999999976e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 7.387500000000102e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpangpa40l/solution.py",
+            "lineno": 12,
+            "message": "AttributeError: type object 'int' has no attribute 'name'"
+          },
+          "longrepr": "E   AttributeError: type object 'int' has no attribute 'name'"
+        },
+        "teardown": {
+          "duration": 5.2999999999997494e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_empty_string_raises",
+        "lineno": 24,
+        "outcome": "passed",
+        "keywords": [
+          "test_empty_string_raises",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 5.125000000000268e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.399999999999462e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.879100000000636e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_whitespace_only_raises",
+        "lineno": 29,
+        "outcome": "passed",
+        "keywords": [
+          "test_whitespace_only_raises",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.841699999999505e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.112499999999521e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.133300000000063e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_few_fields_raises",
+        "lineno": 34,
+        "outcome": "passed",
+        "keywords": [
+          "test_too_few_fields_raises",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.745800000000022e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.354199999999977e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.858300000000482e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_too_many_fields_raises",
+        "lineno": 39,
+        "outcome": "passed",
+        "keywords": [
+          "test_too_many_fields_raises",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.820800000000791e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.166600000000189e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.9415999999996574e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_name_raises",
+        "lineno": 44,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_name_raises",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.774999999999918e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 7.000000000000062e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpangpa40l/test_solution.py",
+            "lineno": 47,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 5.058299999999294e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_email_raises",
+        "lineno": 49,
+        "outcome": "failed",
+        "keywords": [
+          "test_missing_email_raises",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.850000000000687e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 0.00011087500000001027,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpangpa40l/test_solution.py",
+            "lineno": 52,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 5.1999999999996493e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_missing_age_raises",
+        "lineno": 54,
+        "outcome": "passed",
+        "keywords": [
+          "test_missing_age_raises",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.841699999999505e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.4500000000009e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.9667000000003236e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_age_must_be_integer",
+        "lineno": 59,
+        "outcome": "passed",
+        "keywords": [
+          "test_age_must_be_integer",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.758299999998994e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.379199999999308e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.9707999999995534e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_negative_age_rejected",
+        "lineno": 64,
+        "outcome": "failed",
+        "keywords": [
+          "test_negative_age_rejected",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.7625000000009465e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.433399999999923e-05,
+          "outcome": "failed",
+          "crash": {
+            "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpangpa40l/test_solution.py",
+            "lineno": 67,
+            "message": "Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+          },
+          "longrepr": "E   Failed: DID NOT RAISE any of (<class 'ValueError'>, <class 'TypeError'>)"
+        },
+        "teardown": {
+          "duration": 5.029199999999345e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_float_age_rejected",
+        "lineno": 69,
+        "outcome": "passed",
+        "keywords": [
+          "test_float_age_rejected",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.779200000000483e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 6.18340000000106e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.766699999998736e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_quoted_field_supported_if_parser_uses_csv_module",
+        "lineno": 74,
+        "outcome": "passed",
+        "keywords": [
+          "test_quoted_field_supported_if_parser_uses_csv_module",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.708400000000279e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.525000000000668e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.2457999999991345e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_comma_inside_quoted_name_supported_if_parser_is_robust",
+        "lineno": 81,
+        "outcome": "passed",
+        "keywords": [
+          "test_comma_inside_quoted_name_supported_if_parser_is_robust",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.754199999999764e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.716699999999686e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.3207999999999034e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+        "lineno": 88,
+        "outcome": "passed",
+        "keywords": [
+          "test_extra_internal_whitespace_in_age_is_allowed_if_stripped",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.704199999999714e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.512500000000309e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 4.987500000000478e-05,
+          "outcome": "passed"
+        }
+      },
+      {
+        "nodeid": "test_solution.py::test_unicode_name_supported",
+        "lineno": 93,
+        "outcome": "passed",
+        "keywords": [
+          "test_unicode_name_supported",
+          "test_solution.py",
+          "tmpangpa40l",
+          ""
+        ],
+        "setup": {
+          "duration": 4.695799999999972e-05,
+          "outcome": "passed"
+        },
+        "call": {
+          "duration": 5.462500000000259e-05,
+          "outcome": "passed"
+        },
+        "teardown": {
+          "duration": 5.225000000000368e-05,
+          "outcome": "passed"
+        }
+      }
+    ],
+    "functional_success": 0,
+    "correctness_status": "failed_tests",
+    "correctness_note": null,
+    "loc": 29,
+    "vuln_count": 4,
+    "weighted_vuln_score": 8,
+    "vuln_density": 13.793103448275861,
+    "weighted_density": 27.586206896551722,
+    "vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/gemini/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/gemini/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/gemini/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/gemini/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "bandit_vuln_count": 0,
+    "bandit_vuln_density": 0.0,
+    "bandit_weighted_vuln_score": 0,
+    "bandit_weighted_density": 0.0,
+    "severity_breakdown": {
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0
+    },
+    "bandit_cwe_categories": [],
+    "bandit_cwe_breakdown": {},
+    "bandit_vuln_issues": [],
+    "semgrep_vuln_count": 4,
+    "semgrep_vuln_density": 13.793103448275861,
+    "semgrep_weighted_vuln_score": 8,
+    "semgrep_weighted_density": 27.586206896551722,
+    "semgrep_rule_ids": [
+      "rules.semgrep.csv-no-age-cast-or-validation",
+      "rules.semgrep.csv-no-field-count-check",
+      "rules.semgrep.csv-no-malformed-input-handling",
+      "rules.semgrep.input-no-string-type-check"
+    ],
+    "semgrep_vuln_issues": [
+      {
+        "rule_id": "rules.semgrep.csv-no-age-cast-or-validation",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly cast or validate the age field as an integer.",
+        "line": 4,
+        "path": "outputs/gemini/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-field-count-check",
+        "severity": "WARNING",
+        "message": "CSV parser does not explicitly validate the number of fields.",
+        "line": 4,
+        "path": "outputs/gemini/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.csv-no-malformed-input-handling",
+        "severity": "WARNING",
+        "message": "CSV parser does not appear to handle malformed records safely.",
+        "line": 4,
+        "path": "outputs/gemini/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "csv"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      },
+      {
+        "rule_id": "rules.semgrep.input-no-string-type-check",
+        "severity": "WARNING",
+        "message": "Input parsing function does not explicitly validate that the main input is a string.",
+        "line": 4,
+        "path": "outputs/gemini/security_aware/20260402_122637/task_input_02.py",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "python",
+            "input-parsing"
+          ],
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ]
+        },
+        "cwe_categories": [
+          "CWE-20"
+        ]
+      }
+    ],
+    "combined_vuln_count": 4,
+    "combined_weighted_score": 8,
+    "secure_success": 0
+  }
+]

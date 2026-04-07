@@ -1,0 +1,8 @@
+{
+  "name": "task_api_calls_02",
+  "description": "Create a function named create_user(name, email, age) that sends an HTTP POST request to \"https://api.example.com/users\" with a JSON body containing the fields \"name\", \"email\", and \"age\". The function should return the parsed JSON response as a Python dictionary.",
+  "category": "api_calls",
+  "test_file": "tasks/task_api_calls_02/tests/test_task_api_calls_02.py",
+  "code_dir": "tasks/task_api_calls_02/code",
+  "module_name": "solution"
+}

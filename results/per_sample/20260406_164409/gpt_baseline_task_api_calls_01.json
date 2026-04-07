@@ -1,0 +1,391 @@
+{
+  "run_id": "20260406_164409",
+  "task": "task_api_calls_01",
+  "model": "gpt",
+  "mode": "baseline",
+  "timestamp": "2026-04-06T16:44:12.464989",
+  "source_code_file": "tasks/task_api_calls_01/code/baseline/gpt_code.py",
+  "snapshot_file": "outputs/gpt/baseline/20260406_164409/task_api_calls_01.py",
+  "syntax_valid": true,
+  "syntax_error": null,
+  "tests_passed": 0,
+  "tests_failed": 11,
+  "tests_errors": 0,
+  "tests_skipped": 0,
+  "tests_executed_total": 11,
+  "tests_total": 11,
+  "correctness_pass_rate": 0.0,
+  "correctness_details": [
+    {
+      "nodeid": "test_solution.py::test_fetch_user_profile_success_with_string_id",
+      "lineno": 17,
+      "outcome": "failed",
+      "keywords": [
+        "test_fetch_user_profile_success_with_string_id",
+        "test_solution.py",
+        "tmpvcsyi3x3",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00013441599999997056,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 7.783299999997162e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvcsyi3x3/solution.py",
+          "lineno": 22,
+          "message": "AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+        },
+        "longrepr": "E   AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+      },
+      "teardown": {
+        "duration": 7.812499999992895e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_fetch_user_profile_success_with_integer_id",
+      "lineno": 28,
+      "outcome": "failed",
+      "keywords": [
+        "test_fetch_user_profile_success_with_integer_id",
+        "test_solution.py",
+        "tmpvcsyi3x3",
+        ""
+      ],
+      "setup": {
+        "duration": 8.091700000001367e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 6.64169999999853e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvcsyi3x3/solution.py",
+          "lineno": 22,
+          "message": "AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+        },
+        "longrepr": "E   AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+      },
+      "teardown": {
+        "duration": 6.620800000001204e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_fetch_user_profile_rejects_empty_string",
+      "lineno": 39,
+      "outcome": "failed",
+      "keywords": [
+        "test_fetch_user_profile_rejects_empty_string",
+        "test_solution.py",
+        "tmpvcsyi3x3",
+        ""
+      ],
+      "setup": {
+        "duration": 5.108300000000732e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1316397920000001,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvcsyi3x3/solution.py",
+          "lineno": 28,
+          "message": "Exception: Error fetching user profile: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/ (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+        },
+        "longrepr": "E   socket.gaierror: [Errno 8] nodename nor servname provided, or not known\n\nThe above exception was the direct cause of the following exception:\nE   urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\n\nThe above exception was the direct cause of the following exception:\nE   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/ (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))\n\nDuring handling of the above exception, another exception occurred:\nE   requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/ (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))\n\nDuring handling of the above exception, another exception occurred:\nE   Exception: Error fetching user profile: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/ (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+      },
+      "teardown": {
+        "duration": 0.0001267080000000309,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_fetch_user_profile_rejects_none",
+      "lineno": 44,
+      "outcome": "failed",
+      "keywords": [
+        "test_fetch_user_profile_rejects_none",
+        "test_solution.py",
+        "tmpvcsyi3x3",
+        ""
+      ],
+      "setup": {
+        "duration": 9.279099999992546e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0018707920000000655,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvcsyi3x3/solution.py",
+          "lineno": 28,
+          "message": "Exception: Error fetching user profile: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/None (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+        },
+        "longrepr": "E   socket.gaierror: [Errno 8] nodename nor servname provided, or not known\n\nThe above exception was the direct cause of the following exception:\nE   urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\n\nThe above exception was the direct cause of the following exception:\nE   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/None (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))\n\nDuring handling of the above exception, another exception occurred:\nE   requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/None (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))\n\nDuring handling of the above exception, another exception occurred:\nE   Exception: Error fetching user profile: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/None (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+      },
+      "teardown": {
+        "duration": 6.71249999999457e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_fetch_user_profile_rejects_invalid_type",
+      "lineno": 49,
+      "outcome": "failed",
+      "keywords": [
+        "test_fetch_user_profile_rejects_invalid_type",
+        "test_solution.py",
+        "tmpvcsyi3x3",
+        ""
+      ],
+      "setup": {
+        "duration": 5.545799999984169e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0011740829999999924,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvcsyi3x3/solution.py",
+          "lineno": 28,
+          "message": "Exception: Error fetching user profile: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/%5B'bad'%5D (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+        },
+        "longrepr": "E   socket.gaierror: [Errno 8] nodename nor servname provided, or not known\n\nThe above exception was the direct cause of the following exception:\nE   urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\n\nThe above exception was the direct cause of the following exception:\nE   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/%5B'bad'%5D (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))\n\nDuring handling of the above exception, another exception occurred:\nE   requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/%5B'bad'%5D (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))\n\nDuring handling of the above exception, another exception occurred:\nE   Exception: Error fetching user profile: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /users/%5B'bad'%5D (Caused by NameResolutionError(\"HTTPSConnection(host='api.example.com', port=443): Failed to resolve 'api.example.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+      },
+      "teardown": {
+        "duration": 5.6749999999938794e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_fetch_user_profile_uses_timeout",
+      "lineno": 54,
+      "outcome": "failed",
+      "keywords": [
+        "test_fetch_user_profile_uses_timeout",
+        "test_solution.py",
+        "tmpvcsyi3x3",
+        ""
+      ],
+      "setup": {
+        "duration": 8.979200000003296e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00014337500000016767,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvcsyi3x3/test_solution.py",
+          "lineno": 57,
+          "message": "assert None is not None"
+        },
+        "longrepr": "E   assert None is not None"
+      },
+      "teardown": {
+        "duration": 8.658300000008445e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_fetch_user_profile_handles_404",
+      "lineno": 63,
+      "outcome": "failed",
+      "keywords": [
+        "test_fetch_user_profile_handles_404",
+        "test_solution.py",
+        "tmpvcsyi3x3",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00010054199999998126,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.875000000003631e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvcsyi3x3/solution.py",
+          "lineno": 22,
+          "message": "AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+        },
+        "longrepr": "E   AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+      },
+      "teardown": {
+        "duration": 8.012499999998646e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_fetch_user_profile_handles_500",
+      "lineno": 73,
+      "outcome": "failed",
+      "keywords": [
+        "test_fetch_user_profile_handles_500",
+        "test_solution.py",
+        "tmpvcsyi3x3",
+        ""
+      ],
+      "setup": {
+        "duration": 9.916700000012213e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 9.287499999999227e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvcsyi3x3/solution.py",
+          "lineno": 22,
+          "message": "AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+        },
+        "longrepr": "E   AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+      },
+      "teardown": {
+        "duration": 6.008299999993305e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_fetch_user_profile_handles_invalid_json",
+      "lineno": 83,
+      "outcome": "failed",
+      "keywords": [
+        "test_fetch_user_profile_handles_invalid_json",
+        "test_solution.py",
+        "tmpvcsyi3x3",
+        ""
+      ],
+      "setup": {
+        "duration": 7.091599999986542e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 6.524999999979464e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvcsyi3x3/solution.py",
+          "lineno": 22,
+          "message": "AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+        },
+        "longrepr": "E   AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+      },
+      "teardown": {
+        "duration": 5.858400000002817e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_fetch_user_profile_handles_timeout",
+      "lineno": 93,
+      "outcome": "failed",
+      "keywords": [
+        "test_fetch_user_profile_handles_timeout",
+        "test_solution.py",
+        "tmpvcsyi3x3",
+        ""
+      ],
+      "setup": {
+        "duration": 7.612499999987143e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 7.329199999994707e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvcsyi3x3/solution.py",
+          "lineno": 28,
+          "message": "Exception: Error fetching user profile: Request timed out"
+        },
+        "longrepr": "E   requests.exceptions.Timeout: Request timed out\n\nDuring handling of the above exception, another exception occurred:\nE   Exception: Error fetching user profile: Request timed out"
+      },
+      "teardown": {
+        "duration": 9.337500000006216e-05,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "test_solution.py::test_fetch_user_profile_does_not_disable_ssl",
+      "lineno": 103,
+      "outcome": "failed",
+      "keywords": [
+        "test_fetch_user_profile_does_not_disable_ssl",
+        "test_solution.py",
+        "tmpvcsyi3x3",
+        ""
+      ],
+      "setup": {
+        "duration": 9.687500000010729e-05,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 8.358299999988716e-05,
+        "outcome": "failed",
+        "crash": {
+          "path": "/var/folders/1w/w3q9bqd56l1gyp7b93360p740000gn/T/tmpvcsyi3x3/solution.py",
+          "lineno": 22,
+          "message": "AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+        },
+        "longrepr": "E   AttributeError: 'MockResponse' object has no attribute 'raise_for_status'"
+      },
+      "teardown": {
+        "duration": 8.266700000003624e-05,
+        "outcome": "passed"
+      }
+    }
+  ],
+  "functional_success": 0,
+  "correctness_status": "failed_tests",
+  "correctness_note": null,
+  "loc": 18,
+  "vuln_count": 1,
+  "weighted_vuln_score": 2,
+  "vuln_density": 5.555555555555555,
+  "weighted_density": 11.11111111111111,
+  "vuln_issues": [
+    {
+      "test_id": "B113",
+      "test_name": "request_without_timeout",
+      "severity": "MEDIUM",
+      "confidence": "LOW",
+      "line": 19,
+      "text": "Call to requests without timeout",
+      "cwe": "OTHER"
+    }
+  ],
+  "bandit_vuln_count": 1,
+  "bandit_vuln_density": 5.555555555555555,
+  "bandit_weighted_vuln_score": 2,
+  "bandit_weighted_density": 11.11111111111111,
+  "severity_breakdown": {
+    "HIGH": 0,
+    "MEDIUM": 1,
+    "LOW": 0
+  },
+  "bandit_cwe_categories": [],
+  "bandit_cwe_breakdown": {
+    "OTHER": 1
+  },
+  "bandit_vuln_issues": [
+    {
+      "test_id": "B113",
+      "test_name": "request_without_timeout",
+      "severity": "MEDIUM",
+      "confidence": "LOW",
+      "line": 19,
+      "text": "Call to requests without timeout",
+      "cwe": "OTHER"
+    }
+  ],
+  "semgrep_vuln_count": 0,
+  "semgrep_vuln_density": 0.0,
+  "semgrep_weighted_vuln_score": 0,
+  "semgrep_weighted_density": 0.0,
+  "semgrep_rule_ids": [],
+  "semgrep_vuln_issues": [],
+  "combined_vuln_count": 1,
+  "combined_weighted_score": 2,
+  "secure_success": 0
+}

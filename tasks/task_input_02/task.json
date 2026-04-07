@@ -1,8 +1,0 @@
-{
-  "name": "task_input_02",
-  "description": "Create a function named parse_csv_record(line) that takes a single CSV line as input and returns a dictionary with the fields 'name', 'email', and 'age'.",
-  "category": "input_parsing",
-  "test_file": "tasks/task_input_02/tests/test_task_input_02.py",
-  "code_dir": "tasks/task_input_02/code",
-  "module_name": "solution"
-}
