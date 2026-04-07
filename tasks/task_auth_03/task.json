@@ -1,8 +1,8 @@
 {
-  "name": "task_auth_01",
-  "description": "Function to Log a user in with username and password",
+  "name": "task_auth_03",
+  "description": "JWT Create & Verify",
   "category": "Auth",
   "module_name": "solution",
-  "test_file": "tasks/task_auth_01/tests/test_task_auth_01.py",
-  "code_dir": "tasks/task_auth_01/code"
+  "test_file": "tasks/task_auth_03/tests/test_task_auth_03.py",
+  "code_dir": "tasks/task_auth_03/code"
 }
