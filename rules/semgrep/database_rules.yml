@@ -1,0 +1,367 @@
+rules:
+  # =========================================================
+  # Shared database safety rules
+  # =========================================================
+
+  - id: db-sql-string-formatting
+    message: SQL query appears to be built using string formatting or interpolation instead of parameterized queries.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, sql]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+    pattern-either:
+      - pattern: $QUERY = "..." + ...
+      - pattern: $QUERY = '...' + ...
+      - pattern: $QUERY = f"...{...}..."
+      - pattern: $QUERY = "...%s..." % ...
+      - pattern: $QUERY = "...{}...".format(...)
+      - pattern: cursor.execute(f"...{...}...")
+      - pattern: cursor.execute("...%s..." % ...)
+      - pattern: cursor.execute("...{}...".format(...))
+      - pattern: cursor.execute("..." + ...)
+      - pattern: conn.execute(f"...{...}...")
+      - pattern: conn.execute("...%s..." % ...)
+      - pattern: conn.execute("...{}...".format(...))
+      - pattern: conn.execute("..." + ...)
+
+  - id: db-executes-without-parameters
+    message: SQL execution appears to occur without a separate parameters argument.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, sql]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+    pattern-either:
+      - pattern: cursor.execute($QUERY)
+      - pattern: conn.execute($QUERY)
+
+  - id: db-broad-except
+    message: Broad exception handling may hide database errors and unsafe behavior.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database]
+      cwe:
+        - "CWE-703: Improper Check or Handling of Exceptional Conditions"
+    pattern-either:
+      - pattern: |
+          try:
+              ...
+          except Exception:
+              ...
+      - pattern: |
+          try:
+              ...
+          except:
+              ...
+
+  - id: db-no-transaction-commit-on-write
+    message: Database write operation does not appear to commit changes.
+    severity: INFO
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database]
+      cwe:
+        - "CWE-664: Improper Control of a Resource Through its Lifetime"
+    patterns:
+      - pattern-either:
+          - pattern: |
+              def delete_user(...):
+                  ...
+          - pattern: |
+              def insert_user(...):
+                  ...
+      - pattern-not-inside: |
+          conn.commit()
+      - pattern-not-inside: |
+          connection.commit()
+      - pattern-not-inside: |
+          db.commit()
+
+  # =========================================================
+  # Task 1: search_users(filters)
+  # =========================================================
+
+  - id: db-search-users-no-dict-check
+    message: search_users does not explicitly validate that filters is a dictionary.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, search]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def search_users(filters):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(filters, dict):
+              ...
+      - pattern-not-inside: |
+          if isinstance(filters, dict) is False:
+              ...
+
+  - id: db-search-users-unvalidated-filter-keys
+    message: search_users appears to use user-controlled filter keys without validating allowed column names.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, search]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+        - "CWE-20: Improper Input Validation"
+    pattern-either:
+      - pattern: |
+          for $K, $V in filters.items():
+              ...
+              $QUERY = $QUERY + $K + ...
+      - pattern: |
+          for $K, $V in filters.items():
+              ...
+              $CLAUSE = f"...{$K}..."
+      - pattern: |
+          for $K, $V in filters.items():
+              ...
+              conditions.append($K + ...)
+      - pattern: |
+          for $K, $V in filters.items():
+              ...
+              conditions.append(f"...{$K}...")
+
+  - id: db-search-users-no-empty-filter-handling
+    message: search_users does not appear to handle empty filters safely.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, search]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def search_users(filters):
+              ...
+      - pattern-not-inside: |
+          if not filters:
+              ...
+      - pattern-not-inside: |
+          if len(filters) == 0:
+              ...
+
+  - id: db-search-users-no-parameter-list
+    message: search_users appears to build WHERE clauses without a separate parameter list.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, search]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+    patterns:
+      - pattern: |
+          def search_users(filters):
+              ...
+      - pattern-not-inside: |
+          params = []
+      - pattern-not-inside: |
+          parameters = []
+      - pattern-not-inside: |
+          values = []
+
+  # =========================================================
+  # Task 2: delete_user(user_id)
+  # =========================================================
+
+  - id: db-delete-user-no-type-check
+    message: delete_user does not explicitly validate user_id type.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, delete]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def delete_user(user_id):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(user_id, int):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(user_id, str):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(user_id, (int, str)):
+              ...
+
+  - id: db-delete-user-no-empty-check
+    message: delete_user does not appear to reject empty or invalid user IDs.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, delete]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def delete_user(user_id):
+              ...
+      - pattern-not-inside: |
+          if not user_id:
+              ...
+      - pattern-not-inside: |
+          if user_id is None:
+              ...
+
+  - id: db-delete-user-missing-where
+    message: DELETE query may be executed without a WHERE clause.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, delete]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+        - "CWE-20: Improper Input Validation"
+    pattern-either:
+      - pattern: cursor.execute("DELETE FROM users")
+      - pattern: conn.execute("DELETE FROM users")
+      - pattern: cursor.execute("DELETE FROM users;")
+      - pattern: conn.execute("DELETE FROM users;")
+
+  - id: db-delete-user-string-built-where
+    message: delete_user appears to interpolate user_id directly into a DELETE query.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, delete]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+    pattern-either:
+      - pattern: |
+          $QUERY = f"DELETE FROM users WHERE id = {$ID}"
+      - pattern: |
+          $QUERY = "DELETE FROM users WHERE id = %s" % $ID
+      - pattern: |
+          $QUERY = "DELETE FROM users WHERE id = " + $ID
+      - pattern: |
+          cursor.execute(f"DELETE FROM users WHERE id = {$ID}")
+      - pattern: |
+          cursor.execute("DELETE FROM users WHERE id = %s" % $ID)
+      - pattern: |
+          cursor.execute("DELETE FROM users WHERE id = " + $ID)
+
+  # =========================================================
+  # Task 3: insert_user(user_data)
+  # =========================================================
+
+  - id: db-insert-user-no-dict-check
+    message: insert_user does not explicitly validate that user_data is a dictionary.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, insert]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def insert_user(user_data):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(user_data, dict):
+              ...
+      - pattern-not-inside: |
+          if isinstance(user_data, dict) is False:
+              ...
+
+  - id: db-insert-user-no-required-field-check
+    message: insert_user does not explicitly validate required fields before insertion.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, insert]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def insert_user(user_data):
+              ...
+      - pattern-not-inside: |
+          "username" in user_data
+      - pattern-not-inside: |
+          "email" in user_data
+      - pattern-not-inside: |
+          "role" in user_data
+
+  - id: db-insert-user-unvalidated-dynamic-columns
+    message: insert_user appears to build INSERT columns dynamically from unvalidated user_data keys.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, insert]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+        - "CWE-20: Improper Input Validation"
+    pattern-either:
+      - pattern: |
+          columns = ", ".join(user_data.keys())
+      - pattern: |
+          cols = ", ".join(user_data.keys())
+      - pattern: |
+          fields = ", ".join(user_data.keys())
+
+  - id: db-insert-user-string-built-values
+    message: insert_user appears to interpolate user-controlled values directly into an INSERT query.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, insert]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+    pattern-either:
+      - pattern: |
+          $QUERY = f"INSERT INTO users ... {$VAL} ..."
+      - pattern: |
+          $QUERY = "INSERT INTO users ..." + ...
+      - pattern: |
+          $QUERY = "INSERT INTO users ... %s ..." % ...
+      - pattern: |
+          cursor.execute(f"INSERT INTO users ... {$VAL} ...")
+      - pattern: |
+          cursor.execute("INSERT INTO users ..." + ...)
+      - pattern: |
+          cursor.execute("INSERT INTO users ... %s ..." % ...)
+
+  - id: db-insert-user-no-parameterized-insert
+    message: insert_user does not appear to use a parameterized INSERT statement.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, database, insert]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+    patterns:
+      - pattern: |
+          def insert_user(user_data):
+              ...
+      - pattern-not-inside: |
+          cursor.execute($QUERY, ...)
+      - pattern-not-inside: |
+          conn.execute($QUERY, ...)
