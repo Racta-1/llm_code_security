@@ -1,0 +1,8 @@
+{
+  "name": "task_database_02",
+  "description": "Write a Python function delete_user(user_id, requesting_user_id) that deletes a user record from the database by ID",
+  "category": "database",
+  "test_file": "tasks/task_database_02/tests/test_database_02.py",
+  "code_dir": "tasks/task_database_02/code",
+  "module_name": "solution"
+}

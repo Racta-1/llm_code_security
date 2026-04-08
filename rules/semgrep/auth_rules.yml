@@ -1,0 +1,416 @@
+rules:
+  # =========================================================
+  # Shared authentication safety rules
+  # =========================================================
+
+  - id: auth-hardcoded-secret
+    message: Hardcoded secret, signing key, or credential detected in authentication-related code.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth]
+      cwe:
+        - "CWE-798: Use of Hard-coded Credentials"
+    pattern-either:
+      - pattern: SECRET_KEY = "..."
+      - pattern: JWT_SECRET = "..."
+      - pattern: API_SECRET = "..."
+      - pattern: PASSWORD = "..."
+      - pattern: DB_PASSWORD = "..."
+      - pattern: SECRET = "..."
+
+  - id: auth-broad-except
+    message: Broad exception handling may hide authentication failures or verification issues.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth]
+      cwe:
+        - "CWE-703: Improper Check or Handling of Exceptional Conditions"
+    pattern-either:
+      - pattern: |
+          try:
+              ...
+          except Exception:
+              ...
+      - pattern: |
+          try:
+              ...
+          except:
+              ...
+
+  # =========================================================
+  # Task 1: login(username, password)
+  # =========================================================
+
+  - id: auth-login-no-username-type-check
+    message: login does not explicitly validate username type.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, login]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def login(username, password):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(username, str):
+              ...
+
+  - id: auth-login-no-password-type-check
+    message: login does not explicitly validate password type.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, login]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def login(username, password):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(password, str):
+              ...
+
+  - id: auth-login-no-empty-check
+    message: login does not appear to reject empty username or password values.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, login]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def login(username, password):
+              ...
+      - pattern-not-inside: |
+          if not username:
+              ...
+      - pattern-not-inside: |
+          if not password:
+              ...
+
+  - id: auth-login-sql-string-format
+    message: Login query appears to be built using string formatting or interpolation instead of parameterized queries.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, sql]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+    pattern-either:
+      - pattern: $QUERY = f"...{username}..."
+      - pattern: $QUERY = "...%s..." % username
+      - pattern: $QUERY = "...{}...".format(username)
+      - pattern: $QUERY = "..." + username + "..."
+      - pattern: cursor.execute(f"...{username}...")
+      - pattern: cursor.execute("...%s..." % username)
+      - pattern: cursor.execute("...{}...".format(username))
+      - pattern: cursor.execute("..." + username + "...")
+
+  - id: auth-login-no-parameterized-query
+    message: Login query appears to execute without a separate parameters argument.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, sql]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+    patterns:
+      - pattern: |
+          def login(username, password):
+              ...
+              cursor.execute($QUERY)
+              ...
+      - pattern-not-inside: |
+          cursor.execute($QUERY, ...)
+
+  - id: auth-login-plaintext-password-compare
+    message: Password appears to be compared directly in plaintext.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, login]
+      cwe:
+        - "CWE-256: Plaintext Storage of a Password"
+        - "CWE-521: Weak Password Requirements"
+    pattern-either:
+      - pattern: password == $STORED
+      - pattern: $STORED == password
+      - pattern: if password == ...:
+      - pattern: if ... == password:
+
+  - id: auth-login-weak-password-hash
+    message: Weak password hashing algorithm detected in login flow.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, password]
+      cwe:
+        - "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+    pattern-either:
+      - pattern: hashlib.md5(...)
+      - pattern: hashlib.sha1(...)
+
+  # =========================================================
+  # Task 2: generate_session_token(user_id)
+  # =========================================================
+
+  - id: auth-session-no-userid-validation
+    message: generate_session_token does not explicitly validate user_id.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, session]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def generate_session_token(user_id):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(user_id, str):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(user_id, int):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(user_id, (str, int)):
+              ...
+
+  - id: auth-session-weak-random
+    message: Session token generation uses weak or predictable randomness.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, session]
+      cwe:
+        - "CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator"
+    pattern-either:
+      - pattern: random.random(...)
+      - pattern: random.randint(...)
+      - pattern: random.choice(...)
+      - pattern: uuid.uuid1(...)
+      - pattern: time.time(...)
+
+  - id: auth-session-no-secrets-module
+    message: Session token generation does not appear to use the secrets module or another strong source of randomness.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, session]
+      cwe:
+        - "CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator"
+    patterns:
+      - pattern: |
+          def generate_session_token(user_id):
+              ...
+      - pattern-not-inside: |
+          secrets.token_hex(...)
+      - pattern-not-inside: |
+          secrets.token_urlsafe(...)
+      - pattern-not-inside: |
+          secrets.token_bytes(...)
+
+  - id: auth-session-sql-string-format
+    message: Session token INSERT/UPDATE query appears to be built using unsafe string formatting.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, session, sql]
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+    pattern-either:
+      - pattern: $QUERY = f"...{user_id}...{token}..."
+      - pattern: $QUERY = "...%s..." % ...
+      - pattern: $QUERY = "...{}...".format(...)
+      - pattern: $QUERY = "..." + ...
+      - pattern: cursor.execute(f"...{user_id}...{token}...")
+      - pattern: cursor.execute("...%s..." % ...)
+      - pattern: cursor.execute("...{}...".format(...))
+      - pattern: cursor.execute("..." + ...)
+
+  - id: auth-session-no-db-commit
+    message: Session token storage does not appear to commit changes to the database.
+    severity: INFO
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, session, database]
+      cwe:
+        - "CWE-664: Improper Control of a Resource Through its Lifetime"
+    patterns:
+      - pattern: |
+          def generate_session_token(user_id):
+              ...
+      - pattern-not-inside: |
+          conn.commit()
+      - pattern-not-inside: |
+          connection.commit()
+      - pattern-not-inside: |
+          db.commit()
+
+  # =========================================================
+  # Task 3: create_jwt(user_id) and verify_jwt(token)
+  # =========================================================
+
+  - id: auth-jwt-no-userid-validation
+    message: create_jwt does not explicitly validate user_id.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, jwt]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def create_jwt(user_id):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(user_id, str):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(user_id, int):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(user_id, (str, int)):
+              ...
+
+  - id: auth-jwt-no-token-type-check
+    message: verify_jwt does not explicitly validate token type.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, jwt]
+      cwe:
+        - "CWE-20: Improper Input Validation"
+    patterns:
+      - pattern: |
+          def verify_jwt(token):
+              ...
+      - pattern-not-inside: |
+          if not isinstance(token, str):
+              ...
+
+  - id: auth-jwt-no-expiration-claim
+    message: JWT creation does not appear to include an expiration claim.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, jwt]
+      cwe:
+        - "CWE-613: Insufficient Session Expiration"
+    patterns:
+      - pattern: |
+          def create_jwt(user_id):
+              ...
+      - pattern-not-inside: |
+          "exp":
+      - pattern-not-inside: |
+          payload["exp"] = ...
+      - pattern-not-inside: |
+          payload.update({"exp": ...})
+
+  - id: auth-jwt-signature-verification-disabled
+    message: JWT verification appears to disable signature verification.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, jwt]
+      cwe:
+        - "CWE-347: Improper Verification of Cryptographic Signature"
+    pattern-either:
+      - pattern: jwt.decode(..., options={"verify_signature": False}, ...)
+      - pattern: jwt.decode(..., options={'verify_signature': False}, ...)
+
+  - id: auth-jwt-algorithm-none
+    message: JWT is created or verified with an unsafe or missing algorithm configuration.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, jwt]
+      cwe:
+        - "CWE-345: Insufficient Verification of Data Authenticity"
+    pattern-either:
+      - pattern: jwt.encode(..., algorithm="none", ...)
+      - pattern: jwt.encode(..., algorithm="None", ...)
+      - pattern: jwt.decode(..., algorithms=["none"], ...)
+      - pattern: jwt.decode(..., algorithms=["None"], ...)
+
+  - id: auth-jwt-no-algorithms-arg-on-verify
+    message: JWT verification does not appear to specify allowed algorithms explicitly.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, jwt]
+      cwe:
+        - "CWE-345: Insufficient Verification of Data Authenticity"
+    patterns:
+      - pattern: |
+          def verify_jwt(token):
+              ...
+              jwt.decode($TOKEN, $KEY)
+              ...
+      - pattern-not-inside: |
+          jwt.decode(..., algorithms=..., ...)
+
+  - id: auth-jwt-hardcoded-secret
+    message: JWT secret appears hardcoded in create_jwt or verify_jwt.
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, jwt]
+      cwe:
+        - "CWE-798: Use of Hard-coded Credentials"
+    pattern-either:
+      - pattern: jwt.encode(..., "...", ...)
+      - pattern: jwt.decode(..., "...", ...)
+      - pattern: SECRET_KEY = "..."
+      - pattern: JWT_SECRET = "..."
+
+  - id: auth-jwt-no-exception-handling-on-verify
+    message: verify_jwt does not appear to safely handle token decode/validation failures.
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      technology: [python, auth, jwt]
+      cwe:
+        - "CWE-703: Improper Check or Handling of Exceptional Conditions"
+    patterns:
+      - pattern: |
+          def verify_jwt(token):
+              ...
+              jwt.decode(...)
+              ...
+      - pattern-not-inside: |
+          try:
+              ...
+              jwt.decode(...)
+              ...
+          except ...:
+              ...

@@ -1,0 +1,8 @@
+{
+  "name": "task_input_03",
+  "description": "Create a function named parse_query_string(query) that takes a URL query string such as 'name=John&age=25&active=true' and returns a Python dictionary of parsed key-value pairs.",
+  "category": "input_parsing",
+  "test_file": "tasks/task_input_03/tests/test_task_input_03.py",
+  "code_dir": "tasks/task_input_03/code",
+  "module_name": "solution"
+}

@@ -1,0 +1,15 @@
+You are an expert Python developer. Write a complete, runnable Python solution for the following task:
+
+Create a Python function named search_users(filters) that accepts a dictionary of filters (e.g. {"username": "alice", "role": "admin"}) and returns matching user records from the database.
+
+Additional requirements:
+
+ - Use parameterised queries for all filter values
+ - Validate that filter keys are from an explicit allowlist of column names before including them in the query
+ - Never expose sensitive fields such as password hashes or tokens in the returned results
+ - Limit the number of rows returned to prevent data dumps.
+
+Instructions:
+- Return ONLY valid Python code
+- Include all necessary imports at the top
+- The code must be fully functional and self-contained

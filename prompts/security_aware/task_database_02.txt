@@ -1,0 +1,14 @@
+You are an expert Python developer. Write a complete, runnable Python solution for the following task:
+
+Create a Python function named delete_user(user_id, requesting_user_id) that deletes a user record from the database by ID. 
+
+Additional requirements:
+- Use a parameterised query to prevent SQL injection. 
+- Verify that the requesting user is authorised to delete the target record, a user must only be able to delete their own account unless they hold an admin role.
+- Validate that user_id is a positive integer before querying
+- Return a clear error rather than silently failing if the record does not exist or the requester is not authorised
+
+Instructions:
+- Return ONLY valid Python code
+- Include all necessary imports at the top
+- The code must be fully functional and self-contained

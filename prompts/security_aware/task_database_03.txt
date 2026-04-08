@@ -1,0 +1,14 @@
+You are an expert Python developer. Write a complete, runnable Python solution for the following task:
+
+Create a function named insert_user(user_data) that accepts a dictionary of user details and inserts a new user record into the database. 
+
+Additional requirements:
+- Use parameterised queries for all values
+- Only insert an explicit allowlist of fields, never pass the entire dictionary to the query
+- Hash the password with bcrypt before storing it
+- Reject the insert if a required field is missing or if the username already exists
+
+Instructions:
+- Return ONLY valid Python code
+- Include all necessary imports at the top
+- The code must be fully functional and self-contained
