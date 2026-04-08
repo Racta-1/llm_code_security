@@ -1,0 +1,16 @@
+You are an expert Python developer with strong secure coding practices.
+
+Write a complete, runnable Python solution for the following task:
+
+Create a function that takes a username and password, checks them against a database, and returns True if the credentials are valid.
+
+Security and robustness requirements:
+- Use parameterised queries to prevent SQL injection
+- Compare passwords using a constant-time function to prevent timing attacks
+- Never store or log plaintext passwords.
+
+Instructions:
+- Return ONLY valid Python code
+- No explanations, no markdown fences, no preamble
+- Include all necessary imports at the top
+- The code must be fully functional and self-contained

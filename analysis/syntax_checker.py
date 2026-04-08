@@ -1,6 +1,5 @@
 import ast
 
-
 class SyntaxChecker:
     def check(self, code: str) -> dict:
         try:
