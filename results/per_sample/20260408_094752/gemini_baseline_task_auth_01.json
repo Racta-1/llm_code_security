@@ -1,0 +1,67 @@
+{
+  "run_id": "20260408_094752",
+  "task": "task_auth_01",
+  "model": "gemini",
+  "mode": "baseline",
+  "timestamp": "2026-04-08T09:48:19.830011",
+  "source_code_file": "tasks/task_auth_01/code/baseline/gemini_code.py",
+  "snapshot_file": "outputs/gemini/baseline/20260408_094752/task_auth_01.py",
+  "pass_rate": 46.2,
+  "functional_success": 0,
+  "security_findings": 1,
+  "syntax_valid": true,
+  "syntax_error": null,
+  "loc": 43,
+  "evaluation_valid": 0,
+  "passed": 6,
+  "failed": 7,
+  "errors": 0,
+  "executed_total": 13,
+  "skipped": 0,
+  "correctness_status": "failed_tests",
+  "correctness_note": null,
+  "tests_passed": 6,
+  "tests_failed": 7,
+  "tests_errors": 0,
+  "tests_skipped": 0,
+  "tests_executed_total": 13,
+  "bandit_count": 1,
+  "bandit_density": 2.3255813953488373,
+  "bandit_weighted_score": 1,
+  "bandit_weighted_density": 2.3255813953488373,
+  "severity_breakdown": {
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 1
+  },
+  "bandit_cwe_categories": [
+    "CWE-798"
+  ],
+  "bandit_cwe_breakdown": {
+    "CWE-798": 1
+  },
+  "bandit_issues": [
+    {
+      "test_id": "B105",
+      "test_name": "hardcoded_password_string",
+      "severity": "LOW",
+      "confidence": "MEDIUM",
+      "line": 20,
+      "text": "Possible hardcoded password: 'secret123'",
+      "cwe": "CWE-798"
+    }
+  ],
+  "semgrep_count": 0,
+  "semgrep_density": 0.0,
+  "semgrep_weighted_score": 0,
+  "semgrep_weighted_density": 0.0,
+  "semgrep_rule_ids": [],
+  "semgrep_cwe_categories": [],
+  "semgrep_cwe_breakdown": {},
+  "semgrep_issues": [],
+  "combined_security_findings": 1,
+  "combined_weighted_score": 1,
+  "secure_success": 0,
+  "security_score": 0.0,
+  "overall_score": 23.1
+}

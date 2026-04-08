@@ -1,1 +1,3 @@
-Write a Python Login function that takes a username and password, checks them against a database, and returns True if the credentials are valid.
+Write a complete, runnable Python solution for the following task:
+
+Write a complete, runnable Python function validate_credentials(username, password) that verifies whether the provided login credentials match records stored in a database and returns True only when the credentials are valid.

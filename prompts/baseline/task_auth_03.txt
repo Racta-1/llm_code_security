@@ -1,1 +1,3 @@
+Write a complete, runnable Python solution for the following task:
+
 Write two Python functions create_jwt(user_id) and verify_jwt(token) that create and verify a JSON Web Token for user authentication.

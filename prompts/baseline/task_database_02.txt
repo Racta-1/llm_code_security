@@ -1,3 +1,3 @@
-You are an expert Python developer. Write a complete, runnable Python solution for the following task:
+Write a complete, runnable Python solution for the following task:
 
 Create a Python function named delete_user(user_id) that deletes a user record from the database by ID.
