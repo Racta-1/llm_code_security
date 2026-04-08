@@ -15,6 +15,7 @@ class Reporter:
     - old detailed correctness/security breakdown
     Adds:
     - Pass Rate (%)
+    - Vulnerability Density
     - Security Score (%)
     - Overall Score (%)
     """
@@ -44,8 +45,8 @@ class Reporter:
             "",
             "## Results",
             "",
-            "| Model | Mode | Syntax | Func Success | Pass Rate | Security Score | Overall Score | Exec Tests | Skipped | Bandit | Semgrep | Combined Score |",
-            "|-------|------|:------:|:------------:|:---------:|:--------------:|:-------------:|:----------:|:-------:|:------:|:-------:|:--------------:|",
+            "| Model | Mode | Syntax | Func Success | Pass Rate | Vuln Density | Security Score | Overall Score | Exec Tests | Skipped | Bandit | Semgrep | Combined Score |",
+            "|-------|------|:------:|:------------:|:---------:|:------------:|:--------------:|:-------------:|:----------:|:-------:|:------:|:-------:|:--------------:|",
         ]
 
         for r in results:
@@ -53,6 +54,10 @@ class Reporter:
             func_str = "Yes" if r.get("functional_success") else "No"
 
             pass_rate = r.get("pass_rate", 0.0)
+            vulnerability_density = r.get(
+                "vulnerability_density",
+                r.get("combined_vuln_density", 0.0)
+            )
             security_score = r.get("security_score", 0.0)
             overall_score = r.get("overall_score", 0.0)
 
@@ -69,7 +74,7 @@ class Reporter:
 
             lines.append(
                 f"| {r['model']} | {r['mode']} | {syntax_str} | {func_str} | "
-                f"{pass_rate:.1f}% | {security_score:.1f}% | {overall_score:.1f}% | "
+                f"{pass_rate:.1f}% | {vulnerability_density:.2f} | {security_score:.1f}% | {overall_score:.1f}% | "
                 f"{executed} | {skipped} | {bandit_count} | {semgrep_count} | {combined_score} |"
             )
 
@@ -81,6 +86,10 @@ class Reporter:
             secure_str = "Yes" if r.get("secure_success") else "No"
 
             pass_rate = r.get("pass_rate", 0.0)
+            vulnerability_density = r.get(
+                "vulnerability_density",
+                r.get("combined_vuln_density", 0.0)
+            )
             security_score = r.get("security_score", 0.0)
             overall_score = r.get("overall_score", 0.0)
 
@@ -110,6 +119,10 @@ class Reporter:
 
             combined_count = r.get("security_findings", bandit_count + semgrep_count)
             combined_score = r.get("combined_weighted_score", bandit_weighted + semgrep_weighted)
+            combined_density = r.get(
+                "combined_vuln_density",
+                r.get("vulnerability_density", bandit_density + semgrep_density)
+            )
 
             lines.append(f"### {r['model']} ({r['mode']})")
             lines.append("")
@@ -124,6 +137,7 @@ class Reporter:
             lines.append("#### Headline Scores")
             lines.append("")
             lines.append(f"- **Pass Rate:** {pass_rate:.1f}%")
+            lines.append(f"- **Vulnerability Density:** {vulnerability_density:.2f} issues/100 LOC")
             lines.append(f"- **Security Score:** {security_score:.1f}%")
             lines.append(f"- **Overall Score:** {overall_score:.1f}%")
             lines.append(f"- **Functional success:** {func_str}")
@@ -144,6 +158,7 @@ class Reporter:
             lines.append("#### Security Breakdown")
             lines.append("")
             lines.append(f"- **Combined security findings:** {combined_count}")
+            lines.append(f"- **Combined vulnerability density:** {combined_density:.2f} issues/100 LOC")
             lines.append(f"- **Combined weighted security score:** {combined_score}")
             lines.append(f"- **LOC:** {r.get('loc', 0)}")
             lines.append("")
@@ -232,21 +247,25 @@ class Reporter:
         print(f"  📊 Markdown report: {path}")
 
     def _print_summary(self, results: list[dict[str, Any]]):
-        print(f"\n{'─' * 126}")
+        print(f"\n{'─' * 142}")
         print(f"  SUMMARY — {self.task_name}")
-        print(f"{'─' * 126}")
+        print(f"{'─' * 142}")
         print(
             f"  {'Model':<10} {'Mode':<16} {'Syntax':<8} {'Func OK':<10} "
-            f"{'Pass Rate':>10} {'Sec.Score':>11} {'Overall':>10} "
+            f"{'Pass Rate':>10} {'Vuln.Dens':>11} {'Sec.Score':>11} {'Overall':>10} "
             f"{'Exec':>6} {'Bandit':>8} {'Semgrep':>9} {'Comb.Score':>12}"
         )
-        print(f"  {'─' * 122}")
+        print(f"  {'─' * 138}")
 
         for r in results:
             syntax_str = "Yes" if r.get("syntax_valid") else "No"
             func_str = "Yes" if r.get("functional_success") else "No"
 
             pass_rate = r.get("pass_rate", 0.0)
+            vulnerability_density = r.get(
+                "vulnerability_density",
+                r.get("combined_vuln_density", 0.0)
+            )
             security_score = r.get("security_score", 0.0)
             overall_score = r.get("overall_score", 0.0)
 
@@ -261,8 +280,8 @@ class Reporter:
 
             print(
                 f"  {r['model']:<10} {r['mode']:<16} {syntax_str:<8} {func_str:<10} "
-                f"{pass_rate:>9.1f}% {security_score:>10.1f}% {overall_score:>9.1f}% "
+                f"{pass_rate:>9.1f}% {vulnerability_density:>10.2f} {security_score:>10.1f}% {overall_score:>9.1f}% "
                 f"{executed:>6} {bandit_count:>8} {semgrep_count:>9} {combined_score:>12}"
             )
 
-        print(f"{'─' * 126}")
+        print(f"{'─' * 142}")

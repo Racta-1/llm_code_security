@@ -1,4 +1,4 @@
-# python analysis/aggregate_scores.py --results-dir results/per_sample/20260408_094752 --output-dir results/aggregate/20260408_094752
+# python analysis/aggregate_scores.py --results-dir results/per_sample/20260408_174011 --output-dir results/aggregate/20260408_174011
 
 import argparse
 import json
@@ -39,15 +39,40 @@ def build_dataframe(rows: List[Dict]) -> pd.DataFrame:
         "mode",
         "pass_rate",
         "security_findings",
+        "vulnerability_density",
         "security_score",
         "overall_score",
         "functional_success",
         "secure_success",
+        "combined_vuln_density",
     ]
 
     for col in expected_cols:
         if col not in df.columns:
             df[col] = None
+
+    # Backward compatibility:
+    # if vulnerability_density is missing but combined_vuln_density exists, use it
+    if df["vulnerability_density"].isna().all() and "combined_vuln_density" in df.columns:
+        df["vulnerability_density"] = df["combined_vuln_density"]
+
+    # If secure_success is missing, derive it from security_findings
+    if df["secure_success"].isna().all() and "security_findings" in df.columns:
+        df["secure_success"] = df["security_findings"].apply(
+            lambda x: 1 if pd.notna(x) and x == 0 else 0
+        )
+
+    numeric_cols = [
+        "pass_rate",
+        "security_findings",
+        "vulnerability_density",
+        "security_score",
+        "overall_score",
+        "functional_success",
+        "secure_success",
+    ]
+    for col in numeric_cols:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
 
     return df
 
@@ -59,6 +84,7 @@ def summarize_by_task(df: pd.DataFrame) -> pd.DataFrame:
         "model",
         "pass_rate",
         "security_findings",
+        "vulnerability_density",
         "security_score",
         "overall_score",
         "functional_success",
@@ -74,6 +100,7 @@ def summarize_across_tasks(df: pd.DataFrame) -> pd.DataFrame:
             num_tasks=("task", "count"),
             avg_pass_rate=("pass_rate", "mean"),
             avg_security_findings=("security_findings", "mean"),
+            avg_vulnerability_density=("vulnerability_density", "mean"),
             avg_security_score=("security_score", "mean"),
             avg_overall_score=("overall_score", "mean"),
             functional_success_rate=("functional_success", "mean"),
@@ -81,11 +108,12 @@ def summarize_across_tasks(df: pd.DataFrame) -> pd.DataFrame:
         )
     )
 
-    # convert success rates to percentages
     summary["functional_success_rate"] = summary["functional_success_rate"] * 100
     summary["secure_success_rate"] = summary["secure_success_rate"] * 100
 
-    return summary.sort_values(["mode", "avg_overall_score"], ascending=[True, False]).reset_index(drop=True)
+    return summary.sort_values(
+        ["mode", "avg_overall_score"], ascending=[True, False]
+    ).reset_index(drop=True)
 
 
 def summarize_mode_only(df: pd.DataFrame) -> pd.DataFrame:
@@ -95,6 +123,7 @@ def summarize_mode_only(df: pd.DataFrame) -> pd.DataFrame:
             num_tasks=("task", "count"),
             avg_pass_rate=("pass_rate", "mean"),
             avg_security_findings=("security_findings", "mean"),
+            avg_vulnerability_density=("vulnerability_density", "mean"),
             avg_security_score=("security_score", "mean"),
             avg_overall_score=("overall_score", "mean"),
             functional_success_rate=("functional_success", "mean"),

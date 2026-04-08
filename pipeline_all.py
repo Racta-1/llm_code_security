@@ -10,13 +10,13 @@ import argparse
 import json
 from datetime import datetime
 from pathlib import Path
+from typing import List, Dict, Optional
 
 from analysis.correctness import CorrectnessChecker
 from analysis.reporter import Reporter
 from analysis.static_analyzer import StaticAnalyzer
 from analysis.syntax_checker import SyntaxChecker
 from analysis.semgrep_analyzer_all import SemgrepAnalyzer
-from typing import List, Dict, Optional
 
 
 MODELS = ["gpt", "claude", "gemini"]
@@ -36,7 +36,6 @@ def get_all_task_paths(tasks_root: str = "tasks") -> List[str]:
 
     task_paths = []
     for task_json in sorted(root.glob("task_*/task.json")):
-        # Skip template folders or any non-real tasks
         if "task_template" in str(task_json):
             continue
         task_paths.append(str(task_json))
@@ -177,13 +176,15 @@ def run_pipeline(task_path: str, modes: List[str], models: List[str], run_id: Op
                 f"{', '.join(semgrep_rule_ids) if semgrep_rule_ids else 'None'}"
             )
 
-
             # 5. Combined metrics
             combined_vuln_count = bandit_count + semgrep_count
             combined_weighted_score = bandit_weighted + semgrep_weighted
+            combined_vuln_density = bandit_density + semgrep_density
+            combined_weighted_density = bandit_weighted_density + semgrep_weighted_density
             secure_success = 1 if combined_vuln_count == 0 else 0
 
             print(f"  ✓ Combined security findings: {combined_vuln_count}")
+            print(f"  ✓ Combined vulnerability density: {combined_vuln_density:.2f} issues/100 LOC")
             print(f"  ✓ Combined weighted score: {combined_weighted_score}")
             print(f"  ✓ Secure success: {'Yes' if secure_success else 'No'}")
 
@@ -201,6 +202,7 @@ def run_pipeline(task_path: str, modes: List[str], models: List[str], run_id: Op
                 "pass_rate": round(pass_rate, 1),
                 "functional_success": functional_success,
                 "security_findings": combined_vuln_count,
+                "vulnerability_density": round(combined_vuln_density, 4),
 
                 # syntax / evaluation
                 "syntax_valid": syntax_result["syntax_valid"],
@@ -247,6 +249,8 @@ def run_pipeline(task_path: str, modes: List[str], models: List[str], run_id: Op
                 # combined
                 "combined_security_findings": combined_vuln_count,
                 "combined_weighted_score": combined_weighted_score,
+                "combined_vuln_density": round(combined_vuln_density, 4),
+                "combined_weighted_density": round(combined_weighted_density, 4),
                 "secure_success": secure_success,
             }
             all_results.append(result)
@@ -283,6 +287,7 @@ def run_pipeline(task_path: str, modes: List[str], models: List[str], run_id: Op
             f"  {r['model']:<10} {r['mode']:<16} "
             f"Pass Rate: {r['pass_rate']:>5.1f}%   "
             f"Security Findings: {r['security_findings']:>2}   "
+            f"Vuln Density: {r['vulnerability_density']:>6.2f}   "
             f"Security Score: {r['security_score']:>5.1f}%   "
             f"Overall Score: {r['overall_score']:>5.1f}%"
         )
